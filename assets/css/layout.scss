@@ -1,0 +1,17 @@
+h1 {
+	font-weight: normal;
+	letter-spacing: 2px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+body > section {
+	height: 100vh;
+
+	&:nth-of-type(odd) {
+		background-color: rgb(233, 233, 233);
+	}
+
+	&:nth-of-type(even) {
+		background-color: invert(rgb(233, 233, 233));
+	}
+}
