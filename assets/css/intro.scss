@@ -1,11 +1,49 @@
 #intro {
 	display: flex;
+	position: relative;
 
+	flex-direction: row;
 	align-items: center;
-	text-align: center;
 
 	h1 {
+		text-align: center;
 		font-size: 7vw;
 		flex: 1;
+	}
+
+	button {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		width: 1em;
+		height: 1em;
+		font-size: 5em;
+		line-height: 0;
+		padding: 0;
+		margin: 0;
+
+		outline: none;
+		border: none;
+
+		background-color: inherit;
+
+		color: rgb(41,41,41);
+
+		&:hover {
+			animation: hoveringButton 0.9s infinite;
+			//animation-timing-function: ease-in-out;
+		}
+	}
+}
+
+@keyframes hoveringButton {
+	0%, 100% {
+		padding-bottom: 0;
+	}
+
+	50% {
+		padding-bottom: 10px;
 	}
 }

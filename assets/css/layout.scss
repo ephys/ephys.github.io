@@ -7,11 +7,16 @@ h1 {
 body > section {
 	height: 100vh;
 
+	$darkColor: rgb(233, 233, 233);
+	$brightColor: invert($darkColor);
+
 	&:nth-of-type(odd) {
-		background-color: rgb(233, 233, 233);
+		background-color: $darkColor;
+		color: $brightColor;
 	}
 
 	&:nth-of-type(even) {
-		background-color: invert(rgb(233, 233, 233));
+		background-color: $brightColor;
+		color: $darkColor;
 	}
 }

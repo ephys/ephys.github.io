@@ -1,26 +1,35 @@
 'use strict';
 
+var $ = require('jquery');
+var utils = require('./utils');
+var ScrollWatcher = require('./ScrollWatcher');
+
+function scrollToSection(sectionNum) {
+	$(document.body).animate({ scrollTop: sectionNum * window.innerHeight }, '500', 'swing');
+}
+
+(function() {
+	var sections = document.getElementsByTagName('section');
+	var sectionWacher = new ScrollWatcher(sections);
+
+	/*sectionWacher.addListener(sections[1], function() {
+
+	});*/
+})();
+
 (function() {
 	var introSection = document.getElementById('intro');
 
 	var h1 = document.createElement('h1');
 	introSection.appendChild(h1);
 
-	slowPrint(h1, location.hostname + '_');
+	utils.slowPrint(h1, location.hostname + '_', 50, function() {
+		var nextPage = document.createElement('button');
+		nextPage.innerHTML = '&#x25bc;';
+		nextPage.addEventListener('click', function() {
+			scrollToSection(1);
+		});
+
+		introSection.appendChild(nextPage);
+	});
 })();
-
-function slowPrint(element, text, delay) {
-	delay = delay || 50;
-
-	var indice = 0;
-
-	var timeout = function() {
-		element.innerText += text.charAt(indice++);
-
-		if (indice !== text.length) {
-			setTimeout(timeout, delay);
-		}
-	};
-
-	setTimeout(timeout, delay);
-}
