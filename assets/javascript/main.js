@@ -15,7 +15,7 @@ function slowPrint(element, text, delay) {
 	var indice = 0;
 
 	var timeout = function() {
-		element.innerText += text.charAt(indice++);
+		element.textContent += text.charAt(indice++);
 
 		if (indice !== text.length) {
 			setTimeout(timeout, delay);
