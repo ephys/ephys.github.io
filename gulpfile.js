@@ -2,17 +2,20 @@
 
 var gulp = require('gulp');
 
-var browserify = require('gulp-browserify');
+var tsify = require('tsify');
+var Browserify = require('browserify');
 var uglify = require('gulp-uglify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 gulp.task('browserify', function () {
-	try {
-		return gulp.src('./assets/javascript/*.js')
-			.pipe(browserify())
-			.pipe(uglify())
-			.pipe(gulp.dest('./_assets/js'));
-	} catch(e) {
-		console.log(e);
-	}
+	return Browserify({ debug: true })
+		.add('./assets/typescript/main.ts')
+		.plugin(tsify, { noImplicitAny: true, removeComments: true })
+		.bundle()
+		.pipe(source('main.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(gulp.dest('./_assets/js/'));
 });
 
 var sass = require('gulp-sass');
@@ -35,5 +38,5 @@ gulp.task('css', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('./assets/css/*.scss', ['css']);
-	gulp.watch('./assets/javascript/*.js', ['browserify']);
+	gulp.watch('./assets/typescript/*.ts', ['browserify']);
 });

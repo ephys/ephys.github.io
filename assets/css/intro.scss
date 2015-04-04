@@ -38,6 +38,14 @@
 	}
 }
 
+.cursor {
+	animation: 1s blink step-end infinite;
+
+	&:after {
+		content: '_';
+	}
+}
+
 @keyframes hoveringButton {
 	0%, 100% {
 		padding-bottom: 0;
@@ -45,5 +53,15 @@
 
 	50% {
 		padding-bottom: 10px;
+	}
+}
+
+@keyframes blink {
+	0%, 100% {
+		color: inherit;
+	}
+
+	50% {
+		color: transparent;
 	}
 }
