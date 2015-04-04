@@ -4,12 +4,11 @@ module.exports = {
 	slowPrint: function(element, text, delay, callback) {
 		delay = delay || 50;
 
-		var indice = 0;
-
+		var index = 0;
 		var timeout = function() {
-			element.innerText += text.charAt(indice++);
+			element.textContent += text.charAt(index++);
 
-			if (indice !== text.length) {
+			if (index !== text.length) {
 				setTimeout(timeout, delay);
 			} else {
 				if (callback !== void 0) {
