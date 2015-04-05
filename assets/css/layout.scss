@@ -1,22 +1,57 @@
-h1 {
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
 	font-weight: normal;
-	letter-spacing: 2px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
+h1, h2 {
+	letter-spacing: 2px;
+}
+
+h2 {
+	padding: 25px 35px;
+	font-size: 40px;
+
+	text-transform: lowercase;
+	&:before {
+		content: '~$ ';
+	}
+}
+
+h3 {
+	padding: 13px 20px 10px;
+	font-size: 32px;
+}
+
+
 body > section {
-	height: 100vh;
+	overflow: hidden;
 
-	$darkColor: rgb(233, 233, 233);
-	$brightColor: invert($darkColor);
+	&:nth-of-type(1) {
+		height: 100vh;
+	}
 
-	&:nth-of-type(odd) {
-		background-color: $darkColor;
-		color: $brightColor;
+	&:nth-of-type(2) {
+		min-height: 100vh;
 	}
 
 	&:nth-of-type(even) {
+		background-color: $darkColor;
+		color: $brightColor;
+
+		pre {
+			background-color: $brightColor;
+			color: $darkColor;
+		}
+	}
+
+	&:nth-of-type(odd) {
 		background-color: $brightColor;
 		color: $darkColor;
+
+		pre {
+			background-color: $darkColor;
+			color: $brightColor;
+		}
 	}
 }

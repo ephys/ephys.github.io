@@ -33,3 +33,13 @@ function scrollToSection(sectionNum: number) {
 		introSection.appendChild(nextPage);
 	});
 })();
+
+(function() {
+	var projects = document.querySelectorAll('.projectGroup article header');
+
+	for (var i = 0; i < projects.length; i++) {
+		projects[i].addEventListener('click', function() {
+			this.parentNode.classList.toggle('active');
+		});
+	}
+})();

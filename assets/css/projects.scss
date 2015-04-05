@@ -1,0 +1,59 @@
+.projectList {
+	padding-bottom: 20px;
+}
+
+.projectGroup {
+	display: flex;
+
+	justify-content: space-around;
+
+	flex-wrap: wrap;
+
+	article {
+		min-width: 340px;
+		flex: 1;
+		margin: 0 20px 20px;
+		padding: 8px;
+
+		align-self: flex-start;
+
+		color: $darkColor;
+		background-color: $brightColor;
+
+		border-radius: 15px;
+		transition: border-radius 0.25s ease-in-out;
+
+		header {
+			cursor: pointer;
+		}
+
+		main {
+			max-height: 250px;
+		}
+
+		footer {
+			max-height: 55px;
+		}
+
+		main, footer {
+			transition: max-height 0.25s ease-out;
+		}
+
+
+		&.active {
+			h3 {
+				border-bottom: 1px $darkColor solid;
+			}
+		}
+
+		&:not(.active) {
+			border-radius: 4px;
+
+			main, footer {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.2s ease-in;
+			}
+		}
+	}
+}

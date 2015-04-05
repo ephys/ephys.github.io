@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
+$brightColor: rgb(233, 233, 233);
+$darkColor: invert($brightColor);
+
 @import 'normalize.css';
 @import 'layout';
 @import 'intro';
+@import 'projects';
