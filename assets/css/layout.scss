@@ -1,57 +1,49 @@
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-weight: normal;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	color: $textColorMain;
+	text-align: center;
 }
 
-h1, h2 {
-	letter-spacing: 2px;
+section {
+	text-align: center;
 }
 
-h2 {
-	padding: 25px 35px;
-	font-size: 40px;
+body>main h2 {
+	//font-weight: bold;
+	margin: 110px auto 100px;
+	font-size: 20px;
+	letter-spacing: 0.25em;
+	position: relative;
 
-	text-transform: lowercase;
-	&:before {
-		content: '~$ ';
+	display: inline-block;
+	width: auto;
+
+	&:after {
+		bottom: -25px;
+		position: absolute;
+		content: '';
+		display: block;
+		height: 1px;
+		width: 90%;
+		left: 5%;
+		background-color: $textColorMain;
 	}
 }
 
-h3 {
-	padding: 13px 20px 10px;
-	font-size: 32px;
+p {
+	color: $textColorMain;
 }
 
+a {
+	text-decoration: none;
+	color: $affordanceColor;
+}
 
-body > section {
-	overflow: hidden;
-
-	&:nth-of-type(1) {
-		height: 100vh;
-	}
-
-	&:nth-of-type(2) {
-		min-height: 100vh;
-	}
-
-	&:nth-of-type(even) {
-		background-color: $darkColor;
-		color: $brightColor;
-
-		pre {
-			background-color: $brightColor;
-			color: $darkColor;
-		}
-	}
-
-	&:nth-of-type(odd) {
-		background-color: $brightColor;
-		color: $darkColor;
-
-		pre {
-			background-color: $darkColor;
-			color: $brightColor;
-		}
-	}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }

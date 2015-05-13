@@ -1,8 +1,41 @@
 .projectList {
-	padding-bottom: 20px;
+	margin: 0 5vw;
+	background-color: lighten($darkColor, 5);
+	border-radius: 10px;
+	overflow: hidden;
+
+	> div {
+		display: flex;
+		color: $darkColor;
+
+		h3 {
+			font-weight: lighter;
+		}
+
+		.titleWrapper {
+			background-color: darken($brightColor, 5);
+			padding-top: 20px;
+
+			h3 {
+				font-size: 22px;
+				transform: rotate(-90deg);
+				padding: 0;
+				margin: 0;
+			}
+		}
+
+		&:not(:last-of-type) {
+			.titleWrapper, .projectGroup {
+				margin-bottom: 20px;
+			}
+		}
+	}
 }
 
 .projectGroup {
+	background-color: $brightColor;
+
+	flex: 1;
 	display: flex;
 
 	justify-content: space-around;
@@ -10,49 +43,116 @@
 	flex-wrap: wrap;
 
 	article {
-		min-width: 340px;
+		min-width: 300px;
 		flex: 1;
-		margin: 0 20px 20px;
-		padding: 8px;
 
 		align-self: flex-start;
 
-		color: $darkColor;
-		background-color: $brightColor;
-
-		border-radius: 15px;
-		transition: border-radius 0.25s ease-in-out;
-
 		header {
+			padding: 8px;
 			cursor: pointer;
+			text-align: center;
+			border-top: 3px solid;
+
+			transition: 0.25s background;
 		}
 
 		main {
-			max-height: 250px;
+			max-height: 300px;
 		}
 
 		footer {
-			max-height: 55px;
+			padding-top: 10px;
+			max-height: 80px;
+			text-align: center;
+			padding-bottom: 10px;
+
+			font-size: 0;
+
+			p {
+				font-size: 16px;
+				background-color: $darkColor;
+				color: $brightColor;
+
+				display: inline-block;
+				padding: 0;
+
+				a {
+					display: inline-block;
+					padding: 10px 20px;
+				}
+
+				&:hover {
+					background-color: lighten($darkColor, 5);
+				}
+
+				&:first-of-type {
+					border-bottom-left-radius: 10px;
+					border-top-left-radius: 10px;
+				}
+
+				&:last-of-type {
+					border-bottom-right-radius: 10px;
+					border-top-right-radius: 10px;
+				}
+			}
 		}
 
 		main, footer {
 			transition: max-height 0.25s ease-out;
 		}
 
-
-		&.active {
-			h3 {
-				border-bottom: 1px $darkColor solid;
-			}
-		}
-
 		&:not(.active) {
-			border-radius: 4px;
-
 			main, footer {
 				max-height: 0;
 				overflow: hidden;
 				transition: max-height 0.2s ease-in;
+				padding: 0;
+				margin: 0;
+			}
+		}
+
+		&:nth-of-type(1n) {
+			header {
+				border-color: $color1;
+			}
+
+			&.active header {
+				color: $brightColor;
+				background-color: $color1;
+			}
+		}
+
+		&:nth-of-type(2n) {
+			header {
+				border-color: $color2;
+			}
+
+			&.active header {
+				color: $brightColor;
+				background-color: $color2;
+			}
+		}
+
+		&:nth-of-type(3n) {
+			header {
+				border-color: #BF1E4B;
+			}
+
+			&.active header {
+				color: $brightColor;
+				background-color: #BF1E4B;
+			}
+		}
+
+		&:nth-of-type(4n) {
+			header {
+				border-color: #00A600;
+			}
+
+			&.active header {
+				color: $brightColor;
+				background-color: #00A600;
 			}
 		}
 	}

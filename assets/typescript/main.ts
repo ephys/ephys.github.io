@@ -1,45 +1,20 @@
-/// <reference path="../dts/jquery.d.ts" />
 'use strict';
 
-import $ = require('jquery');
-import utils = require('./utils');
-import Watcher = require('./ScrollWatcher');
-
-function scrollToSection(sectionNum: number) {
-	$(document.body).animate({ scrollTop: sectionNum * window.innerHeight }, '500', 'swing');
-}
-
+// replace SVG images by inlines (http://stackoverflow.com/questions/11978995/how-to-change-color-of-svg-image-using-css-jquery-svg-image-replacement)
 (function() {
-	var sections = document.getElementsByTagName('section');
-	var sectionWacher = new Watcher.ScrollWatcher();
+	$('img[src$=".svg"]').each(function() {
+		var img = this;
+		var imgURL = this.src;
 
-	sectionWacher.watchElement(sections[1]);
-})();
+		$.get(imgURL, function(data) {
+			var $svg = $(data).find('svg');
+			var svg = $svg[0];
 
-(function() {
-	var introSection = document.getElementById('intro');
+			svg.id = img.id;
+			svg.setAttribute('class', img.getAttribute('class'));
 
-	var h1 = introSection.firstElementChild;
-	var cursor = h1.firstElementChild;
-	var textSpan = <HTMLElement>h1.insertBefore(document.createElement('span'), cursor);
-
-	utils.slowPrint(textSpan, location.hostname, 50, function() {
-		var nextPage = document.createElement('button');
-		nextPage.innerHTML = '&#x25bc;';
-		nextPage.addEventListener('click', function() {
-			scrollToSection(1);
-		});
-
-		introSection.appendChild(nextPage);
+			$(svg).removeAttr('xmlns:a');
+			$(img).replaceWith($svg);
+		}, 'xml');
 	});
-})();
-
-(function() {
-	var projects = document.querySelectorAll('.projectGroup article header');
-
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].addEventListener('click', function() {
-			this.parentNode.classList.toggle('active');
-		});
-	}
 })();

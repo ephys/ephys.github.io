@@ -1,9 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
-
-$brightColor: rgb(233, 233, 233);
-$darkColor: invert($brightColor);
+$affordanceColor: rgb(233, 30, 99);
+$textColorMain: #252525;
+$textColorSub: #747474;
 
 @import 'normalize.css';
 @import 'layout';
 @import 'intro';
-@import 'projects';
+//@import 'projects';
