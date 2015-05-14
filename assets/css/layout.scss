@@ -1,3 +1,15 @@
+html {
+	user-select: none;
+}
+p,a,h1,h2,h3,h4,h5,h6,br,li,td {
+	user-select: text;
+}
+
+::selection {
+	background: $affordanceColor;
+	color: white;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-weight: normal;
@@ -9,6 +21,10 @@ h1, h2, h3, h4, h5, h6 {
 
 section {
 	text-align: center;
+}
+
+h3 {
+	letter-spacing: 2px;
 }
 
 body>main h2 {
@@ -41,6 +57,17 @@ p {
 a {
 	text-decoration: none;
 	color: $affordanceColor;
+	font-weight: bold;
+	letter-spacing: 0.6px;
+
+	&:hover {
+		color: darken($affordanceColor, 8);
+	}
+}
+
+em {
+	color: $affordanceColor;
+	font-style: normal;
 }
 
 ul {
@@ -54,11 +81,42 @@ ul {
 	flex-wrap: wrap;
 
 	>* {
-		min-width: 260px;
+		min-width: 360px;
 
 		margin: 0 3vw 0;
 		line-height: 22px;
 		flex: 1;
 		text-align: left;
 	}
+}
+
+.button {
+	text-align:center;
+	border-radius: 5px;
+	width: 160px;
+	text-transform: uppercase;
+	display: block;
+	color: white;
+	padding: 20px 0;
+}
+
+a.button {
+	font-weight: normal;
+	background-color: $affordanceColor;
+	border: 2px $affordanceColor solid;
+
+	&:hover {
+		background-color: darken($affordanceColor, 4);
+		color: white;
+	}
+
+	&:active {
+		color: $affordanceColor;
+		background-color: white;
+	}
+}
+
+span.button {
+	background-color: $textColorSub;
+	border: 2px $textColorSub solid;
 }

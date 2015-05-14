@@ -11,34 +11,6 @@
 		li {
 			display: inline-block;
 			margin: 7.5px 3.5vw;
-
-			.button {
-				border-radius: 5px;
-				width: 160px;
-				text-transform: uppercase;
-				display: block;
-				color: white;
-				padding: 20px 0;
-			}
-
-			a.button {
-				background-color: $affordanceColor;
-				border: 2px $affordanceColor solid;
-
-				&:hover {
-					background-color: darken($affordanceColor, 4);
-				}
-
-				&:active {
-					color: $affordanceColor;
-					background-color: white;
-				}
-			}
-
-			span.button {
-				background-color: $textColorSub;
-				border: 2px $textColorSub solid;
-			}
 		}
 	}
 }
