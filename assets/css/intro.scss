@@ -1,5 +1,5 @@
 #intro, body>footer {
-	background-image: radial-gradient(circle closest-corner at center, #F5F5F5 0%, #DBDBDB 100%);
+	background-image: radial-gradient(circle closest-corner at center, #F5F5F5 0%, #D9D9D9 100%);
 }
 
 #intro {
@@ -99,5 +99,9 @@ body>footer {
 	p {
 		font-size: 12px;
 		color: $textColorSub;
+
+		a {
+			color: inherit;
+		}
 	}
 }
