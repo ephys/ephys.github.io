@@ -71,13 +71,13 @@ body>footer {
 				}
 
 				a {
-					background-image: url('../../assets/img/iconbase.png');
+					background-image: url('../../assets/img/icons.png');
 					height: 38px;
 					width: 40px;
 					display: inline-block;
 
 					&:hover {
-						background-image: url('../../assets/img/iconhover.png');
+						background-position-y: 38px;
 					}
 
 					&.email {
