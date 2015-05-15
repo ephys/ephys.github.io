@@ -18,13 +18,14 @@
 				margin-bottom: 50px;
 				position: relative;
 
+				$cutSize: 90px;
 				&:before {
 					content: '';
 					position: absolute;
 					bottom: 0;
 					left: 0;
-					border-bottom: 100px solid white;
-					border-right: 100px solid transparent;
+					border-bottom: $cutSize solid white;
+					border-right: $cutSize solid transparent;
 					width: 0;
 					height: 0;
 				}
@@ -34,8 +35,8 @@
 					position: absolute;
 					top: 0;
 					right: 0;
-					border-top: 80px solid white;
-					border-left: 80px solid transparent;
+					border-top: $cutSize solid white;
+					border-left: $cutSize solid transparent;
 					width: 0;
 					height: 0;
 				}
