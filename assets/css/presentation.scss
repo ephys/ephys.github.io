@@ -14,8 +14,14 @@
 			align-items: center;
 			justify-content: center;
 
-			div {
-				margin-bottom: 50px;
+			figure {
+				figcaption {
+					position: absolute; // to avoid messing with the cuts
+					right: 0;
+					color: $textColorSub;
+				}
+
+				margin: 0 0 50px 0;
 				position: relative;
 
 				$cutSize: 90px;

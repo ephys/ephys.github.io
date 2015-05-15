@@ -1,7 +1,7 @@
 html {
 	user-select: none;
 }
-p,a,h1,h2,h3,h4,h5,h6,br,li,td {
+p,a,h1,h2,h3,h4,h5,h6,br,li,td,figcaption {
 	user-select: text;
 }
 
@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	color: $textColorMain;
 	text-align: center;
+}
+
+li,td,figcaption,p {
+	font-family: futura-pt, arial, sans-serif;
 }
 
 section {
@@ -81,7 +85,7 @@ ul {
 	flex-wrap: wrap;
 
 	>* {
-		min-width: 360px;
+		min-width: 320px;
 
 		margin-top: 15px;
 		line-height: 22px;
