@@ -1,0 +1,45 @@
+#i_me_myself {
+	h2 {
+		margin-bottom: 30px;
+	}
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	.columns {
+		flex-direction: row-reverse;
+		margin-top: 50px;
+
+		div:first-of-type {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			div {
+				margin-bottom: 50px;
+				position: relative;
+
+				&:before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					border-bottom: 100px solid white;
+					border-right: 100px solid transparent;
+					width: 0;
+					height: 0;
+				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					border-top: 80px solid white;
+					border-left: 80px solid transparent;
+					width: 0;
+					height: 0;
+				}
+			}
+		}
+	}
+}
