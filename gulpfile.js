@@ -15,7 +15,7 @@ gulp.task('browserify', function () {
 		.pipe(source('main.js'))
 		.pipe(buffer())
 		.pipe(uglify())
-		.pipe(gulp.dest('./_assets/js/'));
+		.pipe(gulp.dest('./assets_/js/'));
 });
 
 var sass = require('gulp-sass');
@@ -30,7 +30,7 @@ gulp.task('css', function() {
 				cascade: false
 			}))
 			.pipe(minifyCSS())
-			.pipe(gulp.dest('./_assets/css'));
+			.pipe(gulp.dest('./assets_/css'));
 	} catch(e) {
 		console.log(e);
 	}
