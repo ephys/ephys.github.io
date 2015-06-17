@@ -79,19 +79,33 @@ body>footer {
 					font-size: 0;
 
 					&:hover {
-						background-position-y: 38px;
+						&.github {
+							background-position: 0 38px;
+						}
+
+						&.email {
+							background-position: -40px 38px;
+						}
+
+						&.tumblr {
+							background-position: -80px 38px;
+						}
+
+						&.twitter {
+							background-position: -120px 38px;
+						}
 					}
 
 					&.email {
-						background-position-x: -40px;
+						background-position: -40px 0;
 					}
 
 					&.tumblr {
-						background-position-x: -80px;
+						background-position: -80px 0;
 					}
 
 					&.twitter {
-						background-position-x: -120px;
+						background-position: -120px 0;
 					}
 				}
 			}
