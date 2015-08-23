@@ -1,24 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="//use.typekit.net/xng1plt.js" defer></script>
-	<script>try {
-		Typekit.load();
-	} catch (e) {
-	}</script>
-	<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<meta name="viewport" content="width=320, height=320, initial-scale=1">
-	<link href="assets_/css/main.css" rel="stylesheet">
 	<meta charset="UTF-8">
 	<title>Ephys' place</title>
+	<meta property="og:title" content="Guylian Cox, back-end developer">
+	<meta property="og:description" content="Suivez le lapin blanc et découvrez l'univers de Mahault Bosmans, front-end developper" />
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ephys.github.io/">
+	<meta property="og:image" content="">
+
+	<meta name="viewport" content="width=320, height=320, initial-scale=1">
+	<link href="assets_/css/main.css" rel="stylesheet">
+
+	<script src="//use.typekit.net/xng1plt.js"></script>
+	<script>
+		(function() {
+			'use strict';
+
+			try {
+				Typekit.load();
+			} catch(e) {
+				console.log(e);
+			}
+
+			var onReady = function() {
+				var presentationDiv = document.querySelector('.presentation');
+				document.querySelector('#i_me_myself .button').addEventListener('click', function(e) {
+					e.preventDefault();
+
+					var isPresentation = !presentationDiv.classList.contains('active');
+					presentationDiv.classList.toggle('active');
+
+					if (isPresentation) {
+						this.innerHTML = 'Show me your cv';
+					} else {
+						this.innerHTML = '<del>Show me your cv</del> <br><ins>Take me back</ins>';
+					}
+				});
+
+				// update my age, have my birthday
+				document.querySelector('#developer_age').textContent = (function() {
+					var year = 1994;
+					var month = 6;
+					var day = 1;
+
+					var today = new Date();
+					var age = today.getFullYear() - year;
+
+					if(today.getMonth() < (month - 1)
+						|| (today.getMonth() === (month - 1) && today.getDate() < day)) {
+						age--;
+					}
+
+					return age;
+				})();
+			};
+
+			if (document.readyState === 'complete' || document.readyState === 'loaded') {
+				onReady();
+			} else {
+				document.addEventListener('DOMContentLoaded', onReady);
+			}
+		})();
+	</script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
 <header id="intro">
-	<div>
+	<div class="wrapper">
 		<h1>Guylian Cox</h1>
-
 		<h2>Back-end developer</h2>
+
+		<nav>
+			<ul>
+				<li><a class="github" href="https://github.com/Ephys/" target="_blank">Github</a></li>
+				<li><a class="email" href="mailto:guyliancox@gmail.com" target="_blank">Email</a></li>
+				<li><a class="tumblr" href="http://ephys.tumblr.com/" target="_blank">Tumblr</a></li>
+				<li><a class="twitter" href="https://twitter.com/ephyspotato" target="_blank">Twitter</a></li>
+			</ul>
+		</nav>
 	</div>
 </header>
 <main>
@@ -26,39 +89,73 @@
 		<h2>tea, code and rainbows</h2>
 
 		<div class="columns">
-			<div>
-				/something/				<!--<figure>-->					<!--<img height="340" width="255"  src="assets/img/self.jpg">-->					<!--<figcaption>Brussels 2015</figcaption>-->				<!--</figure>-->
+			<div class="column decorative">
+				<button class="button large">Show me your cv</button>
 			</div>
-			<div>
-				<h3>Hello there!</h3>
+			<div class="column presentation active">
+				<article class="cv">
+					<h3>Hello there!</h3>
 
-				<p>I'm <em>Guylian Cox</em> and I'm a 20-year-old currently studying Computer Science at
-					<a href="http://www.vinci.be/fr-be/ipl/Pages/Informatique-de-gestion.aspx" target="_blank">Institut Paul-Lambin</a> in Brussels. I'm mostly self-taught and, while classes are doing wonders at sharpening my algorithmic skills, my knowledge of web-related technologies comes primarily from online documentations such as the
-					<abbr title="Mozilla Developer Network">MDP</abbr> (and Stack Overflow).
-				</p>
+					<p>I'm <em>Guylian Cox</em> and I'm a <span id="developer_age">20</span>-year-old currently studying Computer Science at
+						<a href="http://www.vinci.be/fr-be/ipl/Pages/Informatique-de-gestion.aspx" target="_blank">Institut Paul-Lambin</a> in Brussels. I'm mostly self-taught and, while classes are doing wonders at sharpening my algorithmic skills, my knowledge of web-related technologies comes primarily from online documentations such as the
+						<abbr title="Mozilla Developer Network">MDP</abbr> (and Stack Overflow).
+					</p>
 
-				<p>I've grown a passion for web development since I was 16, it constantly evolving still keeps me interesting in finding out the new tools that get available.<br> Starting off with
-					<em>PHP5</em> for a few years along with the mandatory web languages that are <em>HTML5</em>,
-					<em>CSS3</em> and its preprocessors (<em>LESS</em> at first, followed by <em>SCSS</em>).
-				</p>
+					<p>I've grown a passion for web development since I was 16, it constantly evolving still keeps me interesting in finding out the new tools that get available.<br> Starting off with
+						<em>PHP5</em> for a few years along with the mandatory web languages that are <em>HTML5</em>,
+						<em>CSS3</em> and its preprocessors (<em>LESS</em> at first, followed by <em>SCSS</em>).
+					</p>
 
-				<p>I then started learning <em>Javascript</em> and, with the advent of
-					<em>NodeJS</em>, started getting more interested in the back-end than the front-end.</p>
+					<p>I then started learning <em>Javascript</em> and, with the advent of
+						<em>NodeJS</em>, started getting more interested in the back-end than the front-end.</p>
 
-				<p>I tend to prefer stricter working environment, one of the reasons I also like
-					<em>Java</em> and would like to explore C# and .NET,
-					<em>Typescript</em> felt like a blessing when I discovered it.</p>
+					<p>I tend to prefer stricter working environment, one of the reasons I also like
+						<em>Java</em> and would like to explore C# and .NET,
+						<em>Typescript</em> felt like a blessing when I discovered it.</p>
+				</article>
+				<article>
+					<h3>Tools & Languages I like to use</h3>
+
+					<ul class="list">
+						<li>I do my best to keep up to date with <em>HTML5</em></li>
+						<li>I'm one of those weird ones who like <em>CSS3</em>
+							<ul>
+								<li>I write most of it using <em>SCSS</em></li>
+								<li>but I used to work with <em>LESS</em></li>
+							</ul>
+						</li>
+						<li>I regularly use <em>Javascript</em><ul>
+							<li>I prefer <em>Typescript</em> for more complex apps</li>
+							<li>I'm familiar with <em>gulp</em> and <em>npm</em></li>
+						</ul>
+						</li>
+						<li>Backend-wise, I tend to go for <em>NodeJS</em>, and sometimes <em>PHP5</em></li>
+						<li>My <em>SQL</em> queries don't crash too much</li>
+						<li>I write too much <em>Java</em></li>
+					</ul>
+
+					<ul class="list">
+						<li><em>Git</em> manages each and every one of my projects (and sometimes svn, but mostly git)</li>
+						<li>I prefer using <em>Unix-like</em> environments and often use the Command Line Interface</li>
+						<li>I'm comfortable with <em>Sublime text</em> and <em>Jetbrains' IDE</em></li>
+					</ul>
+
+					<h3>What I like to do</h3>
+					<ul class="list">
+						<li>Back-end development</li>
+						<li>Web Integration</li>
+						<li>Front-end development</li>
+					</ul>
+				</article>
 			</div>
 		</div>
 	</section>
-	<section id="skills">
-		<h2>What can <strong>you</strong> do ?</h2>
-	</section>
 	<section id="projects">
 		<h2>my projects</h2>
-		<article class="project_details" id="project_tsteelworks">
+		<div class="project_details" id="project_tsteelworks">
 			<div class="columns">
-				<div>
+				<article class="column">
+					<h3>Tinkers' Steelworks</h3>
 					<p>Tinkers' Steelworks is a
 						<a href="http://minecraftforge.net" target="_blank">MinecraftForge</a> mod I forked mid-2014 when its original author, known as
 						<a href="https://github.com/Toops/" target="_blank">toops</a>, stopped working on it. You can find the original version
@@ -67,7 +164,7 @@
 
 					<p>At first I picked it up to port it to Minecraft 1.7.10 but it quickly became a playground with which I put the Java concepts I was studying at my school into practice. My work on that project however, was mainly focused on fixing bugs, improving existing features and creating an API to support the interactions with other game modifications.<br> On a personal level this project helped me improved my understanding of Java, along with the discovery of gradle and maven.
 					</p>
-				</div>
+				</article>
 			</div>
 			<ul>
 				<li><a class="button" target="_blank" href="https://github.com/Ephys/TinkersSteelworks">Source code</a>
@@ -76,12 +173,12 @@
 					<a class="button" target="_blank" href="https://github.com/Ephys/TinkersSteelworks/releases">Releases</a>
 				</li>
 			</ul>
-		</article>
+		</div>
 	</section>
 </main>
 <footer>
-	<section>
-		<div>
+	<div class="wrapper">
+		<nav>
 			<h2>Contact Me</h2>
 			<ul>
 				<li><a class="github" href="https://github.com/Ephys/" target="_blank">Github</a></li>
@@ -89,8 +186,8 @@
 				<li><a class="tumblr" href="http://ephys.tumblr.com/" target="_blank">Tumblr</a></li>
 				<li><a class="twitter" href="https://twitter.com/ephyspotato" target="_blank">Twitter</a></li>
 			</ul>
-		</div>
-	</section>
+		</nav>
+	</div>
 	<p>&copy; Guylian Cox, <a href="http://morganebosmans.be" target="_blank">Morgane Bosmans</a>, all right reserved
 	</p>
 </footer>

@@ -12,26 +12,31 @@
 
 	height: 100vh;
 
-	div {
+	.wrapper {
 		margin: 15px;
 
 		h1 {
-			font-size: 54px;
+			font-size: 3.375rem;
 			//font-weight: bold;
 
 			text-align: right;
-			$spacing: 0.15em;
+			$spacing: 0.135em;
 			letter-spacing: $spacing;
-			margin-right: -$spacing;
+			margin: 0 -$spacing 0 0;
+		}
+
+		nav {
+			margin-top: 40px;
+			margin-right: -15px;
 		}
 
 		h2 {
-			font-size: 14px;
+			font-size: 0.875rem;
 			color: $textColorSub;
 
-			$spacing: 1.17em;
+			$spacing: 1.185em;
 			letter-spacing: $spacing;
-			margin-right: (-$spacing + 0.2em);
+			margin: 0 (-$spacing + 0.2em) 0 0;
 			text-align: right;
 
 			&:after {
@@ -48,7 +53,7 @@ body>footer {
 	flex-direction: column;
 	height: 250px;
 
-	section {
+	.wrapper {
 		flex: 1;
 		display: flex;
 		align-items: center;
@@ -57,67 +62,72 @@ body>footer {
 		h2 {
 			font-weight: bold;
 			color: $textColorSub;
-			font-size: 15px;
+			font-size: 0.9375rem;
 			letter-spacing: 0.7em;
-		}
-
-		ul {
-			margin-top: 30px;
-			li {
-				display: inline-block;
-				margin-right: 45px;
-				&:last-of-type {
-					margin-right: 0;
-				}
-
-				a {
-					background-image: url('../../assets/img/icons.png');
-					height: 38px;
-					width: 40px;
-					display: inline-block;
-
-					font-size: 0;
-
-					&:hover {
-						&.github {
-							background-position: 0 38px;
-						}
-
-						&.email {
-							background-position: -40px 38px;
-						}
-
-						&.tumblr {
-							background-position: -80px 38px;
-						}
-
-						&.twitter {
-							background-position: -120px 38px;
-						}
-					}
-
-					&.email {
-						background-position: -40px 0;
-					}
-
-					&.tumblr {
-						background-position: -80px 0;
-					}
-
-					&.twitter {
-						background-position: -120px 0;
-					}
-				}
-			}
 		}
 	}
 
 	p {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: $textColorSub;
 
 		a {
 			color: inherit;
+		}
+	}
+}
+
+nav {
+	text-align: center;
+	ul {
+		margin-top: 30px;
+	}
+
+
+	li {
+		display: inline-block;
+		margin-right: 45px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		a {
+			background-image: url('../../assets/img/icons.png');
+			height: 38px;
+			width: 40px;
+			display: inline-block;
+
+			font-size: 0;
+
+			&:hover {
+				&.github {
+					background-position: 0 38px;
+				}
+
+				&.email {
+					background-position: -40px 38px;
+				}
+
+				&.tumblr {
+					background-position: -80px 38px;
+				}
+
+				&.twitter {
+					background-position: -120px 38px;
+				}
+			}
+
+			&.email {
+				background-position: -40px 0;
+			}
+
+			&.tumblr {
+				background-position: -80px 0;
+			}
+
+			&.twitter {
+				background-position: -120px 0;
+			}
 		}
 	}
 }
