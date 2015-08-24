@@ -2,7 +2,7 @@ $affordanceColor: desaturate(rgb(233, 30, 99), 10);
 $textColorMain: #252525;
 $textColorSub: #747474;
 
-@import 'normalize.css';
+@import url('//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
 @import 'layout';
 @import 'intro';
 @import 'presentation';

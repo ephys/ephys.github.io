@@ -11,99 +11,11 @@
 	<meta property="og:image" content="">
 
 	<meta name="viewport" content="width=320, height=320, initial-scale=1">
-	<link href="assets_/css/main.css" rel="stylesheet">
+	<link href="assets/css/main.css" rel="stylesheet">
 
-	<script src="//use.typekit.net/xng1plt.js"></script>
-	<script>
-		(function() {
-			'use strict';
+	<script src="//use.typekit.net/xng1plt.js" defer></script>
+	<script src="assets/js/main.js" defer></script>
 
-			try {
-				Typekit.load();
-			} catch(e) {
-				console.log(e);
-			}
-
-			var onReady = function() {
-				document.body.classList.remove('noscript');
-				document.body.classList.add('jscript');
-
-				var presentationDiv = document.querySelector('.presentation');
-				document.querySelector('#i_me_myself .button').addEventListener('click', function(e) {
-					e.preventDefault();
-
-					var isPresentation = !presentationDiv.classList.contains('active');
-					presentationDiv.classList.toggle('active');
-
-					if (isPresentation) {
-						this.innerHTML = 'Show me your cv';
-					} else {
-						this.innerHTML = '<del>Show me your cv</del> <br><ins>Take me back</ins>';
-					}
-				});
-
-				// update my age, have my birthday
-				document.querySelector('#developer_age').textContent = (function() {
-					var year = 1994;
-					var month = 6;
-					var day = 1;
-
-					var today = new Date();
-					var age = today.getFullYear() - year;
-
-					if(today.getMonth() < (month - 1)
-						|| (today.getMonth() === (month - 1) && today.getDate() < day)) {
-						age--;
-					}
-
-					return age;
-				})();
-
-				// mandatory easter egg
-				var konamiKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-				var konamiIndex = 0;
-				document.body.addEventListener('keyup', function(e) {
-					if (e.keyCode !== konamiKeys[konamiIndex]) {
-						konamiIndex = 0;
-						return;
-					}
-
-					konamiIndex++;
-					if (konamiIndex == konamiKeys.length) {
-						konamiIndex = 0;
-						document.body.classList.toggle('konami');
-					}
-				});
-
-				// projects
-				var list = document.querySelectorAll('.project_list li');
-				for (var i = 0; i < list.length; i++) {
-					list[i].addEventListener('click', function() {
-						if (this.classList.contains('active')) return;
-
-						var previouslyActive = document.querySelector('.project_list li.active');
-						if (previouslyActive !== null) {
-							previouslyActive.classList.remove('active');
-							var previousTarget = document.getElementById(previouslyActive.getAttribute('data-target'));
-							previousTarget.classList.remove('active');
-						}
-
-						var newTarget = document.getElementById(this.getAttribute('data-target'));
-						if (newTarget !== null) {
-							newTarget.classList.add('active');
-							this.classList.add('active');
-						}
-					});
-				}
-			};
-
-			if (document.readyState === 'complete' || document.readyState === 'loaded') {
-				onReady();
-			} else {
-				document.addEventListener('DOMContentLoaded', onReady);
-			}
-		})();
-	</script>
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -118,8 +30,8 @@
 			<ul>
 				<li><a class="github" href="https://github.com/Ephys/" target="_blank">Github</a></li>
 				<li><a class="email" href="mailto:guyliancox@gmail.com" target="_blank">Email</a></li>
-				<li><a class="tumblr" href="http://ephys.tumblr.com/" target="_blank">Tumblr</a></li>
 				<li><a class="twitter" href="https://twitter.com/ephyspotato" target="_blank">Twitter</a></li>
+				<li><a class="tumblr" href="http://ephys.tumblr.com/" target="_blank">Tumblr</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -193,9 +105,14 @@
 	<section id="projects">
 		<h2>my projects</h2>
 		<div class="project_list">
-			<p>Click on one of these bubbles to select a project</p>
+			<!--
+			Ideas:
+			blurred image background depending on the project ?
+			need something to differentiate the buttons
+			-->
+			<p>Click on one of these squares to select a project</p>
 			<ul>
-				<li data-target="project_portfolio" title="Portfolio">Portfolio</li>
+				<li data-target="project_portfolio" title="Portfolio" class="active">Portfolio</li>
 				<li data-target="project_cappuccino" title="Cappuccino">Cappuccino</li>
 				<li data-target="project_tsteelworks" title="Tinkers' Steelworks">Tinkers' Steelworks</li>
 				<li data-target="project_coraline" title="Coraline">Coraline</li>
@@ -205,6 +122,38 @@
 			</ul>
 		</div>
 
+		<div class="columns project_details active" id="project_portfolio">
+			<div class="decorative column">
+				<canvas></canvas>
+			</div>
+			<article class="column">
+				<h3>ephys.github.io</h3>
+				<p>Designed by <a href="http://morganebosmans.be" target="_blank">Morgane Bosmans</a> and integrated by myself.</p>
+				<p>Cappuccino was my Bac+2 year-end work; It's a desktop application written in Java.</p>
+				<p>The project was developed in a team of 5 students. My part of the work was to manage the project and the team along with writing the core components of the application such as the dependency injection framework.</p>
+
+
+				<ul>
+					<li><a class="button" target="_blank" href="https://github.com/Ephys/ephys.github.io">Source code</a></li>
+				</ul>
+			</article>
+		</div>
+		<div class="columns project_details" id="project_cappuccino">
+			<div class="decorative column">
+				<figure>
+					<img src="assets/img/cappuccino.png">
+					<figcaption>Cappuccino Logo</figcaption>
+				</figure>
+			</div>
+			<article class="column">
+				<h3>Cappuccino</h3>
+				<p>Cappuccino was my Bac+2 year-end work; It's a desktop application written in Java.</p>
+				<p>The project was developed in a team of 5 students. My part of the work was to manage the project and the team along with writing the core components of the application such as the dependency injection framework.</p>
+				<ul>
+					<li><a class="button" target="_blank" href="https://github.com/Ephys/CappuccinoCore">Source code</a></li>
+				</ul>
+			</article>
+		</div>
 		<div class="columns project_details" id="project_tsteelworks">
 			<div class="decorative column">hi</div>
 			<article class="column">
@@ -225,23 +174,6 @@
 				</ul>
 			</article>
 		</div>
-		<div class="columns project_details" id="project_cappuccino">
-			<div class="decorative column">
-				<figure>
-					<img src="assets/img/cappuccino.png">
-					<figcaption>Cappuccino Logo</figcaption>
-				</figure>
-			</div>
-			<article class="column">
-				<h3>Cappuccino</h3>
-				<p>Cappuccino was my Bac+2 year-end work; It's a desktop application written in Java.</p>
-				<p>The project was developed in a team of 5 students. My part of the work was to manage the project and the team along with writing the core components of the application such as the dependency injection framework.</p>
-				<p>It was deemed as the year best project.</p>
-				<ul>
-					<li><a class="button" target="_blank" href="https://github.com/Ephys/CappuccinoCore">Source code</a></li>
-				</ul>
-			</article>
-		</div>
 	</section>
 </main>
 <footer>
@@ -251,12 +183,12 @@
 			<ul>
 				<li><a class="github" href="https://github.com/Ephys/" target="_blank">Github</a></li>
 				<li><a class="email" href="mailto:guyliancox@gmail.com" target="_blank">Email</a></li>
-				<li><a class="tumblr" href="http://ephys.tumblr.com/" target="_blank">Tumblr</a></li>
 				<li><a class="twitter" href="https://twitter.com/ephyspotato" target="_blank">Twitter</a></li>
+				<li><a class="tumblr" href="http://ephys.tumblr.com/" target="_blank">Tumblr</a></li>
 			</ul>
 		</nav>
 	</div>
-	<p>&copy; Guylian Cox, <a href="http://morganebosmans.be" target="_blank">Morgane Bosmans</a>, all right reserved
+	<p><span class="copyleft">&copy; copyleft</span> Guylian Cox, <a href="http://morganebosmans.be" target="_blank">Morgane Bosmans</a> 2015
 	</p>
 </footer>
 </body>

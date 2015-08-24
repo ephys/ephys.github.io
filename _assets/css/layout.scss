@@ -11,6 +11,10 @@ p,a,h1,h2,h3,h4,h5,h6,br,li,td,figcaption {
 	color: white;
 }
 
+*:focus {
+	outline-style: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	font-family: Arial, sans-serif;

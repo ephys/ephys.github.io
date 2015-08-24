@@ -130,3 +130,12 @@ nav {
 		}
 	}
 }
+
+.copyleft {
+	display: inline-block;
+	text-align: right;
+	margin: 0;
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
