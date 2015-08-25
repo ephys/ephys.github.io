@@ -151,7 +151,8 @@
 					if (textIndex >= textList.length) {
 						var newText = {
 							size: random(0, 100),
-							offset: random(0, hypotenuse)
+							offset: random(0, hypotenuse),
+							speedModifier: Math.random() + 0.5
 						};
 
 						textList.push(newText);
@@ -161,7 +162,7 @@
 					context.font = (textDetails.size / 2) + 'px monospace';
 
 					var width = context.measureText(text).width;
-					var speed = 4;
+					var speed = 4 * textDetails.speedModifier;
 					context.fillText(text, (timestamp / textDetails.size * speed + textDetails.offset) % (hypotenuse + width) - width, textPos);
 
 					textPos += textDetails.size * 0.6 + 2;
@@ -178,7 +179,11 @@
 					context.fillRect(0, ((lineWidth * 2) * i) + lineWidth, hypotenuse, lineWidth);
 				}
 
-
+				var gradient = context.createRadialGradient(sideSize / 2, sideSize / 2, sideSize/2, sideSize/2, sideSize/2, 80);
+				gradient.addColorStop(1, "rgba(21, 21, 21, 0.1)");
+				gradient.addColorStop(0, "rgba(0, 0, 0, 0.5)");
+				context.fillStyle = gradient;
+				context.fillRect(0,0,sideSize,sideSize);
 
 				context.restore();
 

@@ -103,5 +103,6 @@ body.noscript {
 
 #project_portfolio canvas {
 	min-height: 350px;
-	background-color: #000106;
+	//filter: invert(100%);
+	background: #000106;// radial-gradient(circle closest-corner at center, rgba(245, 245, 245, 0.7) 0%, rgba(217, 217, 217, 0.7) 100%);
 }
