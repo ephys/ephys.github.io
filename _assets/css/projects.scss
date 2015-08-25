@@ -7,7 +7,7 @@ body.jscript {
 .project_details {
 	margin-bottom: 45px;
 
-	&:nth-of-type(2n) {
+	&:nth-of-type(2n+1) {
 		flex-direction: row-reverse;
 	}
 
@@ -99,4 +99,9 @@ body.noscript {
 		opacity: 1;
 		transform: scale(1.05);
 	}
+}
+
+#project_portfolio canvas {
+	min-height: 350px;
+	background-color: #000106;
 }

@@ -86,14 +86,24 @@
 											window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 			// I like that background http://i.ytimg.com/vi/IQtikWKaqN4/maxresdefault.jpg
 			var sr4Canvas = document.querySelector('#project_portfolio canvas');
+			sr4Canvas.addEventListener('dblclick', function() {
+				sr4Canvas.classList.toggle('fullscreen');
+				document.body.classList.toggle('hide');
+
+				resize();
+			});
 			var context = sr4Canvas.getContext('2d');
 
-			sr4Canvas.style.backgroundColor = '#000106';
 			var hypotenuse;
 			function resize() {
-				sr4Canvas.style.minHeight = '300px';
-				sr4Canvas.width  = sr4Canvas.parentNode.offsetWidth;
-				sr4Canvas.height = sr4Canvas.parentNode.offsetHeight;
+				if (sr4Canvas.classList.contains('fullscreen')) {
+					sr4Canvas.width = window.outerWidth;// - 40;
+					sr4Canvas.height = window.outerHeight;// - 40;
+				} else {
+					sr4Canvas.width  = sr4Canvas.parentNode.offsetWidth;
+					//sr4Canvas.height = sr4Canvas.parentNode.offsetHeight;
+					sr4Canvas.height = 400;
+				}
 
 				hypotenuse = Math.sqrt(sr4Canvas.width * sr4Canvas.width + sr4Canvas.height * sr4Canvas.height);
 
@@ -102,35 +112,73 @@
 			}
 
 			var text = '1 00 11  1 0  0';
-			var nbLines = 29;
-			var lineWidth = 5;
+			var lineWidth = 7;
 
-			var elements = [15, 100, 40, 35, 14, 23, 12, 24, 40, 80, 50, 12, 20];
+			//var textList = [15, 100, 40, 35, 14, 23, 12, 24, 40, 80, 50, 16, 20, 11, 13, 18, 45, 70, 58];
+			var textList = [];
 			function drawMoving(timestamp) {
 				context.save();
-				context.clearRect(0, 0, sr4Canvas.width, sr4Canvas.height);
+				var canvasWidth = sr4Canvas.width;
+				var canvasHeight = sr4Canvas.height;
+
+				context.clearRect(0, 0, canvasWidth, canvasHeight);
+
+				// we need to draw a square that will perfectly surround a variable-sized rectangle
+				// calculate the side of the square using trigonometry. The square is rotated by 45deg so the
+				// resulting triangles are isoceles
+				var x = Math.sqrt((canvasWidth * canvasWidth) / 2);
+				var y = Math.sqrt((canvasHeight * canvasHeight) / 2);
+				var sideSize = x + y;
+
+				// then translate that square around the rectangle using even more trigonometry
+				var distanceFromBottomOfRectangleToCornerOfSquare = Math.sqrt((x * x) - Math.pow(canvasWidth / 2, 2));
+				context.translate(canvasWidth/2, -distanceFromBottomOfRectangleToCornerOfSquare);
+
+				var distanceFromSideOfRectangleToCornerOfSquare = Math.sqrt((y * y) - Math.pow(canvasHeight / 2, 2));
+				var squareHypothenuse = Math.sqrt(sideSize * sideSize * 2);
+
+				// then rotate the square
 				context.rotate(45 * Math.PI / 180);
+				context.fillStyle = '#052D50';
 
-				context.translate(0, -415);
+				var bottomLinesStartHeight = sideSize * 0.6;
+				var upperLinesEndHeight = ((lineWidth * 2) * 10) + lineWidth;
+				var textPos = upperLinesEndHeight + 30;
 
-				for (var i = 0; i < nbLines / 3; i++) {
-					context.fillRect(0, (lineWidth * 2) * i + lineWidth, sr4Canvas.width, lineWidth);
-				}
+				// draw text
+				var textIndex = 0;
+				while (textPos < bottomLinesStartHeight) {
+					if (textIndex >= textList.length) {
+						var newText = {
+							size: random(0, 100),
+							offset: random(0, hypotenuse)
+						};
 
-				var minHeight = (lineWidth * 2) * i + 38;
+						textList.push(newText);
+					}
 
-				for (i = 0; i < nbLines; i++) {
-					context.fillRect(0, hypotenuse - ((lineWidth * 2) * i + lineWidth), sr4Canvas.width, lineWidth);
-				}
-
-				for (i = 0; i < elements.length; i++) {
-					context.font = (elements[i] / 2) + 'px monospace';
+					var textDetails = textList[textIndex];
+					context.font = (textDetails.size / 2) + 'px monospace';
 
 					var width = context.measureText(text).width;
-					context.fillText(text, (timestamp / elements[i] * 2.4) % (hypotenuse + width) - width, minHeight);
+					var speed = 4;
+					context.fillText(text, (timestamp / textDetails.size * speed + textDetails.offset) % (hypotenuse + width) - width, textPos);
 
-					minHeight += (elements[i] * 0.5) + 2;
+					textPos += textDetails.size * 0.6 + 2;
+					textIndex++;
 				}
+
+				// draw lines
+				while (bottomLinesStartHeight < squareHypothenuse) {
+					context.fillRect(0, bottomLinesStartHeight, hypotenuse, lineWidth);
+					bottomLinesStartHeight += lineWidth * 2;
+				}
+
+				for (var i = 0; i < 10; i++) {
+					context.fillRect(0, ((lineWidth * 2) * i) + lineWidth, hypotenuse, lineWidth);
+				}
+
+
 
 				context.restore();
 
@@ -147,5 +195,9 @@
 		onReady();
 	} else {
 		document.addEventListener('DOMContentLoaded', onReady);
+	}
+
+	function random(min, max) {
+		return Math.round(Math.random() * (max - min)) + min;
 	}
 })();
