@@ -2,22 +2,6 @@
 
 var gulp = require('gulp');
 
-//var tsify = require('tsify');
-//var Browserify = require('browserify');
-//var uglify = require('gulp-uglify');
-//var source = require('vinyl-source-stream');
-//var buffer = require('vinyl-buffer');
-/*gulp.task('browserify', function () {
-	return Browserify({ debug: true })
-		.add('./assets/typescript/main.ts')
-		.plugin(tsify, { noImplicitAny: true, removeComments: true })
-		.bundle()
-		.pipe(source('main.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(gulp.dest('./assets_/js/'));
-});*/
-
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
@@ -38,5 +22,4 @@ gulp.task('css', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('./_assets/css/*.scss', ['css']);
-	//gulp.watch('./assets/typescript/*.ts', ['browserify']);
 });

@@ -59,6 +59,8 @@ body>footer {
 		align-items: center;
 		justify-content: center;
 
+		margin: 15px;
+
 		h2 {
 			font-weight: bold;
 			color: $textColorSub;
@@ -86,10 +88,8 @@ nav {
 
 	li {
 		display: inline-block;
-		margin-right: 35px;
-		&:last-of-type {
-			margin-right: 0;
-		}
+		margin-right: 17px;
+		margin-left: 17px;
 
 		a {
 			background-image: url('../../assets/img/icons.png');
@@ -115,6 +115,10 @@ nav {
 				&.twitter {
 					background-position: -120px 38px;
 				}
+
+				&.linkedin {
+					background-position: -160px 38px;
+				}
 			}
 
 			&.email {
@@ -127,6 +131,10 @@ nav {
 
 			&.twitter {
 				background-position: -120px 0;
+			}
+
+			&.linkedin {
+				background-position: -160px 0;
 			}
 		}
 	}
