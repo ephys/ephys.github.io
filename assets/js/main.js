@@ -8,14 +8,16 @@
 	}
 
 	function sendTardis() {
-		var tardis = document.createElement('img');
-		tardis.src = 'assets/img/tardis.gif';
-		tardis.classList.add('tardis');
-		document.body.appendChild(tardis);
+		var tardis = new Image();
+		tardis.onload = function() {
+			tardis.classList.add('tardis');
+			document.body.appendChild(tardis);
 
-		setTimeout(function() {
-			document.body.removeChild(tardis);
-		}, 3500);
+			setTimeout(function() {
+				document.body.removeChild(tardis);
+			}, 3500);
+		};
+		tardis.src = 'assets/img/tardis.gif';
 	}
 
 	var onReady = function() {
