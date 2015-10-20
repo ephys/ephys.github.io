@@ -1,4 +1,4 @@
-(function() {
+(function($) {
 	'use strict';
 
 	try {
@@ -27,6 +27,12 @@
 
 			return age;
 		})();
+
+		document.querySelector('#intro > .arrow').addEventListener('click', function(e) {
+			$('html, body').animate({
+				scrollTop: $('main').offset().top
+			}, 'slow');
+		});
 
 		// move the CV behind the presentation and add a flip button
 		(function() {
@@ -235,4 +241,4 @@
 	function random(min, max) {
 		return Math.round(Math.random() * (max - min)) + min;
 	}
-})();
+})(jQuery);

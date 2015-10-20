@@ -45,8 +45,10 @@
 		}
 	}
 
-	&::after {
+	>.arrow {
 		content: '';
+
+		cursor: pointer;
 
 		width: 40px;
 		height: 40px;
