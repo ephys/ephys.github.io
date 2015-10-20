@@ -8,12 +8,43 @@
 	}
 
 	var onReady = function() {
-		(function() {
-			document.body.classList.remove('noscript');
-			document.body.classList.add('jscript');
+		document.body.classList.remove('noscript');
+		document.body.classList.add('jscript');
 
-			var presentationDiv = document.querySelector('.presentation');
-			document.querySelector('#i_me_myself .button').addEventListener('click', function(e) {
+		// update my age, have my birthday
+		document.querySelector('#developer_age').textContent = (function() {
+			var year = 1994;
+			var month = 6;
+			var day = 1;
+
+			var today = new Date();
+			var age = today.getFullYear() - year;
+
+			if(today.getMonth() < (month - 1)
+				|| (today.getMonth() === (month - 1) && today.getDate() < day)) {
+				age--;
+			}
+
+			return age;
+		})();
+
+		// move the CV behind the presentation and add a flip button
+		(function() {
+			var presentationWrapper = document.querySelector('#i_me_myself > .columns');
+			var cv = presentationWrapper.querySelector('.cv');
+			var textIntro = presentationWrapper.querySelector('.text_intro');
+			var buttonWrapper = cv.parentNode;
+			var presentationDiv = textIntro.parentNode;
+
+			cv.parentNode.removeChild(cv);
+			textIntro.parentNode.appendChild(cv);
+			presentationDiv.classList.add('presentation');
+
+			var flipButton = document.createElement('button');
+			flipButton.classList.add('button', 'large');
+			flipButton.textContent = 'Show me your cv';
+
+			flipButton.addEventListener('click', function(e) {
 				e.preventDefault();
 
 				var isPresentation = !presentationDiv.classList.contains('active');
@@ -26,23 +57,10 @@
 				}
 			});
 
-			// update my age, have my birthday
-			document.querySelector('#developer_age').textContent = (function() {
-				var year = 1994;
-				var month = 6;
-				var day = 1;
+			buttonWrapper.appendChild(flipButton);
+		})();
 
-				var today = new Date();
-				var age = today.getFullYear() - year;
-
-				if(today.getMonth() < (month - 1)
-					|| (today.getMonth() === (month - 1) && today.getDate() < day)) {
-					age--;
-				}
-
-				return age;
-			})();
-
+		(function() {
 			// mandatory easter egg
 			var konamiKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 			var konamiIndex = 0;
@@ -85,7 +103,19 @@
 			window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 											window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 			// I like that background http://i.ytimg.com/vi/IQtikWKaqN4/maxresdefault.jpg
-			var sr4Canvas = document.querySelector('#project_portfolio canvas');
+
+			var portfolioProject = document.getElementById('project_portfolio');
+			var canvasDescription = document.createElement('p');
+			canvasDescription.textContent = 'There isn\'t much to say about it so I recreated the saints row 4 loading screen animation to distract you.';
+			portfolioProject.lastElementChild.insertBefore(canvasDescription, portfolioProject.lastElementChild.lastElementChild);
+
+			var canvasDiv = document.createElement('div');
+			portfolioProject.insertBefore(canvasDiv, portfolioProject.firstElementChild);
+			canvasDiv.classList.add('decorative', 'column');
+
+			var sr4Canvas = document.createElement('canvas');
+			canvasDiv.appendChild(sr4Canvas);
+
 			sr4Canvas.addEventListener('dblclick', function() {
 				sr4Canvas.classList.toggle('fullscreen');
 				document.body.classList.toggle('hide');

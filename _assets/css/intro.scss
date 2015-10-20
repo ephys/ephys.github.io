@@ -103,14 +103,13 @@ nav {
 		display: inline-block;
 		margin-right: 17px;
 		margin-left: 17px;
+		font-size: 0;
 
 		a {
 			background-image: url(../../assets/img/icons.png);
 			height: 38px;
 			width: 40px;
 			display: inline-block;
-
-			font-size: 0;
 
 			&:hover {
 				&.github {
@@ -168,4 +167,8 @@ nav {
 	transform: scaleX(-1);
 	filter: FlipH;
 	-ms-filter: "FlipH";
+
+	&::before {
+		content: '\00a9  ';
+	}
 }
