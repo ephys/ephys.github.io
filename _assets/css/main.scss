@@ -7,3 +7,28 @@ $textColorSub: #747474;
 @import 'intro';
 @import 'presentation';
 @import 'projects';
+
+.tardis {
+	display: block;
+	position: fixed;
+
+	width: 500px;
+	height: 333px;
+
+	left: -500px;
+	bottom: 0;
+
+	animation: tardis 3.5s infinite;
+}
+
+@keyframes tardis {
+	from {
+		left: -500px;
+		bottom: 0;
+	}
+
+	to {
+		left: 100vw;
+		bottom: 50%;
+	}
+}

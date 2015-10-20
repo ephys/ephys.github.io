@@ -7,6 +7,17 @@
 		console.log(e);
 	}
 
+	function sendTardis() {
+		var tardis = document.createElement('img');
+		tardis.src = 'assets/img/tardis.gif';
+		tardis.classList.add('tardis');
+		document.body.appendChild(tardis);
+
+		setTimeout(function() {
+			document.body.removeChild(tardis);
+		}, 3500);
+	}
+
 	var onReady = function() {
 		document.body.classList.remove('noscript');
 		document.body.classList.add('jscript');
@@ -28,6 +39,7 @@
 			return age;
 		})();
 
+		// arrow scroll
 		document.querySelector('#intro > .arrow').addEventListener('click', function(e) {
 			$('html, body').animate({
 				scrollTop: $('main').offset().top
@@ -79,7 +91,10 @@
 				konamiIndex++;
 				if (konamiIndex == konamiKeys.length) {
 					konamiIndex = 0;
-					document.body.classList.toggle('konami');
+					//document.body.classList.toggle('konami');
+					//if (document.body.classList.contains('konami')) {
+						sendTardis();
+					//}
 				}
 			});
 
