@@ -4,6 +4,16 @@ body.jscript {
 	}
 }
 
+body.noscript {
+	.project_list ul, #project_list_info {
+		display: none;
+	}
+
+	.project_list p:first-letter {
+		text-transform: capitalize;
+	}
+}
+
 .project_details {
 	margin-bottom: 45px;
 
@@ -35,12 +45,6 @@ body.jscript {
 			display: inline-block;
 			margin: 7.5px 2.5%;
 		}
-	}
-}
-
-body.noscript {
-	.project_list {
-		display: none;
 	}
 }
 
