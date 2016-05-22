@@ -23,40 +23,33 @@
 	<meta name="author" content="Guylian Cox, Morgane Bosmans">
 	<meta name="web_author" content="Guylian Cox, Morgane Bosmans">
 	<!--<meta name="copyright" content="Guylian Cox, Morgane Bosmans">-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="viewport" content="width=400, maximum-scale=1.0, user-scalable=no, minimal-ui" />
 	<meta name="twitter:creator" content="@ephyspotato" />
 	<meta name="twitter:site" content="@guyliancox" />
 
-	<link rel="shortcut icon" href="assets/img/KBl0IweZ.png" />
+	<link rel="shortcut icon" href="assets/img/me.jpg" />
 	<link href="assets/css/main.css" rel="stylesheet">
 	<script src="//use.typekit.net/xng1plt.js" defer></script>
-	<script src="//code.jquery.com/jquery-2.1.4.min.js" defer></script>
-	<script src="assets/js/main.js" defer></script>
-
-	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<![endif]-->
+	<script src="assets/js/app.js" defer></script>
 </head>
 <body class="noscript">
-<header id="intro">
-	<div class="wrapper">
+<header id="header" class="doc-header">
+	<nav class="doc-nav doc-header-nav">
+		<ul>
+			<li><a class="github" href="https://github.com/Ephys/"><span>Check out my <em>Github</em>!</span></a></li>
+			<li><a class="tumblr" href="http://ephys.tumblr.com/"><span>My <em>Tumblr</em> has a few <del>web related</del> posts!</span></a></li>
+			<li><a class="email" href="mailto:guyliancox@gmail.com"><span><em>Email</em> me stuff!</span></a></li>
+			<li><a class="twitter" href="https://twitter.com/ephyspotato"><span>My <em>Twitter</em> account, just for you.</span></a></li>
+			<li><a class="linkedin" href="https://be.linkedin.com/in/guyliancox"><span>If you'd rather stay professional, here is my <em>LinkedIn</em>.</span></a></li>
+		</ul>
+	</nav>
+	<div class="doc-header-content">
 		<h1>Guylian Cox</h1>
 		<h2>Back-end developer</h2>
-
-		<nav>
-			<ul>
-				<li>Check out my <a class="github" href="https://github.com/Ephys/">Github</a>!</li>
-				<li>My <a class="tumblr" href="http://ephys.tumblr.com/">Tumblr</a> has a few web related posts!</li>
-				<li><a class="email" href="mailto:guyliancox@gmail.com">Email me</a> about whatever you want!</li>
-				<li>My (new) <a class="twitter" href="https://twitter.com/guyliancox">Twitter</a> account, just for you</li>
-				<li>And if you prefer to be professional, here is my <a class="linkedin" href="https://be.linkedin.com/in/guyliancox">LinkedIn</a>.</li>
-			</ul>
-		</nav>
 	</div>
-	<div class="arrow"></div>
 </header>
 <main>
-	<section id="i_me_myself">
+	<section id="intro">
 		<h2>tea, code and rainbows</h2>
 
 		<div class="columns">
@@ -124,7 +117,7 @@
 		</div>
 	</section>
 	<section id="projects">
-		<h2>My projects</h2>
+		<h2>What I've worked on</h2>
 		<div class="project_list">
 			<!--
 			Ideas:
@@ -134,7 +127,8 @@
 			<p><span id="project_list_info">Click on one of these squares to select a project. <br>Or </span>
 				you can go <a href="http://jsfiddle.net/user/ephys/fiddles/">here</a> to see my smaller experiments.</p>
 			<ul>
-				<li data-target="project_portfolio" title="Portfolio" class="active">Portfolio</li>
+				<li data-target="project_socialhub" title="Social Hub" class="active">Social Hub</li>
+				<li data-target="project_portfolio" title="Portfolio">Portfolio</li>
 				<li data-target="project_cappuccino" title="Cappuccino">Cappuccino</li>
 				<li data-target="project_tsteelworks" title="Tinkers' Steelworks">Tinkers' Steelworks</li>
 				<li data-target="project_coraline" title="Coraline">Coraline</li>
@@ -144,7 +138,18 @@
 			</ul>
 		</div>
 
-		<div class="columns project_details active" id="project_portfolio">
+		<div class="columns project_details active" id="project_socialhub">
+			<article class="column">
+				<h3>The Social Hub</h3>
+				<p>While working as an intern at <a href="http://pictawall.com">pictawall</a>, I was tasked to write a new application for them: <em>The Social Hub</em>.</p>
+				<p></p>
+
+				<ul>
+					<li><a class="button" href="https://pictahub.com/">Product website</a></li>
+				</ul>
+			</article>
+		</div>
+		<div class="columns project_details" id="project_portfolio">
 			<article class="column">
 				<h3>ephys.github.io</h3>
 				<p>Designed by <a href="http://morganebosmans.be">Morgane Bosmans</a> and integrated by myself.</p>
@@ -224,19 +229,17 @@
 		</div>
 	</section>
 </main>
-<footer>
-	<div class="wrapper">
-		<nav>
-			<h2>Contact Me</h2>
-			<ul>
-				<li>You can see what I did on <a class="github" href="https://github.com/Ephys/">Github</a></li>
-				<li>You can read what I said on <a class="tumblr" href="http://ephys.tumblr.com/">Tumblr</a></li>
-				<li>You can <a class="email" href="mailto:guyliancox@gmail.com">Email</a> directly</li>
-				<li>You can <a class="twitter" href="https://twitter.com/guyliancox">Tweet</a> me something nice :)</li>
-				<li>And you can even get in touch through <a class="linkedin" href="https://be.linkedin.com/in/guyliancox">LinkedIn</a>!</li>
-			</ul>
-		</nav>
-	</div>
+<footer class="doc-footer">
+	<nav class="doc-nav">
+		<h2>Let's get in touch!</h2>
+		<ul>
+			<li><a class="github" href="https://github.com/Ephys/"><span>Check out my <em>Github</em>!</span></a></li>
+			<li><a class="tumblr" href="http://ephys.tumblr.com/"><span>My <em>Tumblr</em> has a few <del>web related</del> posts!</span></a></li>
+			<li><a class="email" href="mailto:guyliancox@gmail.com"><span><em>Email</em> me stuff!</span></a></li>
+			<li><a class="twitter" href="https://twitter.com/ephyspotato"><span>My <em>Twitter</em> account, just for you.</span></a></li>
+			<li><a class="linkedin" href="https://be.linkedin.com/in/guyliancox"><span>If you'd rather stay professional, here is my <em>LinkedIn</em>.</span></a></li>
+		</ul>
+	</nav>
 	<p><span class="copyleft">copyleft</span> Guylian Cox, <a href="http://morganebosmans.be">Morgane Bosmans</a> 2015. <a href="https://www.google.com/design/icons/">Arrow icon</a> from google material design.
 	</p>
 </footer>

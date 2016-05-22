@@ -1,34 +1,38 @@
-$affordanceColor: desaturate(rgb(233, 30, 99), 10);
-$textColorMain: #252525;
-$textColorSub: #747474;
-
 @import url('//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
+
+@import 'variables';
 @import 'layout';
-@import 'intro';
+@import 'nav';
+@import 'header';
 @import 'presentation';
 @import 'projects';
+@import 'footer';
 
 .tardis {
-	display: block;
-	position: fixed;
+  display: block;
+  position: fixed;
 
-	width: 500px;
-	height: 333px;
+  width: 500px;
+  height: 333px;
 
-	left: -500px;
-	bottom: 0;
+  left: -500px;
+  bottom: 0;
 
-	animation: tardis 3.5s infinite;
+  animation: tardis 3.5s infinite;
 }
 
 @keyframes tardis {
-	from {
-		left: -500px;
-		bottom: 0;
-	}
+  from {
+    left: -500px;
+    bottom: 0;
+  }
 
-	to {
-		left: 100vw;
-		bottom: 50%;
-	}
+  to {
+    left: 100vw;
+    bottom: 50%;
+  }
+}
+
+body {
+  background: $white;
 }

@@ -1,25 +1,36 @@
 'use strict';
 
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var minifyCSS = require('gulp-minify-css');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const minifyCSS = require('gulp-minify-css');
+const webpack = require('webpack');
+
 gulp.task('css', function() {
-	try {
-		gulp.src('./_assets/css/main.scss')
-			.pipe(sass())
-			.pipe(autoprefixer({
-				browsers: ['last 2 versions'],
-				cascade: false
-			}))
-			.pipe(minifyCSS({ processImport: false }))
-			.pipe(gulp.dest('./assets/css'));
-	} catch(e) {
-		console.log(e);
-	}
+	gulp.src('./_assets/css/main.scss')
+		.pipe(sass())
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
+		.pipe(minifyCSS({ processImport: false }))
+		.pipe(gulp.dest('./assets/css'));
 });
 
-gulp.task('watch', function() {
-	gulp.watch('./_assets/css/*.scss', ['css']);
+gulp.task('js', function(callback) {
+  webpack(require('./webpack.config'), function (err, stats) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('[webpack]', stats.toString());
+    }
+
+    callback();
+  });
+});
+
+gulp.task('default', ['js', 'css'], function() {
+	gulp.watch('./_assets/css/**/*', ['css']);
+	gulp.watch('./_assets/js/**/*', ['js']);
 });

@@ -1,0 +1,108 @@
+.doc-nav {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    flex: 1;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-around;
+
+    max-width: 550px;
+  }
+
+  li {
+    display: inline-block;
+    text-align: center;
+
+    margin: 0 10px;
+
+    span {
+      width: 120px;
+      position: absolute;
+      left: 50%;
+      top: -20px;
+
+      transform: translateY(-100%) translateX(-50%);
+      display: none;
+
+      background-color: rgba(darken($white, 3), 0.8);
+      z-index: 1000;
+      padding: 7.5px;
+      border-radius: 7px;
+    }
+
+    a:hover span {
+      display: block;
+    }
+
+    a {
+      font-weight: normal;
+      color: $textColorSub;
+
+      display: inline-block;
+      position: relative;
+
+      height: 38px;
+      width: 40px;
+
+      &::after {
+        content: '';
+        display: block;
+        background-image: url(../../assets/img/icons.png);
+        height: 38px;
+        width: 40px;
+        position: absolute;
+        bottom: 0;
+      }
+
+      &:hover {
+        &.github::after {
+          background-position: 0 38px;
+        }
+
+        &.email::after {
+          background-position: -40px 38px;
+        }
+
+        &.tumblr::after {
+          background-position: -80px 38px;
+        }
+
+        &.twitter::after {
+          background-position: -120px 38px;
+        }
+
+        &.linkedin::after {
+          background-position: -160px 38px;
+        }
+
+        &.website::after {
+          background-position: -200px 38px;
+        }
+      }
+
+      &.email::after {
+        background-position: -40px 0;
+      }
+
+      &.tumblr::after {
+        background-position: -80px 0;
+      }
+
+      &.twitter::after {
+        background-position: -120px 0;
+      }
+
+      &.linkedin::after {
+        background-position: -160px 0;
+      }
+
+      &.website::after {
+        background-position: -200px 0;
+      }
+    }
+  }
+}
