@@ -1,224 +1,223 @@
 html {
-	user-select: none;
+  user-select: none;
 }
 
-p,a,h1,h2,h3,h4,h5,h6,br,li,td,figcaption {
-	user-select: text;
+p, a, h1, h2, h3, h4, h5, h6, br, li, td, figcaption {
+  user-select: text;
 }
 
 ::selection {
-	background: $affordanceColor;
-	color: white;
+  background: $affordanceColor;
+  color: white;
 }
 
 *:focus {
-	outline-style: none;
+  outline-style: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
-	font-family: Arial, sans-serif;
-	color: $textColorMain;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  color: $textColorMain;
 
-	margin: 0 3vw;
-	text-align: center;
-	text-transform: uppercase;
+  margin: 0 3vw;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-
-li,td,figcaption,p {
-	font-family: futura-pt, arial, sans-serif;
+li, td, figcaption, p {
+  font-family: futura-pt, arial, sans-serif;
 }
 
 figure {
-	margin: 0 40px;
+  margin: 0 40px;
 }
 
 section {
-	text-align: center;
-	margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 h3 {
-	letter-spacing: 2px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-body>main h2 {
-	//font-weight: bold;
-	margin: 50px auto 30px;
-	font-size: 1.25rem;
-	letter-spacing: 0.25em;
-	position: relative;
+body > main h2 {
+  //font-weight: bold;
+  margin: 50px auto 30px;
+  font-size: 1.25rem;
+  letter-spacing: 0.25em;
+  position: relative;
 
-	display: inline-block;
-	width: auto;
+  display: inline-block;
+  width: auto;
 
-	&::after {
-		bottom: -25px;
-		position: absolute;
-		content: '';
-		display: block;
-		height: 1px;
-		width: 90%;
-		left: 5%;
-		background-color: $textColorMain;
-	}
+  &::after {
+    bottom: -25px;
+    position: absolute;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 90%;
+    left: 5%;
+    background-color: $textColorMain;
+  }
 }
 
 p {
-	font-size: 1.1rem;
-	line-height: 1.45;
-	color: $textColorMain;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: $textColorMain;
 }
 
 a {
-	text-decoration: none;
-	color: $affordanceColor;
-	font-weight: bold;
-	letter-spacing: 0.6px;
+  text-decoration: none;
+  color: $affordanceColor;
+  font-weight: bold;
+  letter-spacing: 0.6px;
 
-	&:hover {
-		color: darken($affordanceColor, 8);
-	}
+  &:hover {
+    color: darken($affordanceColor, 8);
+  }
 }
 
 em {
-	color: $affordanceColor;
-	font-style: normal;
+  color: $affordanceColor;
+  font-style: normal;
 }
 
 ul.list {
-	list-style: square;
-	font-size: 1.15rem;
+  list-style: square;
+  font-size: 1.15rem;
 
-	line-height: 1.3;
-	padding-left: 20px;
+  line-height: 1.3;
+  padding-left: 20px;
 
-	ul {
-		padding-top: 2px;
-		padding-left: 20px;
-		list-style: none;
-	}
+  ul {
+    padding-top: 2px;
+    padding-left: 20px;
+    list-style: none;
+  }
 
-	li {
-		padding-bottom: 5px;
-	}
+  li {
+    padding-bottom: 5px;
+  }
 }
 
 ul {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ins {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .columns {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-	> .column {
-		min-width: 320px;
-		max-width: 600px;
+  > .column {
+    min-width: 320px;
+    max-width: 600px;
 
-		margin-top: 50px;
-		margin-left: 3vw;
-		margin-right: 3vw;
-		line-height: 22px;
-		flex: 1;
-		text-align: left;
+    margin-top: 50px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    line-height: 22px;
+    flex: 1;
+    text-align: left;
 
-		p, ul {
-			margin-left: 3vw;
-			margin-right: 3vw;
-		}
+    p, ul {
+      margin-left: 3vw;
+      margin-right: 3vw;
+    }
 
-		ul ul {
-			margin: 0;
-		}
-	}
+    ul ul {
+      margin: 0;
+    }
+  }
 }
 
 .button {
-	text-align: center;
-	//border-radius: 5px;
-	width: 160px;
-	text-transform: uppercase;
-	display: block;
-	color: white;
-	padding: 20px 0;
+  text-align: center;
+  //border-radius: 5px;
+  width: 160px;
+  text-transform: uppercase;
+  display: block;
+  color: white;
+  padding: 20px 0;
 
-	&.large {
-		width: 300px;
-		min-height: 88px;
-	}
+  &.large {
+    width: 300px;
+    min-height: 88px;
+  }
 }
 
 a.button, button.button, input.button {
-	font-weight: normal;
-	border: 2px $affordanceColor solid;
+  font-weight: normal;
+  border: 2px $affordanceColor solid;
 
-	color: $affordanceColor;
-	background-color: transparent;
+  color: $affordanceColor;
+  background-color: transparent;
 
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-	transition: color 0.5s;
+  transition: color 0.5s;
 
-	&::after {
-		content: '';
+  &::after {
+    content: '';
 
-		display: block;
-		width: 100%;
-		height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 
-		position: absolute;
-		top: 100%;
-		left: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
 
-		z-index: -1;
+    z-index: -1;
 
-		transition: top 0.3s;
-		background-color: $affordanceColor;
-	}
+    transition: top 0.3s;
+    background-color: $affordanceColor;
+  }
 
-	&.active, &:hover {
-		color: white;
+  &.active, &:hover {
+    color: white;
 
-		&::after {
-			top: 0;
-		}
-	}
+    &::after {
+      top: 0;
+    }
+  }
 }
 
 span.button {
-	background-color: $textColorSub;
-	border: 2px $textColorSub solid;
+  background-color: $textColorSub;
+  border: 2px $textColorSub solid;
 }
 
 body.hide {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .fullscreen {
-	z-index: 5;
+  z-index: 5;
 
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 
-	/*
-	left: 20px;
-	top: 20px;
+  /*
+  left: 20px;
+  top: 20px;
 
 
-	height: calc(100vh - 40px);
-	width: calc(100vw - 40px);*/
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);*/
 }

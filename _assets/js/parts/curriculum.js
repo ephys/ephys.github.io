@@ -1,16 +1,15 @@
 // move the CV behind the presentation and add a flip button
 
-var presentationWrapper = document.querySelector('#intro > .columns');
-var cv = presentationWrapper.querySelector('.cv');
-var textIntro = presentationWrapper.querySelector('.text_intro');
-var buttonWrapper = cv.parentNode;
-var presentationDiv = textIntro.parentNode;
+const presentationWrapper = document.querySelector('#intro > .columns');
+const cv = presentationWrapper.querySelector('.cv');
+const textIntro = presentationWrapper.querySelector('.text_intro');
+const buttonWrapper = cv.parentNode;
+const presentationDiv = textIntro.parentNode;
 
-cv.parentNode.removeChild(cv);
 textIntro.parentNode.appendChild(cv);
 presentationDiv.classList.add('presentation');
 
-var flipButton = document.createElement('button');
+const flipButton = document.createElement('button');
 flipButton.classList.add('button', 'large');
 flipButton.textContent = 'Curriculum vitae';
 
@@ -21,4 +20,8 @@ flipButton.addEventListener('click', function (e) {
   flipButton.classList.toggle('active');
 });
 
+const img = document.createElement('img');
+img.src = 'assets/img/me.jpg';
+
+buttonWrapper.appendChild(img);
 buttonWrapper.appendChild(flipButton);

@@ -154,7 +154,6 @@
 	var buttonWrapper = cv.parentNode;
 	var presentationDiv = textIntro.parentNode;
 
-	cv.parentNode.removeChild(cv);
 	textIntro.parentNode.appendChild(cv);
 	presentationDiv.classList.add('presentation');
 
@@ -169,6 +168,10 @@
 	  flipButton.classList.toggle('active');
 	});
 
+	var img = document.createElement('img');
+	img.src = 'assets/img/me.jpg';
+
+	buttonWrapper.appendChild(img);
 	buttonWrapper.appendChild(flipButton);
 
 /***/ },
