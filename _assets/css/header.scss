@@ -12,11 +12,6 @@
 }
 
 .doc-header-content {
-
-  margin-bottom: 45px;
-  background: url(../../assets/img/pattern.svg) fixed right;
-  background-size: cover;
-
   position: relative;
   z-index: 1;
 
@@ -47,4 +42,20 @@
       display: none;
     }
   }
+}
+
+.doc-header-after {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 2px;
+  margin-bottom: 45px;
+  z-index:10000;
+}
+
+.doc-header-content, .doc-header-after {
+  background: url(../../assets/img/pattern.svg) fixed right;
+  background-size: cover;
+
 }
