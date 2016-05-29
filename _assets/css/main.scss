@@ -1,34 +1,53 @@
-$affordanceColor: desaturate(rgb(233, 30, 99), 10);
-$textColorMain: #252525;
-$textColorSub: #747474;
-
 @import url('//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
+
+@import 'variables';
 @import 'layout';
-@import 'intro';
+@import 'nav';
+@import 'header';
 @import 'presentation';
 @import 'projects';
+@import 'footer';
 
 .tardis {
-	display: block;
-	position: fixed;
+  display: block;
+  position: fixed;
 
-	width: 500px;
-	height: 333px;
+  width: 500px;
+  height: 333px;
 
-	left: -500px;
-	bottom: 0;
+  left: -500px;
+  bottom: 0;
 
-	animation: tardis 3.5s infinite;
+  animation: tardis 3.5s infinite;
 }
 
 @keyframes tardis {
-	from {
-		left: -500px;
-		bottom: 0;
-	}
+  from {
+    left: -500px;
+    bottom: 0;
+  }
 
-	to {
-		left: 100vw;
-		bottom: 50%;
-	}
+  to {
+    left: 100vw;
+    bottom: 50%;
+  }
+}
+
+@keyframes mask1 {
+  $borders: 87% 10%,84% 88%,23% 97%,1% 62%,16% 0%; //79% 14%, 70% 88%, 21% 100%, 0 65%, 15% 0;
+  $step: 100% / length($borders);
+
+  @for $i from 0 through length($borders) {
+    #{$i * $step} {
+      clip-path: polygon($borders);
+
+      $tmp: nth($borders, 1);
+      $borders: remove($borders, $tmp);
+      $borders: append($borders, $tmp);
+    }
+  }
+}
+
+body {
+  background: $white;
 }

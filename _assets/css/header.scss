@@ -1,0 +1,50 @@
+@import 'variables';
+
+.doc-header-nav {
+  justify-content: flex-start;
+  margin: 10px 5vw;
+
+  li span {
+    top: initial;
+    bottom: -20px;
+    transform: translateY(100%) translateX(-50%);
+  }
+}
+
+.doc-header-content {
+
+  margin-bottom: 45px;
+  background: url(../../assets/img/pattern.svg) fixed right;
+  background-size: cover;
+
+  position: relative;
+  z-index: 1;
+
+  padding: 120px 5vw 120px 20px;
+
+  h1 {
+    font-weight: lighter;
+    font-size: 3.375em;
+
+    text-align: right;
+    $spacing: 0.135em;
+    letter-spacing: $spacing;
+    margin: 0 -$spacing 0 0;
+
+    color: $white;
+  }
+
+  h2 {
+    font-size: 0.875em;
+    color: darken($white, 5);
+
+    $spacing: 1.165em;
+    letter-spacing: $spacing;
+    margin: 0 (-$spacing + 0.5em) 0 0;
+    text-align: right;
+
+    &:after {
+      display: none;
+    }
+  }
+}
