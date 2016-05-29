@@ -7,14 +7,6 @@ body.jscript {
 }
 
 body.noscript {
-  .project-nav, #project_list_info {
-    display: none;
-  }
-
-  .project_list p:first-letter {
-    text-transform: capitalize;
-  }
-
   .project_details:nth-child(even) {
     flex-direction: row-reverse;
   }
@@ -27,6 +19,7 @@ body.noscript {
 
 .project_details {
   margin-bottom: 45px;
+  align-items: center;
 
   .decorative {
     display: flex;
@@ -86,8 +79,13 @@ body.noscript {
     transition: background-color 0.5s;
 
     cursor: pointer;
+
     &:hover {
       background-color: lighten($affordanceColor, 5);
+
+      &::after {
+        display: block;
+      }
     }
 
     &.active {
@@ -120,6 +118,20 @@ body.noscript {
 
       opacity: 1;
       transform: scale(1.05);
+    }
+
+    &::after {
+      content: attr(title);
+      font-size: 1rem;
+
+      position: absolute;
+      bottom: -7.5px;
+      left: 50%;
+      font-weight: normal;
+
+      transform: translateY(100%) translateX(-50%);
+
+      display: none;
     }
   }
 }
