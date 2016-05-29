@@ -30,7 +30,7 @@ li, td, figcaption, p {
 }
 
 figure {
-  margin: 0 40px;
+  margin: 0;
 }
 
 section {
@@ -119,19 +119,20 @@ ins {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 
   > .column {
     min-width: 320px;
-    max-width: 600px;
+    max-width: calc(600px - 6vw);
 
     margin-top: 50px;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 4.5vw;
+    margin-right: 4.5vw;
     line-height: 22px;
-    flex: 1;
+    //flex: 1;
     text-align: left;
 
-    p, ul {
+    ul {
       margin-left: 3vw;
       margin-right: 3vw;
     }

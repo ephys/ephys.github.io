@@ -53,18 +53,3 @@
     }
   }
 }
-
-@keyframes mask1 {
-  $borders: 87% 10%,84% 88%,23% 97%,1% 62%,16% 0%; //79% 14%, 70% 88%, 21% 100%, 0 65%, 15% 0;
-  $step: 100% / length($borders);
-
-  @for $i from 0 through length($borders) {
-    #{$i * $step} {
-      clip-path: polygon($borders);
-
-      $tmp: nth($borders, 1);
-      $borders: remove($borders, $tmp);
-      $borders: append($borders, $tmp);
-    }
-  }
-}

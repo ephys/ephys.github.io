@@ -257,27 +257,47 @@
 
 	// projects
 
-	var projectSection = document.getElementById('projects');
+	var projectList = document.querySelector('.project_details_list');
+	var projectNav = document.querySelector('.project-nav ul');
 
-	var projectList = projectSection.querySelectorAll('.project_list li');
-	Array.prototype.forEach.call(projectList, function (project) {
-	  project.addEventListener('click', function () {
-	    if (this.classList.contains('active')) return;
+	window.addEventListener('hashchange', function (e) {
+	  var project = getProject();
 
-	    var previouslyActive = document.querySelector('.project_list li.active');
-	    if (previouslyActive !== null) {
-	      previouslyActive.classList.remove('active');
-	      var previousTarget = document.getElementById(previouslyActive.getAttribute('data-target'));
-	      previousTarget.classList.remove('active');
-	    }
-
-	    var newTarget = document.getElementById(this.getAttribute('data-target'));
-	    if (newTarget !== null) {
-	      newTarget.classList.add('active');
-	      this.classList.add('active');
-	    }
-	  });
+	  if (project) {
+	    e.preventDefault();
+	    openProject(project);
+	  }
 	});
+
+	function getProject() {
+	  if (!document.location.hash) {
+	    return null;
+	  }
+
+	  var hash = document.location.hash.substring(1);
+	  if (!hash || !/^project_/.test(hash)) {
+	    return null;
+	  }
+
+	  return hash;
+	}
+
+	function openProject(projectId) {
+	  projectNav.querySelector('.active').classList.remove('active');
+	  projectNav.querySelector('a[href="#' + projectId + '"]').classList.add('active');
+
+	  var activeProject = projectList.querySelector('.active');
+	  if (activeProject) {
+	    activeProject.classList.remove('active');
+	  }
+
+	  document.getElementById(projectId).classList.add('active');
+	}
+
+	var project = getProject();
+	if (project) {
+	  openProject(project);
+	}
 
 /***/ }
 /******/ ]);

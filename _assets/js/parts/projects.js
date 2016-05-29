@@ -1,23 +1,43 @@
 // projects
 
-const projectSection = document.getElementById('projects');
+const projectList = document.querySelector('.project_details_list');
+const projectNav = document.querySelector('.project-nav ul');
 
-const projectList = projectSection.querySelectorAll('.project_list li');
-Array.prototype.forEach.call(projectList, project => {
-  project.addEventListener('click', function () {
-    if (this.classList.contains('active')) return;
+window.addEventListener('hashchange', function (e) {
+  const project = getProject();
 
-    var previouslyActive = document.querySelector('.project_list li.active');
-    if (previouslyActive !== null) {
-      previouslyActive.classList.remove('active');
-      var previousTarget = document.getElementById(previouslyActive.getAttribute('data-target'));
-      previousTarget.classList.remove('active');
-    }
-
-    var newTarget = document.getElementById(this.getAttribute('data-target'));
-    if (newTarget !== null) {
-      newTarget.classList.add('active');
-      this.classList.add('active');
-    }
-  });
+  if (project) {
+    e.preventDefault();
+    openProject(project);
+  }
 });
+
+function getProject() {
+  if (!document.location.hash) {
+    return null;
+  }
+
+  const hash = document.location.hash.substring(1);
+  if (!hash || !/^project_/.test(hash)) {
+    return null;
+  }
+
+  return hash;
+}
+
+function openProject(projectId) {
+  projectNav.querySelector('.active').classList.remove('active');
+  projectNav.querySelector('a[href="#' + projectId + '"]').classList.add('active');
+
+  const activeProject = projectList.querySelector('.active');
+  if (activeProject) {
+    activeProject.classList.remove('active');
+  }
+
+  document.getElementById(projectId).classList.add('active');
+}
+
+const project = getProject();
+if (project) {
+  openProject(project);
+}
