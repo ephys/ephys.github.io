@@ -1,3 +1,5 @@
+@import 'variables';
+
 html {
   user-select: none;
 }
@@ -35,18 +37,18 @@ figure {
 
 section {
   text-align: center;
-  margin-bottom: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 h3 {
   letter-spacing: 2px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 1em 0;
 }
 
 body > main h2 {
   //font-weight: bold;
-  margin: 50px auto 30px;
+  margin: 8em auto 2em;
   font-size: 1.25rem;
   letter-spacing: 0.25em;
   position: relative;
@@ -55,7 +57,7 @@ body > main h2 {
   width: auto;
 
   &::after {
-    bottom: -25px;
+    bottom: -1em;
     position: absolute;
     content: '';
     display: block;
@@ -124,7 +126,7 @@ ins {
     min-width: 320px;
     max-width: calc(600px - 6vw);
 
-    margin-top: 50px;
+    margin-top: 2rem;
     margin-left: 4.5vw;
     margin-right: 4.5vw;
     line-height: 22px;
