@@ -1,10 +1,9 @@
-
 import documentReady from './util/documentReady';
 
 documentReady(function () {
   try {
     Typekit.load();
-  } catch(e) {
+  } catch (e) {
     console.log(e);
   }
 
