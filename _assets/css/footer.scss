@@ -5,19 +5,28 @@
 
   text-align: center;
   overflow: visible;
-  display: flex;
-  flex-direction: column;
-  height: 250px;
-  justify-content: space-between;
+
+  .doc-nav-wrapper {
+    margin: 0 auto;
+    padding: $rowHeight * 3 $columnWidth;
+    max-width: columnsSize($columnCount);
+  }
 
   .doc-nav {
+
     flex: 1;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 
-    margin: 40px 5px;
+    ul {
+      max-width: 450px;
+      min-width: 320px;
+    }
   }
 
   h2 {
+    margin: $rowHeight $gutterWidth;
     font-weight: bold;
     color: $textColorSub;
     font-size: 0.9375rem;
@@ -25,9 +34,16 @@
   }
 
   p {
-    margin: 0 0 5px;
+    margin: 0;
+    padding: 5px 0;
     font-size: 0.75rem;
     color: $textColorSub;
+
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   a {
