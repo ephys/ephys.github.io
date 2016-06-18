@@ -3,6 +3,15 @@ $textColorMain: #252525;
 $textColorSub: #747474;
 $white: #f8f8f8;
 
+$columnCount: 6;
+$columnWidth: 140px;
+$gutterWidth: 24px;
+$rowHeight: 25px;
+
+@function columnsSize($columnCount) {
+  @return $columnCount * $columnWidth + ($columnCount - 1) * $gutterWidth;
+}
+
 @function remove($list, $value, $recursive: false, $separator: comma) {
   $result: ();
 

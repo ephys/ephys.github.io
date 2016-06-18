@@ -13,8 +13,8 @@ body.noscript {
 }
 
 .project_details_list {
-  margin-top: 3vw;
-  margin-bottom: 3vw;
+  margin-top: $rowHeight;
+  margin-bottom: $rowHeight * 2;
 }
 
 .project_details {
@@ -55,8 +55,13 @@ body.noscript {
 
 .project-nav {
 
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
   li {
-    display: inline-block;
+    display: inline-flex;
   }
 
   a {
@@ -72,8 +77,6 @@ body.noscript {
 
     $margin: 5px;
     margin: 0 $margin;
-
-    //border-radius: 50%;
 
     position: relative;
     transition: background-color 0.5s;
@@ -102,7 +105,6 @@ body.noscript {
       $borderSize: 2px;
       border: $borderSize solid lighten($affordanceColor, 10);
       opacity: 0;
-      //border-radius: 50%;
 
       position: absolute;
       left: -$borderSize;
@@ -136,20 +138,8 @@ body.noscript {
   }
 }
 
-#project_portfolio::before {
-  content: '';
-  background: url(../../assets/img/pattern.svg) right;
-  background-size: 600px 700px;
-  width: 400px;
+
+#project_portfolio img {
   animation: mask1 200s linear infinite;
-  display: block;
   height: 300px;
-
-  min-width: 320px;
-  max-width: 600px;
-  margin-top: 50px;
-  line-height: 22px;
-
-  margin-left: 3vw;
-  margin-right: 3vw;
 }

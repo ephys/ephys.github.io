@@ -33,6 +33,25 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <script src="//use.typekit.net/xng1plt.js" defer></script>
   <script src="assets/js/app.js" defer></script>
+
+  <!--<link href="headsupgrid/hugrid.css" type="text/css" rel="stylesheet" />-->
+  <!--<script src="headsupgrid/jquery-1.6.2.min.js"></script>-->
+  <!--<script src="headsupgrid/hugrid.js"></script>-->
+  <!--<script type="text/javascript">-->
+    <!--$(document).ready(function() {-->
+      <!--pageUnits = 'px';-->
+      <!--colUnits = 'px';-->
+      <!--pagewidth = 960;-->
+      <!--columns = 6;-->
+      <!--columnwidth = 140;-->
+      <!--gutterwidth = 24;-->
+      <!--pagetopmargin = 305;-->
+      <!--rowheight = 25;-->
+      <!--gridonload = 'on';-->
+      <!--makehugrid();-->
+      <!--setgridonload();-->
+    <!--});-->
+  <!--</script>-->
 </head>
 <body class="noscript">
   <header id="header" class="doc-header">
@@ -48,10 +67,10 @@
         </li>
       </ul>
     </nav>
-    <div class="doc-header-content">
+    <hgroup class="doc-header-content">
       <h1>Guylian Cox</h1>
       <h2>Back-end developer</h2>
-    </div>
+    </hgroup>
   </header>
   <div class="doc-header-after"></div>
   <main>
@@ -171,6 +190,12 @@
         </div>
 
         <div class="columns project_details active" id="project_portfolio">
+          <div class="decorative column">
+            <figure>
+              <img src="assets/img/pattern.svg" alt="Social Hub preview">
+              <figcaption>A Social Hub</figcaption>
+            </figure>
+          </div>
           <article class="column">
             <h3>ephys.github.io</h3>
             <p><a href="https://github.com/Ephys/ephys.github.io/tree/v1">Originally</a> designed by <a
@@ -291,7 +316,7 @@
     </p>
   </footer>
   <script>
-    if (location.protocol === 'http:') {
+    if (location.protocol === 'http:' && location.hostname !== 'localhost') {
       location.protocol = 'https:';
     }
 
