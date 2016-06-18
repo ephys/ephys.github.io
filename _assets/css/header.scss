@@ -36,13 +36,13 @@
 
 .doc-header-content {
   box-sizing: border-box;
-  max-width: columnsSize($columnCount) + $gutterWidth * 2;
-  margin: 0 auto;
+  //max-width: columnsSize($columnCount) + $gutterWidth * 2;
+  //margin: 0 auto;
 
   position: relative;
   z-index: 1;
 
-  padding: 120px $gutterWidth;
+  padding: $rowHeight * 4 5vw $rowHeight * 4 $gutterWidth;
 
   h1 {
     font-weight: lighter;
