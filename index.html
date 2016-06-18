@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Person">
 <head>
   <!-- http://meta-tag-gen.net/ <3 -->
   <meta charset="utf-8">
   <title>Guylian Cox, back-end developer</title>
   <meta property="og:title" content="Guylian Cox, back-end developer" />
   <meta name="twitter:title" content="Guylian Cox, back-end developer" />
-  <meta itemprop="name" content="Guylian Cox, back-end developer">
   <meta property="og:url" content="https://ephys.github.io/" />
   <meta name="twitter:url" content="https://ephys.github.io/">
   <meta property="og:image" content="assets/img/KBl0IweZ.png" />
@@ -18,13 +17,11 @@
   <meta name="description" content="Guylian Cox's Portfolio. I do web development!" />
   <meta name="twitter:description" content="Guylian Cox's Portfolio. I do web development!" />
   <meta property="og:description" content="Guylian Cox's Portfolio. I do web development!" />
-  <meta itemprop="description" content="Guylian Cox's Portfolio. I do web development!">
   <meta property="og:site_name" content="Guylian Cox's Portfolio" />
   <meta property="og:locale" content="en_US" />
   <meta name="content-language" content="en_US">
   <meta name="author" content="Guylian Cox">
   <meta name="web_author" content="Guylian Cox, Morgane Bosmans">
-  <!--<meta name="copyright" content="Guylian Cox, Morgane Bosmans">-->
   <meta name="viewport" content="width=400, maximum-scale=1.0, user-scalable=no, minimal-ui" />
   <meta name="twitter:creator" content="@ephyspotato" />
   <meta name="twitter:site" content="@ephyspotato" />
@@ -34,6 +31,8 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <script src="//use.typekit.net/xng1plt.js" defer></script>
   <script src="assets/js/app.js" defer></script>
+
+  <meta itemprop="nationality" content="Belgium">
 
   <!--<link href="headsupgrid/hugrid.css" type="text/css" rel="stylesheet" />-->
   <!--<script src="headsupgrid/jquery-1.6.2.min.js"></script>-->
@@ -62,7 +61,7 @@
           <li><a class="github" href="https://github.com/Ephys/"><span>Check out my <em>Github</em>!</span></a></li>
           <li><a class="tumblr" href="http://ephys.tumblr.com/"><span>My <em>Tumblr</em> has a few <del>web related</del> posts!</span></a>
           </li>
-          <li><a class="email" href="mailto:guyliancox@gmail.com"><span><em>Email</em> me stuff!</span></a></li>
+          <li><a class="email" href="mailto:guyliancox@gmail.com" itemprop="email" content="guyliancox@gmail.com"><span><em>Email</em> me stuff!</span></a></li>
           <li><a class="twitter"
                  href="https://twitter.com/ephyspotato"><span>My <em>Twitter</em> account, just for you.</span></a></li>
           <li><a class="linkedin" href="https://be.linkedin.com/in/guyliancox"><span>If you'd rather stay professional, here is my <em>LinkedIn</em>.</span></a>
@@ -70,8 +69,8 @@
         </ul>
       </nav>
       <hgroup class="doc-header-content">
-        <h1>Guylian Cox</h1>
-        <h2>Back-end developer</h2>
+        <h1 itemprop="name">Guylian Cox</h1>
+        <h2 itemprop="jobtitle">Back-end developer</h2>
       </hgroup>
     </div>
   </header>
@@ -84,7 +83,7 @@
         <div class="column decorative">
           <!--<button class="button large">Show me your cv</button>-->
           <article class="cv">
-            <h3>Tools & Languages I like to use</h3>
+            <h3>Tools &amp; Languages I like to use</h3>
 
             <ul class="list">
               <li>I do my best to keep up to date with <em>HTML5</em></li>
@@ -127,13 +126,16 @@
           <article class="text_intro">
             <h3>Hello there!</h3>
 
-            <p>I'm <em>Guylian Cox</em>, a <span id="developer_age">20</span>-year-old currently studying Computer
+            <p itemprop="description">I'm <em>Guylian Cox</em>, a <span id="developer_age" itemprop="birthDate" content="1994-06-01">22</span>-year-old currently studying Computer
                Science at
               <a href="http://www.vinci.be/fr-be/ipl/Pages/Informatique-de-gestion.aspx">Institut Paul-Lambin</a> in
-               Brussels, currently in the final year. I'm mostly self-taught and, while classes are doing wonders at
+               <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                 <span itemprop="addressLocality">Brussels</span>,
+                 <span itemprop="addressCountry">Belgium</span>.
+               </span><!--I'm mostly self-taught and, while classes are doing wonders at
                sharpening my algorithmic skills, my knowledge of web-related technologies comes primarily from online
                documentations such as the
-              <abbr title="Mozilla Developer Network">MDN</abbr> (and Stack Overflow).
+              <abbr title="Mozilla Developer Network">MDN</abbr> (and Stack Overflow).-->
             </p>
 
             <p>I've grown a passion for web development since I was 16, the constantly evolving field keeps me
@@ -315,7 +317,7 @@
         </ul>
       </nav>
     </div>
-    <p><span class="copyleft">copyleft</span> Guylian Cox, <a href="http://morganebosmans.be">Morgane Bosmans</a> 2015.
+    <p><span class="copyleft">copyleft</span> <a itemprop="url" href="https://ephys.github.io">Guylian Cox</a>, <a href="http://morganebosmans.be">Morgane Bosmans</a> 2015.
       <a href="https://www.google.com/design/icons/">Arrow icon</a> from google material design. Image animations
                                               inspired by <a href="http://lsdtalk.in">lsdtalk.in</a>.
     </p>
