@@ -1,3 +1,5 @@
+@import 'variables';
+
 .doc-nav {
 
   display: flex;
@@ -20,17 +22,18 @@
     margin: 0;
 
     span {
-      width: 120px;
       position: absolute;
       left: 50%;
       top: -20px;
-
       transform: translateY(-100%) translateX(-50%);
+
+      z-index: 1000;
       display: none;
 
-      background-color: rgba(darken($white, 3), 0.8);
-      z-index: 1000;
+      width: 120px;
       padding: 7.5px;
+
+      background-color: rgba(darken($white, 4), 0.8);
       border-radius: 7px;
     }
 
@@ -45,63 +48,30 @@
       display: inline-block;
       position: relative;
 
-      height: 38px;
-      width: 40px;
-
+      //noinspection CssNoGenericFontName
       &::after {
-        content: '';
-        display: block;
-        background-image: url(../../assets/img/icons.png);
-        height: 38px;
-        width: 40px;
-        position: absolute;
-        bottom: 0;
-      }
-
-      &:hover {
-        &.github::after {
-          background-position: 0 38px;
-        }
-
-        &.email::after {
-          background-position: -40px 38px;
-        }
-
-        &.tumblr::after {
-          background-position: -80px 38px;
-        }
-
-        &.twitter::after {
-          background-position: -120px 38px;
-        }
-
-        &.linkedin::after {
-          background-position: -160px 38px;
-        }
-
-        &.website::after {
-          background-position: -200px 38px;
-        }
+        font-family: 'fontello';
+        font-size: 40px;
       }
 
       &.email::after {
-        background-position: -40px 0;
+        content: '\e802';
       }
 
       &.tumblr::after {
-        background-position: -80px 0;
+        content: '\e800';
       }
 
       &.twitter::after {
-        background-position: -120px 0;
+        content: '\e803';
       }
 
       &.linkedin::after {
-        background-position: -160px 0;
+        content: '\e804';
       }
 
-      &.website::after {
-        background-position: -200px 0;
+      &.github::after {
+        content: '\e801';
       }
     }
   }
