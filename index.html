@@ -13,7 +13,8 @@
   <meta name="twitter:image" content="assets/img/KBl0IweZ.png">
   <meta itemprop="image" content="assets/img/KBl0IweZ.png">
   <meta name="twitter:card" content="summary" />
-  <meta name="keywords" content="Guylian Cox, portfolio, web development, full stack, back-end, front-end, belgium, brussels" />
+  <meta name="keywords"
+        content="Guylian Cox, portfolio, web development, full stack, back-end, front-end, belgium, brussels" />
   <meta name="description" content="Guylian Cox's Portfolio. I do web development!" />
   <meta name="twitter:description" content="Guylian Cox's Portfolio. I do web development!" />
   <meta property="og:description" content="Guylian Cox's Portfolio. I do web development!" />
@@ -38,39 +39,41 @@
   <!--<script src="headsupgrid/jquery-1.6.2.min.js"></script>-->
   <!--<script src="headsupgrid/hugrid.js"></script>-->
   <!--<script type="text/javascript">-->
-    <!--$(document).ready(function() {-->
-      <!--pageUnits = 'px';-->
-      <!--colUnits = 'px';-->
-      <!--pagewidth = 960;-->
-      <!--columns = 6;-->
-      <!--columnwidth = 140;-->
-      <!--gutterwidth = 24;-->
-      <!--pagetopmargin = 305;-->
-      <!--rowheight = 25;-->
-      <!--gridonload = 'on';-->
-      <!--makehugrid();-->
-      <!--setgridonload();-->
-    <!--});-->
+  <!--$(document).ready(function() {-->
+  <!--pageUnits = 'px';-->
+  <!--colUnits = 'px';-->
+  <!--pagewidth = 960;-->
+  <!--columns = 6;-->
+  <!--columnwidth = 140;-->
+  <!--gutterwidth = 24;-->
+  <!--pagetopmargin = 305;-->
+  <!--rowheight = 25;-->
+  <!--gridonload = 'on';-->
+  <!--makehugrid();-->
+  <!--setgridonload();-->
+  <!--});-->
   <!--</script>-->
 </head>
 <body class="noscript">
   <header id="header" class="doc-header">
-    <nav class="doc-nav doc-header-nav">
-      <ul>
-        <li><a class="github" href="https://github.com/Ephys/"><span>Check out my <em>Github</em>!</span></a></li>
-        <li><a class="tumblr" href="http://ephys.tumblr.com/"><span>My <em>Tumblr</em> has a few <del>web related</del> posts!</span></a>
-        </li>
-        <li><a class="email" href="mailto:guyliancox@gmail.com"><span><em>Email</em> me stuff!</span></a></li>
-        <li><a class="twitter"
-               href="https://twitter.com/ephyspotato"><span>My <em>Twitter</em> account, just for you.</span></a></li>
-        <li><a class="linkedin" href="https://be.linkedin.com/in/guyliancox"><span>If you'd rather stay professional, here is my <em>LinkedIn</em>.</span></a>
-        </li>
-      </ul>
-    </nav>
-    <hgroup class="doc-header-content">
-      <h1>Guylian Cox</h1>
-      <h2>Back-end developer</h2>
-    </hgroup>
+    <div class="doc-header-wrapper">
+      <nav class="doc-nav doc-header-nav">
+        <ul>
+          <li><a class="github" href="https://github.com/Ephys/"><span>Check out my <em>Github</em>!</span></a></li>
+          <li><a class="tumblr" href="http://ephys.tumblr.com/"><span>My <em>Tumblr</em> has a few <del>web related</del> posts!</span></a>
+          </li>
+          <li><a class="email" href="mailto:guyliancox@gmail.com"><span><em>Email</em> me stuff!</span></a></li>
+          <li><a class="twitter"
+                 href="https://twitter.com/ephyspotato"><span>My <em>Twitter</em> account, just for you.</span></a></li>
+          <li><a class="linkedin" href="https://be.linkedin.com/in/guyliancox"><span>If you'd rather stay professional, here is my <em>LinkedIn</em>.</span></a>
+          </li>
+        </ul>
+      </nav>
+      <hgroup class="doc-header-content">
+        <h1>Guylian Cox</h1>
+        <h2>Back-end developer</h2>
+      </hgroup>
+    </div>
   </header>
   <div class="doc-header-after"></div>
   <main>
@@ -320,10 +323,17 @@
       location.protocol = 'https:';
     }
 
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-79527805-1', 'auto');
     ga('send', 'pageview');

@@ -1,24 +1,32 @@
 @import 'variables';
 
-.doc-header {
-  position: relative;
+.doc-header, .doc-footer {
   box-shadow: 0 -1px 6px rgba(0,0,0,0.16) inset, 0 -1px 6px rgba(0,0,0,0.23) inset;
+}
 
+.doc-header-wrapper {
   display: flex;
   flex-direction: column-reverse;
+  max-width: calc(#{columnsSize($columnCount + 1)} + 10vw);
+  margin: 0 auto;
 }
 
 .doc-header-nav {
+  margin: {
+    left: 5vw;
+    right: $gutterWidth;
+  }
+
   bottom: 0;
   z-index: 2;
-  width: 100%;
 
   justify-content: flex-start;
-  margin: 0;
 
   ul {
-    margin: 0 2vw;
+    padding-right: 0;
+    padding-left: 0;
     max-width: 400px;
+    justify-content: space-between;
   }
 
   li span {
@@ -42,7 +50,12 @@
   position: relative;
   z-index: 1;
 
-  margin: $rowHeight * 4 5vw $rowHeight * 1 $gutterWidth;
+  margin: {
+    right: 5vw;
+    top: $rowHeight * 4;
+    bottom: $rowHeight;
+    left: $gutterWidth;
+  }
 
   h1 {
     font-weight: lighter;
