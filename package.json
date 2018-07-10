@@ -1,0 +1,35 @@
+{
+  "name": "@ephys/me",
+  "version": "1.0.0",
+  "description": "Personal Blog",
+  "main": "index.html",
+  "scripts": {
+    "build": "concurrently \"webpack\" \"gulp\"",
+    "build:watch": "concurrently --kill-others \"webpack --watch\" \"gulp watch\"",
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ephys/ephys.github.io.git"
+  },
+  "author": "Guylian Cox <guyliancox@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ephys/ephys.github.io/issues"
+  },
+  "homepage": "https://github.com/ephys/ephys.github.io#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "concurrently": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "http-server": "^0.11.1",
+    "postcss-flexbugs-fixes": "^3.3.1",
+    "postcss-preset-env": "^4.1.0",
+    "postcss-scss": "^1.0.5",
+    "webpack": "^4.7.0",
+    "webpack-cli": "^2.1.2"
+  }
+}
