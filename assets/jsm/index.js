@@ -11,23 +11,6 @@ document.addEventListener('scroll', e => {
 const welcome = document.querySelector('.welcome h1');
 const targetText = welcome.textContent;
 
-const width = welcome.clientWidth;
-
-console.log(targetText, width);
-
-const maxScreenWidth = window.outerWidth - 20;
-if (width > maxScreenWidth) {
-  const currentFontSize = 128;
-
-  const ratio = maxScreenWidth / width;
-
-  const newFontSize = currentFontSize * ratio;
-
-  welcome.style.fontSize = newFontSize + 'px';
-  console.log(newFontSize);
-  console.log(currentFontSize);
-}
-
 const badCharacterSet = ['_', '\\', '/', '#', '@', '$', '%', '&', '#', 'x'];
 function glitchCharacter() {
   return badCharacterSet[getRandomInt(0, badCharacterSet.length - 1)];
@@ -37,7 +20,7 @@ function glitchCharacter() {
 // make social icons appear underneath "welcome" when it has loaded (fade slide down)
 let count = 0;
 function loadLetters() {
-  welcome.textContent = glitchCharacter()  + glitchCharacter();
+  welcome.textContent = glitchCharacter() + glitchCharacter();
 
   if (count++ < 6) {
     setTimeout(loadLetters, getRandomFloat(0.3, 1) * 160);
@@ -95,8 +78,38 @@ function runGlitchIt() {
   });
 }
 
-setTimeout(loadLetters, Math.random() * 1400 / targetText.length);
-welcome.textContent = '';
+welcome.style.opacity = '0';
+
+document.fonts.ready.then(() => {
+  const fonts = [];
+
+  for (const font of document.fonts.values()) {
+    if (font.family === 'Space Mono') {
+      fonts.push(font.loaded);
+    }
+  }
+
+  Promise.race(fonts).then(() => {
+    const width = welcome.clientWidth;
+    const maxScreenWidth = document.body.clientWidth - 20;
+
+    if (width > maxScreenWidth) {
+      const currentFontSize = 128;
+
+      const ratio = maxScreenWidth / width;
+
+      const newFontSize = currentFontSize * ratio;
+
+      welcome.style.fontSize = newFontSize + 'px';
+    }
+
+    welcome.textContent = '';
+    welcome.style.opacity = '';
+
+    setTimeout(loadLetters, Math.random() * 1400 / targetText.length);
+  });
+});
+
 
 let phase = 0;
 const glitchPart = () => {
