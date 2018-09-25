@@ -17,8 +17,20 @@ body {
   font-family: 'Work Sans';
 }
 
-p {
+p, li {
   line-height: 1.5;
+}
+
+a {
+  color: $red;
+
+  &:visited {
+    color: darken(desaturate($red, 20), 5);
+  }
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
 }
 
 .welcome {
@@ -750,5 +762,5 @@ $spacing-h: 40px;
 }
 
 .projects h2 {
-  background: $red;  
+  background: $red;
 }
