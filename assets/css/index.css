@@ -10,6 +10,9 @@ body {
   background: #FAFAFA;
   font-family: 'Work Sans'; }
 
+p {
+  line-height: 1.5; }
+
 .welcome {
   position: fixed;
   top: 0;
@@ -96,8 +99,7 @@ body {
   margin-top: 15%;
   margin-bottom: 20%;
   margin-right: var(--rs-external-size);
-  padding: 20px 40px;
-  line-height: 1.5; }
+  padding: 20px 40px; }
   .about-me-section {
     width: 440px; }
     @media screen and (min-width: 470px) {
@@ -877,3 +879,21 @@ h1, h2, h3, h4, h5, h6 {
   .social-links .linkedin {
     -webkit-mask-image: url("../img/linkedin.svg");
             mask-image: url("../img/linkedin.svg"); }
+
+.past-experiences,
+.projects {
+  max-width: 800px;
+  width: calc(100% - 80px);
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 96px; }
+  .past-experiences article,
+  .projects article {
+    margin-bottom: 48px; }
+  .past-experiences .time,
+  .projects .time {
+    font-style: italic;
+    color: #5d5c5c; }
+  .past-experiences h3,
+  .projects h3 {
+    margin-bottom: 0.15em; }

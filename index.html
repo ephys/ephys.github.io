@@ -7,6 +7,7 @@
   <script src="assets/js/bundle.js" defer></script>
 </head>
 <body>
+  <!-- This is a very early prototype! I just really really wanted to update my website -->
   <div class="welcome">
     <div>
       <h1>Welcome</h1>
@@ -33,11 +34,11 @@
         that)!</p>
 
       <p>Currently, my language of predilection is JavaScript/ECMAScript. I am also very enthusiast about other
-        web technologies such as the DOM, HTML, CSS and the gazillion other specs.</p>
+        web technologies such as the DOM, HTML, CSS and the gazillion of other specs.</p>
 
       <p>I try to keep up to date (and sometimes a bit in advance) with the tech of our industry by actively reading
         (and writing too!) the TC39 (ECMAScript), WHATWG (HTML), and W3C (CSS) githubs and mailing lists (ECMAScript).
-        I love the open source community and <a href="https://github.com/Ephys">try to give back when I can</a>.</p>
+        I love the open source community and <a href="https://github.com/Ephys" target="_blank" rel="noopener noreferrer">try to give back when I can</a>.</p>
 
       <p>
         I've worked with community-produced tech such as React, Webpack, SCSS, PostCSS, Babel, Gatsby, PHP, Wordpress,
@@ -47,6 +48,7 @@
 
     </section>
 
+<!--
     <section>
       <h2>Should you hire me?</h2>
 
@@ -58,26 +60,33 @@
         <li>Want someone who will lobby to keep your stack up to modern standards</li>
         <li>Care about speed</li>
         <li>Like open source</li>
+        progressive enhancement
+        pwa
       </ul>
     </section>
+-->
 
-    <section>
-      <h2>Past experiences</h2>
+    <section class="past-experiences">
+      <h2>Past experience</h2>
 
       <article>
         <h3>MAD Kings</h3>
-        <time>July 2017</time>
-        -
-        <time>Current</time>
+        <span class="time">
+          <time>July 2017</time>
+          -
+          <time>Current</time>
+        </span>
 
         <p>At MAD Kings</p>
       </article>
 
       <article>
         <h3>Pictawall</h3>
-        <time>february 2016</time>
-        -
-        <time>June 2016</time>
+        <span class="time">
+          <time>february 2016</time>
+          -
+          <time>June 2016</time>
+        </span>
 
         <p>
           Pictawall was a SaaS platform that provided dynamic displays for User Generated Content to events and
@@ -96,8 +105,119 @@
       </article>
     </section>
 
-    TODO:
-    - open source projects
+    <section class="projects">
+      <h2>My own projects</h2>
+
+      <article>
+        <h3>Joi Config Generator</h3>
+        <span class="time"><time>2018</time></span>
+
+        <ul>
+          <li><a href="https://github.com/madkingsag/joi-config-generator" rel="noopener noreferrer" target="_blank">Source code</a></li>
+          <li><a href="https://www.npmjs.com/package/joi-config-generator" rel="noopener noreferrer" target="_blank">npm</a></li>
+        </ul>
+
+        <p>
+          It is my opinion that one of the biggest pain point when joining a project is filling in the configuration files of the project as they're often very cryptic and/or provide little to no information on what is needed.
+        </p>
+        <p>
+          This (<strong>WIP</strong>!) library is an attempt to solve that issue by letting the application declare exactly what it needs, using <a href="https://github.com/hapijs/joi" rel="noopener noreferrer" target="_blank">Joi</a>.
+        </p>
+      </article>
+
+      <article>
+        <h3>dotenv parser/serializer</h3>
+        <span class="time"><time>2018</time></span>
+
+        <ul>
+          <li><a href="https://github.com/Ephys/dotenv-parser-serializer" rel="noopener noreferrer" target="_blank">Source code</a></li>
+          <li><a href="https://www.npmjs.com/package/dotenv-parser-serializer" rel="noopener noreferrer" target="_blank">npm</a></li>
+        </ul>
+
+        <p>
+          I wanted to add support for dotenv files in joi-config-generator, and wanted to learn how to parse non-trivial file formats. So I wrote a naïve parser!
+        </p>
+      </article>
+
+      <article>
+        <h3>react-intl-formatted-xml-message</h3>
+        <span class="time"><time>2018</time></span>
+
+        <ul>
+          <li><a href="https://github.com/Ephys/react-intl-formatted-xml-message" rel="noopener noreferrer" target="_blank">Source code</a></li>
+          <li><a href="https://www.npmjs.com/package/react-intl-formatted-xml-message" rel="noopener noreferrer" target="_blank">npm</a></li>
+        </ul>
+
+        <p>
+          My biggest issue with <a href="https://github.com/yahoo/react-intl" rel="noopener noreferrer" target="_blank">react-intl</a> was how complex it is to insert tags in one of their formatted message. Especially when they become nested.
+          <br/>
+          To solve this issue, I wrote a library that replaces XML tags, found inside the formatted message, with React components or elements.
+          <br/>
+          It does so before any user variable is injected into the formatted message, to avoid XSS.
+        </p>
+      </article>
+
+      <article>
+        <h3>dom-unoverride</h3>
+        <span class="time"><time>2018</time></span>
+
+        <ul>
+          <li><a href="https://github.com/Ephys/dom-unoverride" rel="noopener noreferrer" target="_blank">Source code</a></li>
+          <li><a href="https://www.npmjs.com/package/dom-unoverride" rel="noopener noreferrer" target="_blank">npm</a></li>
+        </ul>
+
+        <p>
+          My biggest issue with <a href="https://github.com/yahoo/react-intl" rel="noopener noreferrer" target="_blank">react-intl</a> was how complex it is to insert tags in one of their formatted message. Especially when they become nested.
+          <br/>
+          To solve this issue, I wrote a library that replaces XML tags, found inside the formatted message, with React components or elements.
+          <br/>
+          It does so before any user variable is injected into the formatted message, to avoid XSS.
+        </p>
+      </article>
+
+      <article>
+        <h3>The gender unicorn</h3>
+        <span class="time"><time>2016</time></span>
+
+        <ul>
+          <li><a href="https://github.com/Ephys/Gender-Unicorn" rel="noopener noreferrer" target="_blank">Source code</a></li>
+          <li><a href="https://ephys.github.io/Gender-Unicorn/" rel="noopener noreferrer" target="_blank">Live Demo</a></li>
+        </ul>
+
+        <p>
+          The gender unicorn is a website created for the <a href="http://www.transstudent.org/" rel="noopener noreferrer" target="_blank"><abbr title="Trans Student Educational Resources">TSER</abbr></a>.
+          It is a recreation of their <a href="http://www.transstudent.org/gender" rel="noopener noreferrer" target="_blank">Gender Unicorn infographic</a> as an interactive, mobile friendly version.
+        </p>
+        <p>
+          This project was incredibly fun, and a great opportunity to learn how to adapt a design for a different medium, while staying true to the original.
+        </p>
+      </article>
+
+      <article>
+        <h3>StyleSheet Observer</h3>
+        <span class="time"><time>2016</time></span>
+
+        <ul>
+          <li><a href="https://github.com/foobarhq/stylesheer-observer" rel="noopener noreferrer" target="_blank">Source code</a></li>
+          <li><a href="https://www.npmjs.com/package/stylesheer-observer" rel="noopener noreferrer" target="_blank">npm</a></li>
+        </ul>
+
+        <p>
+          My biggest issue with <a href="https://github.com/yahoo/react-intl" rel="noopener noreferrer" target="_blank">react-intl</a> was how complex it is to insert tags in one of their formatted message. Especially when they become nested.
+          <br/>
+          To solve this issue, I wrote a library that replaces XML tags, found inside the formatted message, with React components or elements.
+          <br/>
+          It does so before any user variable is injected into the formatted message, to avoid XSS.
+        </p>
+      </article>
+
+      <!--
+      other projects:
+        https://github.com/Ephys/minecraft-magic-feather
+        https://github.com/madkingsag/stilt
+        https://github.com/reworkjs
+      -->
+    </section>
   </div>
 </body>
 </html>
