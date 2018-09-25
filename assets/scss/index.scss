@@ -736,3 +736,19 @@ $spacing-h: 40px;
     margin-bottom: 0.15em;
   }
 }
+
+.past-experiences h2,
+.projects h2 {
+  color: white;
+  display: inline;
+  padding: 5px 20px;
+  box-decoration-break: clone;
+}
+
+.past-experiences h2 {
+  background: $blue;
+}
+
+.projects h2 {
+  background: $red;  
+}

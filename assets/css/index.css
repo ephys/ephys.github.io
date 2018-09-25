@@ -909,3 +909,17 @@ h1, h2, h3, h4, h5, h6 {
   .past-experiences h3,
   .projects h3 {
     margin-bottom: 0.15em; }
+
+.past-experiences h2,
+.projects h2 {
+  color: white;
+  display: inline;
+  padding: 5px 20px;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone; }
+
+.past-experiences h2 {
+  background: #2b2782; }
+
+.projects h2 {
+  background: #bf1f55; }
