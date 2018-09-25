@@ -169,8 +169,6 @@ p {
 
   @include fluid-scale(470px, 1200px, 440px, 600px, width);
 
-  min-height: 75vh;
-
   color: white;
 
   --rs-width: 40vw;

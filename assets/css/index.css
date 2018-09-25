@@ -92,7 +92,6 @@ p {
 .about-me-section {
   position: relative;
   background: #2b2782;
-  min-height: 75vh;
   color: white;
   --rs-width: 40vw;
   --rs-external-size: calc(var(--rs-width) - 100px);
