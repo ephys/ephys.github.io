@@ -843,25 +843,38 @@ h1, h2, h3, h4, h5, h6 {
             filter: blur(0); } }
 
 .social-links {
-  position: fixed;
   z-index: 100000;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   display: flex;
-  flex-direction: column;
   list-style: none;
   margin: 0;
-  margin-right: 15px; }
+  padding: 0; }
+  @media (min-width: 800px) {
+    .social-links {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      flex-direction: column;
+      margin-right: 15px; }
+      .social-links li:not(:last-of-type) {
+        margin-bottom: 15px; } }
+  @media (max-width: 799px) {
+    .social-links {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      margin-top: 15px; }
+      .social-links li:not(:last-of-type) {
+        margin-right: 25px; } }
   .social-links span {
     display: none; }
-  .social-links li:not(:last-of-type) {
-    margin-bottom: 15px; }
   .social-links a {
     display: block;
-    height: 55px;
-    width: 55px;
+    height: 50px;
+    width: 50px;
     background: #747474;
     -webkit-mask-size: cover;
             mask-size: cover;
