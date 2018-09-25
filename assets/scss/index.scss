@@ -44,15 +44,6 @@ a {
   align-items: center;
   padding: 10px;
 
-  &::after {
-    content: '';
-    background-color: #FAFAFA;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-
-    transition: background-color ease-in-out 3s;
-  }
 
   &.phase-2 {
 
@@ -763,4 +754,28 @@ $spacing-h: 40px;
 
 .projects h2 {
   background: $red;
+}
+
+.jump-to-content {
+  &:not(:focus) {
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+  }
+
+  position: absolute;
+  color: white;
+
+  // selector importance is the worst
+  &:visited {
+    color: white;
+  }
+
+  background: $red;
+  padding: 10px 20px;
+  display: block;
+  left: 0;
+  top: 0;
 }

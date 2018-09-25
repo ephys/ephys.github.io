@@ -30,13 +30,6 @@ a {
   justify-content: center;
   align-items: center;
   padding: 10px; }
-  .welcome::after {
-    content: '';
-    background-color: #FAFAFA;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    transition: background-color ease-in-out 3s; }
   .welcome.phase-2 h1::after {
     width: 90%; }
   .welcome.phase-2 .description {
@@ -930,3 +923,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .projects h2 {
   background: #bf1f55; }
+
+.jump-to-content {
+  position: absolute;
+  color: white;
+  background: #bf1f55;
+  padding: 10px 20px;
+  display: block;
+  left: 0;
+  top: 0; }
+  .jump-to-content:not(:focus) {
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px); }
+  .jump-to-content:visited {
+    color: white; }
