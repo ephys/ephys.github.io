@@ -1,3 +1,4 @@
+// can't wait for CSS Houdini so I can make this better
 document.addEventListener('scroll', () => {
   const viewportHeight = window.innerHeight;
   const totalScrolled = Math.min(document.scrollingElement.scrollTop, viewportHeight);
@@ -82,11 +83,33 @@ function runGlitchIt() {
 
 welcome.style.opacity = '0';
 
+function getElementFontStyle(element) {
+  const styleMap = getComputedStyle(element);
+
+  // "style weight size family"
+  const font = styleMap.getPropertyValue('font');
+  if (font) {
+    return font;
+  }
+
+  // right now this is fine, but
+  // we might want to use https://github.com/bramstein/css-font-parser one day
+  // if we want fallback fonts
+
+  const style = styleMap.getPropertyValue('font-variant');
+  const weight = styleMap.getPropertyValue('font-weight');
+  const size = styleMap.getPropertyValue('font-size');
+  const family = styleMap.getPropertyValue('font-family');
+
+  return `${style} ${weight} ${size} ${family}`;
+}
+
 (async function run() {
   await racePromiseTimeout(
     waitForDomLoaded()
       .then(() => waitForStyleSheets())
-      .then(() => document.fonts.load(getComputedStyle(welcome).font, welcome.textContent)),
+      .then(() => document.fonts.load(getElementFontStyle(welcome), welcome.textContent))
+      .catch(e => console.error(e)),
     1000
   );
 
@@ -132,7 +155,7 @@ function racePromiseTimeout(promise, timeout) {
     .then(val => {
       clearTimeout(timeoutIdentifier);
 
-      return val[0];
+      return val;
     });
 }
 
@@ -356,7 +379,6 @@ function glitchIt(obj) {
     });
   });
 }
-
 
 function waitForDomLoaded() {
   return new Promise(resolve => {
