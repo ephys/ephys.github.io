@@ -82,35 +82,59 @@ function runGlitchIt() {
 
 welcome.style.opacity = '0';
 
-document.fonts.ready.then(() => {
-  const fonts = [];
+(async function run() {
+  await racePromiseTimeout(
+    waitForDomLoaded()
+      .then(() => waitForStyleSheets())
+      .then(() => document.fonts.load(getComputedStyle(welcome).font, welcome.textContent)),
+    1000
+  );
 
-  for (const font of document.fonts.values()) {
-    if (font.family === 'Space Mono') {
-      fonts.push(font.loaded);
-    }
+  const width = welcome.clientWidth;
+
+  resizeText(welcome, width);
+  window.addEventListener('resize', () => {
+    resizeText(welcome, width);
+  }, { passive: true });
+
+  welcome.textContent = '';
+  welcome.style.opacity = '';
+
+  setTimeout(loadLetters, Math.random() * 1400 / targetText.length);
+}());
+
+function resizeText(textContainer, width) {
+  const maxScreenWidth = document.body.clientWidth - 20;
+
+  if (width > maxScreenWidth) {
+    const currentFontSize = 128;
+
+    const ratio = maxScreenWidth / width;
+
+    const newFontSize = currentFontSize * ratio;
+
+    textContainer.style.fontSize = `${newFontSize}px`;
   }
+}
 
-  Promise.race(fonts).then(() => {
-    const width = welcome.clientWidth;
-    const maxScreenWidth = document.body.clientWidth - 20;
+function racePromiseTimeout(promise, timeout) {
 
-    if (width > maxScreenWidth) {
-      const currentFontSize = 128;
+  let timeoutIdentifier;
+  const timeoutPromise = new Promise(resolve => {
+    timeoutIdentifier = setTimeout(() => {
+      console.warn('promise timeouted');
 
-      const ratio = maxScreenWidth / width;
-
-      const newFontSize = currentFontSize * ratio;
-
-      welcome.style.fontSize = `${newFontSize}px`;
-    }
-
-    welcome.textContent = '';
-    welcome.style.opacity = '';
-
-    setTimeout(loadLetters, Math.random() * 1400 / targetText.length);
+      resolve();
+    }, timeout);
   });
-});
+
+  return Promise.race([promise, timeoutPromise])
+    .then(val => {
+      clearTimeout(timeoutIdentifier);
+
+      return val[0];
+    });
+}
 
 let phase = 0;
 const glitchPart = () => {
@@ -331,4 +355,41 @@ function glitchIt(obj) {
       resolve();
     });
   });
+}
+
+
+function waitForDomLoaded() {
+  return new Promise(resolve => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', resolve, { passive: true, once: true });
+    } else {
+      resolve();
+    }
+  });
+}
+
+function waitForStyleSheets() {
+  const sheetLinks = Array.from(document.head.querySelectorAll('link[rel=stylesheet]'));
+
+  const promises = sheetLinks.map(link => {
+
+    return new Promise(resolve => {
+      let loaded;
+      try {
+        loaded = link.sheet.cssRules.length > 0;
+      } catch {
+        loaded = false;
+      }
+
+      if (loaded) {
+        return void resolve(link.sheet);
+      }
+
+      link.addEventListener('load', () => {
+        resolve(link.sheet);
+      }, { passive: true, once: true });
+    });
+  });
+
+  return Promise.all(promises);
 }
