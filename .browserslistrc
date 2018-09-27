@@ -1,0 +1,8 @@
+last 2 versions
+Firefox ESR
+not dead
+not ie > 0
+
+# I thought android browser supported es6, but babel-env thinks it doesn't?
+# I really want to use es6 natively on this project for a change.
+not android > 0
