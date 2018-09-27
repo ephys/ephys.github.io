@@ -1,0 +1,11 @@
+{
+  "extends": "@foobarhq/eslint-config",
+  "rules": {
+    // rules I shoud really disable one day
+    "lines-around-comment": 0,
+    "no-use-before-define": 0
+  },
+  "env": {
+    "browser": true
+  }
+}

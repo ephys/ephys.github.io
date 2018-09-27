@@ -1,9 +1,9 @@
-document.addEventListener('scroll', e => {
+document.addEventListener('scroll', () => {
   const viewportHeight = window.innerHeight;
   const totalScrolled = Math.min(document.scrollingElement.scrollTop, viewportHeight);
   const leftToScroll = viewportHeight - totalScrolled;
   const percentScrolled = leftToScroll / viewportHeight;
-  document.querySelector('.welcome').style.opacity = percentScrolled * percentScrolled  * percentScrolled;
+  document.querySelector('.welcome').style.opacity = percentScrolled * percentScrolled * percentScrolled;
   document.querySelector('.welcome').style.minHeight = `${percentScrolled * 100}vh`;
   document.querySelector('.welcome').style.top = `-${(100 - (percentScrolled * 100)) / 5}vh`;
 }, { passive: true });
@@ -12,6 +12,7 @@ const welcome = document.querySelector('.welcome h1');
 const targetText = welcome.textContent;
 
 const badCharacterSet = ['_', '\\', '/', '#', '@', '$', '%', '&', '#', 'x'];
+
 function glitchCharacter() {
   return badCharacterSet[getRandomInt(0, badCharacterSet.length - 1)];
 }
@@ -19,6 +20,7 @@ function glitchCharacter() {
 // idea:
 // make social icons appear underneath "welcome" when it has loaded (fade slide down)
 let count = 0;
+
 function loadLetters() {
   welcome.textContent = glitchCharacter() + glitchCharacter();
 
@@ -47,7 +49,7 @@ function addLetter() {
   if (isGlitch) {
     // TODO use displayed text instead
     // Replace last displayed character with glitch, + another glitch behind
-    welcome.textContent = targetText.substr(0, length - 1) + glitchCharacter()  + glitchCharacter();
+    welcome.textContent = targetText.substr(0, length - 1) + glitchCharacter() + glitchCharacter();
   } else {
     length += 1;
     // TODO use displayed text instead
@@ -100,7 +102,7 @@ document.fonts.ready.then(() => {
 
       const newFontSize = currentFontSize * ratio;
 
-      welcome.style.fontSize = newFontSize + 'px';
+      welcome.style.fontSize = `${newFontSize}px`;
     }
 
     welcome.textContent = '';
@@ -109,7 +111,6 @@ document.fonts.ready.then(() => {
     setTimeout(loadLetters, Math.random() * 1400 / targetText.length);
   });
 });
-
 
 let phase = 0;
 const glitchPart = () => {
@@ -124,19 +125,19 @@ const glitchPart = () => {
 };
 
 function mapNumbers(val, rangeAStart, rangeAEnd, rangeBStart, rangeBEnd) {
-return (val - rangeAStart) / (rangeAEnd-rangeAStart) * (rangeBEnd-rangeBStart) + rangeBStart;
+  return (val - rangeAStart) / (rangeAEnd - rangeAStart) * (rangeBEnd - rangeBStart) + rangeBStart;
 }
- 
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function getRandomFloat(min, max) {
-return Math.random() * (max - min) + min;
+  return Math.random() * (max - min) + min;
 }
 
 function replaceAt(str, index, replacement) {
-  return str.substr(0, index) + replacement+ str.substr(index + replacement.length);
+  return str.substr(0, index) + replacement + str.substr(index + replacement.length);
 }
 
 const animations = [
@@ -197,127 +198,125 @@ const animations = [
     duration: 1000,
   }, {
     keyframes: [{
-        textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '50px 0 0 red, -50px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '0 0 0 red, 0 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 lime',
-        filter: 'blur(0)',
-        /* --font: ''Courier New'', */
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 lime',
-        filter: 'blur(0)',
-        /* --font: ''Space Mono'', */
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 lime',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 lime',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '1px 0 0 red, -1px 0 0 lime',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 lime',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 lime',
-        filter: 'blur(0.5px)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 red, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '60px 0 0 lime, -60px 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '0 0 0 lime, 0 0 0 #0c33f5',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
-        filter: 'blur(0)',
-      }, {
-        textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
-        filter: 'blur(0)',
+      textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 #0c33f5',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '50px 0 0 red, -50px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '0 0 0 red, 0 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '3px 0 0 red, -3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 lime',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 lime',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '1px 0 0 red, -1px 0 0 lime',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 lime',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 lime',
+      filter: 'blur(0.5px)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 red, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '60px 0 0 lime, -60px 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '0 0 0 lime, 0 0 0 #0c33f5',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '0.8px 0 0 #0c33f5, -0.8px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
+      filter: 'blur(0)',
+    }, {
+      textShadow: '-3px 0 0 #0c33f5, 3px 0 0 lime',
+      filter: 'blur(0)',
     }],
     duration: 1500,
-  }
+  },
 ];
 
 function glitchIt(obj) {
@@ -325,11 +324,11 @@ function glitchIt(obj) {
 
   const animation = obj.animate(keyframes, options);
 
+  // return animation.finished;
+
   return new Promise(resolve => {
     animation.addEventListener('finish', () => {
       resolve();
     });
   });
-
-  // return animation.finished;
 }
