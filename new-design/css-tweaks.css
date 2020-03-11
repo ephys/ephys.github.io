@@ -1,0 +1,110 @@
+
+/* TODO: major third? */
+/* TODO: anchors before sections */
+/* TODO: move social links to their own section at the very bottom */
+/* TODO new picture */
+
+/* Element | https://guylian.me/ */
+
+.welcome > div:nth-child(1) > h1:nth-child(1) {
+    font-size: 177px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 48px;
+}
+
+/* Element | https://guylian.me/ */
+
+.past-experiences > h2:nth-child(1) {
+    font-size: 39.06px;
+}
+
+/* index.css | https://guylian.me/assets/css/index.css */
+
+.past-experiences h3, .projects h3 {
+    /* font-size: 31.25px\); */
+    font-size: 31.25px;
+}
+
+p, li {
+    font-size: 20px;
+}
+
+.about-me-section::before {
+    animation: glitch 3s steps(100);
+}
+
+.welcome h1::after {
+    /* height: calc(1em / 6); */
+    /* width: 0; */
+    /* left: 0; */
+    /* top: 100%; */
+    height: calc(0.1em / 6);
+    left: -0.15em;
+    bottom: 0;
+    line-height: 0;
+}
+
+.welcome p {
+    /* padding: 0.4em 10% 0.4em 0.7em; */
+    padding: 0;
+}
+
+.past-experiences .time, .projects .time {
+    /* color: #5d5c5c; */
+    color: #A2A3A3;
+}
+
+a {
+    /* color: #bf1f55; */
+    color: #ff669a;
+}
+
+/* Element | https://guylian.me/ */
+
+.about-me-section > h2:nth-child(1) {
+    font-size: 37.90px;
+    margin-top: 7px;
+}
+
+/* Element | https://guylian.me/ */
+
+body {
+    background: black;
+    color: white;
+}
+
+/* Element | https://guylian.me/ */
+
+.description > p:nth-child(1) {
+    padding-top: 0;
+    margin-top: 16px;
+}
+
+/* Element | https://guylian.me/ */
+
+.description > p:nth-child(2) {
+    margin-top: 16px;
+}
+
+/* Element | https://guylian.me/ */
+
+.past-experiences > article:nth-child(2) > span:nth-child(2) {
+    color: #A2A3A3;
+}
+
+/* Element | https://guylian.me/ */
+
+.projects > h2:nth-child(1) {
+    font-size: 39.06px;
+}
+
+/* Inline #2 | https://guylian.me/ */
+
+.about-me-section strong {
+    font-weight: normal;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 2px;
+    color: #2b2782;
+    box-decoration-break: clone;
+}
