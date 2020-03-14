@@ -24,6 +24,8 @@
   > div {
     position: relative;
     z-index: 4;
+    display: flex;
+    flex-direction: column;
   }
 
   .description {
@@ -41,31 +43,50 @@
 
   p {
     background: black;
-    color: white;
+    color: $white;
     display: inline-block;
     padding: 0;
     font-family: 'Space Mono', monospace;
 
-    margin: 1.2em 0 0;
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
 
     html:global(.light) & {
       padding: 0.4em 10% 0.4em 0.7em;
+
+      @media (max-width: 400px) {
+        padding: 0;
+        background: transparent;
+        color: black;
+      }
     }
 
     font-size: $fontSizeContent;
+    @include fluid-type(320px, 1200px, 16px, $fontSizeContent);
   }
 
   h1 {
+    align-self: center;
     position: relative;
     line-height: 1.2em;
+    text-align: center;
 
     animation: glitch 3s steps(100);
-    font-size: 177px;
 
+    @include fluid-type(320px, 1200px, 60px, 177px);
+
+    user-select: none;
     font-family: 'Space Mono', monospace;
     text-transform: lowercase;
     font-weight: normal;
-    margin: 0 0 48px;
+    margin: 0 0 calc(var(--bar-height) + 0.27em);
+
+    --bar-height: calc(0.1em / 6);
+    html:global(.light) & {
+      --bar-height: calc(0.5em / 6);
+    }
 
     &::after {
       content: '';
@@ -74,16 +95,12 @@
       width: 0;
       background: currentcolor;
       position: absolute;
-      top: 100%;
       transition: width 1s ease-in-out;
       left: -0.15em;
       bottom: 0;
       line-height: 0;
 
-      height: calc(0.1em / 6);
-      html:global(.light) & {
-        height: calc(0.5em / 6);
-      }
+      height: var(--bar-height);
     }
   }
 }

@@ -12,10 +12,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   --background: #000000;
-  --color: #fafafa;
+  --color: #{$white};
 
   &:global(.light) {
-    --background: #fafafa;
+    --background: #{$white};
     --color: #000000;
   }
 }
