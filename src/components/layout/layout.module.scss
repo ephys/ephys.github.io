@@ -11,6 +11,13 @@ html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  --background: #000000;
+  --color: #fafafa;
+
+  &:global(.light) {
+    --background: #fafafa;
+    --color: #000000;
+  }
 }
 
 body {
@@ -18,7 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
 
-  background: #fafafa;
+  background: var(--background);
   font-family: 'Work Sans', sans-serif;
 }
 
