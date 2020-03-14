@@ -3,6 +3,7 @@ $red: rgb(191, 31, 85);
 $white: #fafafa;
 
 $fontSizeContent: 20px;
+$fontSizeSectionTitle: 31.25px;
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);

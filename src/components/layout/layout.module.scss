@@ -11,12 +11,17 @@ html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
   --background: #000000;
   --color: #{$white};
+  --red: rgb(255, 102, 154);
+  --blue: rgb(79, 73, 202);
 
   &:global(.light) {
     --background: #{$white};
     --color: #000000;
+    --red: #{$red};
+    --blue: #{$blue};
   }
 }
 
@@ -26,10 +31,20 @@ body {
   line-height: 1.5;
 
   background: var(--background);
+  color: var(--color);
   font-family: 'Work Sans', sans-serif;
 }
 
-::selection { background: $red; color: white; }
+::selection {
+  background: rgba(white, 0.99);
+  color: $red;
+
+  :global(.light) & {
+    background: $red;
+    color: white;
+    opacity: 1;
+  }
+}
 
 .jump-to-content {
   &:not(:focus) {

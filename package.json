@@ -13,6 +13,7 @@
     "test:ts-dry-run": "check-engines && tsc --noEmit --project tsconfig.json --skipLibCheck"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "classnames": "^2.2.6",
     "gatsby": "^2.19.43",
     "gatsby-image": "^2.2.43",
@@ -21,7 +22,9 @@
     "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-sharp": "^2.4.12",
     "gatsby-plugin-typescript": "^2.2.3",
+    "gatsby-remark-source-name": "^1.0.0",
     "gatsby-source-filesystem": "^2.1.55",
+    "gatsby-transformer-remark": "^2.6.58",
     "gatsby-transformer-sharp": "^2.3.18",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
