@@ -31,7 +31,6 @@ function Layout(props: Props) {
       <button onClick={() => setPrefersDark(val => !val)} style={{ position: 'fixed', top: 0, right: 0 }}>
         switch dark theme
       </button>
-      <footer>© {new Date().getFullYear()}</footer>
     </>
   );
 }

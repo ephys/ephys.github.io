@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 256px;
+  max-width: 600px + 64px;
+}
+
+.h3 {
+  margin-bottom: 0;
+  font-family: 'Space Mono';
+  font-size: 25px;
+}
+
+.time {
+  font-style: italic;
+  color: #5d5c5c;
+
+  :global(.dark) & {
+    color: #A2A3A3;
+  }
+}
+
+.experience {
+  margin-bottom: 48px;
+}
+
+.list {
+  a {
+    color: var(--red);
+  }
+
+  a:visited {
+    color: #952f52;
+  }
+}

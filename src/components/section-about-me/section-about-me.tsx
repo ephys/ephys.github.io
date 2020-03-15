@@ -2,6 +2,7 @@ import React from 'react';
 import css from './style.module.scss';
 import Container from '../container';
 import photo from '../../resources/duotone.png';
+import MarkdownHtml from '../markdown-text';
 
 type Props = {
   id: string,
@@ -12,9 +13,8 @@ function SectionAboutMe(props: Props) {
 
   return (
     <Container id={props.id} className={css.container}>
-      <div
-        className={css.sectionAboutMe}
-        dangerouslySetInnerHTML={{ __html: props.content }}
+      <MarkdownHtml
+        html={props.content }
       />
       <div className={css.picture}>
         <img src={photo} alt="Guylian Cox" />
@@ -24,8 +24,3 @@ function SectionAboutMe(props: Props) {
 }
 
 export default SectionAboutMe;
-
-/*
-width: 387px;
-height: 718.45px;
- */

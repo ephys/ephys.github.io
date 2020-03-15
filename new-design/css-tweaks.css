@@ -4,45 +4,10 @@
 /* TODO: move social links to their own section at the very bottom */
 /* TODO new picture */
 
-/* Element | https://guylian.me/ */
-
-.welcome > div:nth-child(1) > h1:nth-child(1) {
-    /*font-size: 177px;*/
-    /*font-weight: normal;*/
-    /*margin: 0;*/
-    /*margin-bottom: 48px;*/
-}
-
-/* Element | https://guylian.me/ */
-
-.past-experiences > h2:nth-child(1) {
-    font-size: 39.06px;
-}
-
 /* index.css | https://guylian.me/assets/css/index.css */
-
-.past-experiences h3, .projects h3 {
-    /* font-size: 31.25px\); */
-    font-size: 31.25px;
-}
 
 p, li {
     font-size: 20px;
-}
-
-.about-me-section::before {
-    animation: glitch 3s steps(100);
-}
-
-.welcome h1::after {
-    /* height: calc(1em / 6); */
-    /* width: 0; */
-    /* left: 0; */
-    /* top: 100%; */
-    height: calc(0.1em / 6);
-    left: -0.15em;
-    bottom: 0;
-    line-height: 0;
 }
 
 .welcome p {
@@ -53,25 +18,6 @@ p, li {
 .past-experiences .time, .projects .time {
     /* color: #5d5c5c; */
     color: #A2A3A3;
-}
-
-a {
-    /* color: #bf1f55; */
-    color: #ff669a;
-}
-
-/* Element | https://guylian.me/ */
-
-.about-me-section > h2:nth-child(1) {
-    font-size: 37.90px;
-    margin-top: 7px;
-}
-
-/* Element | https://guylian.me/ */
-
-body {
-    background: black;
-    color: white;
 }
 
 /* Element | https://guylian.me/ */
