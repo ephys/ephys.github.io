@@ -6,6 +6,7 @@ import SectionWelcome from '../components/section-welcome/section-welcome';
 import SectionAboutMe from '../components/section-about-me/section-about-me';
 import SectionExperience from '../components/section-experience';
 import SectionProjects from '../components/section-projects';
+import FooterSocial from '../components/footer-social';
 
 function IndexPage({ data }) {
   return (
@@ -15,6 +16,7 @@ function IndexPage({ data }) {
       <SectionAboutMe id="content" content={data.aboutMe.html} />
       <SectionExperience id="experience" content={data.experience.nodes} />
       <SectionProjects id="projects" content={data.projects.nodes} />
+      <FooterSocial />
     </Layout>
   );
 }

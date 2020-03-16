@@ -14,7 +14,8 @@ function SectionAboutMe(props: Props) {
   return (
     <Container id={props.id} className={css.container}>
       <MarkdownHtml
-        html={props.content }
+        className={css.content}
+        html={props.content}
       />
       <div className={css.picture}>
         <img src={photo} alt="Guylian Cox" />

@@ -69,3 +69,22 @@ body {
   left: 0;
   top: 0;
 }
+
+.darkModeToggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 10;
+  color: var(--color);
+
+  svg {
+    height: 44px;
+    width: 44px;
+  }
+}

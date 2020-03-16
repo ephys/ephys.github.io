@@ -18,6 +18,11 @@ type Props = {
   }>
 };
 
+const externalLinkProps = {
+  rel: 'nofollow noopener noreferrer',
+  target: '_blank',
+};
+
 export default function SectionProjects(props: Props) {
 
   props.content.sort((a, b) => {
@@ -50,35 +55,28 @@ export default function SectionProjects(props: Props) {
               <time>{item.meta.year}</time>
             </span>
             <ul className={css.list}>
-              {item.meta.repository && <li><a href={item.meta.repository}>Source code</a></li>}
-              {item.meta.npm && <li><a href={item.meta.npm}>npm</a></li>}
-              {item.meta.demo && <li><a href={item.meta.demo}>Live page</a></li>}
+              {item.meta.repository && <li><a href={item.meta.repository} {...externalLinkProps}>Source code</a></li>}
+              {item.meta.npm && <li><a href={item.meta.npm} {...externalLinkProps}>npm</a></li>}
+              {item.meta.demo && <li><a href={item.meta.demo} {...externalLinkProps}>Live page</a></li>}
             </ul>
             <MarkdownHtml html={item.html} />
           </div>
         )
       })}
-
-      <p>Want to see more? TODO</p>
-      <p>-> Check out my archived projects</p>
-      <p>Or</p>
-      <ul>
-        <li>I post a lot of code snippets on https://gist.github.com/Ephys</li>
-        <li>And refined code on https://github.com/ephys</li>
-        <li>Read my tech thoughts on https://guylian.me/blog</li>
-      </ul>
-
-
-    </Container>
-    <Container id={props.id} className={css.container}>
-      <H2>TODO: My Clients ? Merge with past experience ?</H2>
-      <ul>
-        <li>MyMedicoach</li>
-        <li>Figures</li>
-      </ul>
-    </Container>
-    <Container id={props.id} className={css.container}>
-      <H2>TODO: SOCIAL LINKS</H2>
     </Container>
   </>);
 }
+
+// TODO: project archive
+//  <p>Want to see more? TODO</p>
+//       <p>-> Check out my archived projects</p>
+//       <p>Or</p>
+//       <ul>
+//         <li>I post a lot of code snippets on https://gist.github.com/Ephys</li>
+//         <li>And refined code on https://github.com/ephys</li>
+//         <li>Read my tech thoughts on https://guylian.me/blog</li>
+//       </ul>
+
+// TODO: live projects in 'Past experience'
+//  - MyMedicoach + testimony
+//  - Figures

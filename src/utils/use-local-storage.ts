@@ -115,5 +115,10 @@ export function createStorageHook(storage: Storage = new Storage()) {
   };
 }
 
-export const useLocalStorage = createStorageHook(localStorage);
-export const useSessionStorage = createStorageHook(sessionStorage);
+// on non-browser contexts, we fallback to useState
+function useSsrStorageHook<T>(_key: string, defaultValue: T): [T, SetStateFunction<T>] {
+  return useState(defaultValue);
+}
+
+export const useLocalStorage = typeof localStorage === 'undefined' ? useSsrStorageHook : createStorageHook(localStorage);
+export const useSessionStorage = typeof sessionStorage === 'undefined' ? useSsrStorageHook : createStorageHook(sessionStorage);

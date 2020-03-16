@@ -15,6 +15,11 @@
   &.red {
     background: $red;
   }
+
+  &.transparent {
+    background: transparent;
+    color: var(--color);
+  }
 }
 
 .md {
@@ -46,8 +51,14 @@
 
   code {
     color: var(--red);
-    //font-size: 16px;
     font-family: 'Space Mono';
   }
 }
 
+ul {
+  list-style: square;
+}
+
+li::marker {
+  color: #bf1f55;
+}
