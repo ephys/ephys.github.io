@@ -6,13 +6,13 @@
   "author": "Guylian Cox <guylian.cox@gmail.com>",
   "scripts": {
     "start": "gatsby serve",
-    "build": "gatsby build",
+    "build": "gatsby build && cp CNAME public/CNAME",
     "start:dev": "gatsby develop",
     "format": "prettier --write src/**/*.{ts,tsx,js,jsx}",
     "serve": "gatsby serve",
     "test": "check-engines && concurrently \"npm:test:*\"",
     "test:ts-dry-run": "check-engines && tsc --noEmit --project tsconfig.json --skipLibCheck",
-    "release": "npm run build && gh-pages -d public --message \"[skip ci] Deploy\""
+    "release": "npm run build && gh-pages --branch master -d public --message \"[skip ci] Deploy\""
   },
   "dependencies": {
     "add": "^2.0.6",
