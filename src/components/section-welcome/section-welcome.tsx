@@ -72,8 +72,8 @@ function addLetters(element: HTMLElement, cleanText: string) {
   return new Promise(resolve => {
     const loop = () => {
 
-      // probability to glitch increases with each letter (linearly mapped between 0.2 => 0.75)
-      const glitchProbability = mapNumbers(addedLetters, 0, targetLength - 1, 0.2, 0.75);
+      // probability to glitch decreases with each letter (linearly mapped between 0.75 => 0.2)
+      const glitchProbability = mapNumbers(addedLetters, 0, targetLength - 1, 0.75, 0.2);
       const isGlitch = Math.random() < glitchProbability;
 
       if (isGlitch) {
