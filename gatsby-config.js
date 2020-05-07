@@ -33,10 +33,10 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-external-links",
-          }
-        ]
-      }
+            resolve: 'gatsby-remark-external-links',
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -50,6 +50,14 @@ module.exports = {
         theme_color: `#bf1f55`,
         display: `minimal-ui`,
         // icon: `src/images/gatsby-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: 'UA-79527805-1',
+        head: true,
+        anonymize: true,
       },
     },
   ],
