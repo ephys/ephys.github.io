@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as GatsbyLink, GatsbyLinkProps } from 'gatsby';
 import classes from 'classnames';
 import css from './style.module.scss';
 
@@ -19,4 +20,9 @@ export default function MarkdownHtml(props: Props) {
 export function H2(props: React.ComponentProps<'h2'> & { red?: boolean, transparent?: boolean }) {
   const { red, transparent, ...passDown } = props;
   return <h2 {...passDown} className={classes(css.h2, red && css.red, transparent&& css.transparent)} />;
+}
+
+export function TextLink<TState>(props: GatsbyLinkProps<TState>) {
+  // @ts-ignore
+  return <GatsbyLink {...props} className={classes(css.link, props.className)} />;
 }

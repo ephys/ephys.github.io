@@ -2,10 +2,14 @@ import React from 'react';
 import classes from 'classnames';
 import css from './container.module.scss';
 
-type Props = React.ComponentProps<'div'>;
+type Props = React.ComponentProps<'div'> & {
+  component?: React.ElementType,
+};
 
 export default function Container(props: Props) {
+  const Component = props.component ?? 'div';
+
   return (
-    <div {...props} className={classes(css.container, props.className)} />
+    <Component {...props} className={classes(css.container, props.className)} />
   );
 }

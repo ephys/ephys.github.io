@@ -27,3 +27,23 @@ $fontSizeSectionTitle: 31.25px;
     }
   }
 }
+
+@mixin focus-ring {
+  &:-moz-focusring {
+    text-decoration: none;
+    padding: 0.1em 0.2em;
+    margin: -0.1em -0.2em;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 0.12rem var(--focus-color, #EA215A);
+    outline: none;
+  }
+
+  &:focus-visible {
+    text-decoration: none;
+    padding: 0.1em 0.2em;
+    margin: -0.1em -0.2em;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 0.12rem var(--focus-color, #EA215A);
+    outline: none;
+  }
+}

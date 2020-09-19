@@ -13,7 +13,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          localIdentName: process.env.NODE_ENV === 'production' ? '[hash:base64:5]' : '[local]--[hash:base64:5]',
+          implementation: require('sass'),
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -46,6 +46,11 @@ body {
   }
 }
 
+a {
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+}
+
 .jump-to-content {
   &:not(:focus) {
     width: 1px;
@@ -55,6 +60,7 @@ body {
     clip: rect(1px, 1px, 1px, 1px);
   }
 
+  border-radius: 0;
   position: absolute;
   color: white;
 
@@ -82,6 +88,10 @@ body {
   appearance: none;
   z-index: 10;
   color: var(--color);
+  padding: 0;
+  display: flex;
+
+  @include focus-ring;
 
   svg {
     height: 44px;

@@ -12,14 +12,34 @@
   box-decoration-break: clone;
   background: var(--blue);
 
+  &::selection {
+    background: white;
+    color: var(--blue);
+  }
+
   &.red {
     background: $red;
+
+    &::selection {
+      color: $red;
+    }
   }
 
   &.transparent {
     background: transparent;
     color: var(--color);
+
+    &::selection {
+      background: #bf1f55;
+      color: white;
+    }
   }
+}
+
+.md a, .link {
+  color: var(--red);
+
+  @include focus-ring;
 }
 
 .md {
@@ -29,29 +49,35 @@
 
   strong {
     font-weight: normal;
-    background: $red;
+    background: rgba($red, 0.3);
     padding: 2px;
-    color: $white;
+    color: var(--color);
     box-decoration-break: clone;
-
-    &::selection {
-      background: white;
-    }
   }
 
-  a {
-    color: var(--red);
-    text-decoration: underline;
-    text-underline-position: under;
+  del {
+    opacity: 0.2;
+  }
 
-    &:visited {
-      color: #952f52;
+  ins {
+    text-decoration-color: rgba(0,0,0,0.2);
+
+    html:global(.dark) & {
+      text-decoration-color: rgba(255,255,255,0.2);
     }
   }
 
   code {
     color: var(--red);
     font-family: 'Space Mono';
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
   }
 }
 

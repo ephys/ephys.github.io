@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../container';
 import css from './style.module.scss';
-import MarkdownHtml, { H2 } from '../markdown-text';
+import MarkdownHtml, { H2, TextLink } from '../markdown-text';
 
 type Props = {
   id: string,
@@ -55,9 +55,9 @@ export default function SectionProjects(props: Props) {
               <time>{item.meta.year}</time>
             </span>
             <ul className={css.list}>
-              {item.meta.repository && <li><a href={item.meta.repository} {...externalLinkProps}>Source code</a></li>}
-              {item.meta.npm && <li><a href={item.meta.npm} {...externalLinkProps}>npm</a></li>}
-              {item.meta.demo && <li><a href={item.meta.demo} {...externalLinkProps}>Live page</a></li>}
+              {item.meta.repository && <li><TextLink to={item.meta.repository} {...externalLinkProps}>Source code</TextLink></li>}
+              {item.meta.npm && <li><TextLink to={item.meta.npm} {...externalLinkProps}>npm</TextLink></li>}
+              {item.meta.demo && <li><TextLink to={item.meta.demo} {...externalLinkProps}>Live page</TextLink></li>}
             </ul>
             <MarkdownHtml html={item.html} />
           </div>

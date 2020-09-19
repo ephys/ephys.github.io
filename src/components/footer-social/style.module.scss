@@ -1,3 +1,5 @@
+@import '../../resources/variables';
+
 $shadowSpacing: var(--shadow-offset);
 
 .footer {
@@ -24,8 +26,38 @@ $shadowSpacing: var(--shadow-offset);
   }
 
   //font-weight: bold;
-  padding: 8px 32px;
+  padding: 8px 32px 18px;
   position: relative;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:-moz-focusring {
+    text-decoration: none;
+    outline: none;
+
+    span {
+      padding: 0.1em 0.2em;
+      margin: -0.1em -0.2em;
+      border-radius: 3px;
+      box-shadow: inset 0 0 0 0.12rem $white;
+      outline: none;
+    }
+  }
+
+  &:focus {
+    text-decoration: none;
+    outline: none;
+
+    span {
+      padding: 0.1em 0.2em;
+      margin: -0.1em -0.2em;
+      border-radius: 3px;
+      box-shadow: inset 0 0 0 0.12rem $white;
+      outline: none;
+    }
+  }
 
   &::after {
     content: '';
@@ -38,11 +70,6 @@ $shadowSpacing: var(--shadow-offset);
     background: var(--blue);
   }
 
-  &:hover .buttonHover,
-  &:focus .buttonHover {
-    display: block;
-  }
-
   @media (max-width: 470px) {
     font-size: 25px;
     --shadow-offset: 8px;
@@ -50,31 +77,6 @@ $shadowSpacing: var(--shadow-offset);
 }
 
 $bitSize: calc(#{$shadowSpacing} / 10);
-.buttonHover {
-  display: none;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    width: $shadowSpacing;
-    height: $shadowSpacing;
-  }
-
-  &::before {
-    bottom: calc(#{$bitSize} * -1);
-    left: calc(#{$bitSize} * -1);
-    border-bottom: $bitSize solid var(--color);
-    border-left: $bitSize solid var(--color);
-  }
-
-  &::after {
-    top: calc(#{$bitSize} * -1);
-    right: calc(#{$bitSize} * -1);
-    border-top: $bitSize solid var(--color);
-    border-right: $bitSize solid var(--color);
-  }
-}
 
 .contactInfo {
   margin: 128px 0 256px;
@@ -109,6 +111,9 @@ $bitSize: calc(#{$shadowSpacing} / 10);
     font-size: 20px;
     text-align: center;
     align-items: center;
+
+    --focus-color: #{$white};
+    @include focus-ring;
 
     &:hover {
       color: white;
