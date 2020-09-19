@@ -7,13 +7,16 @@ import SectionAboutMe from '../components/section-about-me/section-about-me';
 import SectionExperience from '../components/section-experience';
 import SectionProjects from '../components/section-projects';
 import FooterSocial from '../components/footer-social';
+import SectionTestimonials from '../components/section-testimonials';
 
 function IndexPage({ data }) {
+  console.log(data);
   return (
     <Layout contentSectionId="content">
       <SEO />
       <SectionWelcome />
       <SectionAboutMe id="content" content={data.aboutMe.html} />
+      <SectionTestimonials id="testimonials" content={data.testimonials.nodes} />
       <SectionExperience id="experience" content={data.experience.nodes} />
       <SectionProjects id="projects" content={data.projects.nodes} />
       <FooterSocial />
@@ -49,6 +52,18 @@ export const pageQuery = graphql`
           npm
           active
           demo
+        }
+      }
+    }
+    testimonials: allMarkdownRemark(filter: { frontmatter: { type: { eq: "testimonial" } } }) {
+      nodes {
+        html
+        meta: frontmatter {
+          title
+          url
+          caseStudy
+          referer
+          photo
         }
       }
     }
