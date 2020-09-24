@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: guylian.me
+Token: a0d87fcb2d6b74752573d8a20c8dd2a6103234c7907be8978d52f920f3b63e83

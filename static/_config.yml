@@ -1,0 +1,3 @@
+# github pages: dotfiles are excluded by default
+# https://stackoverflow.com/questions/47456627/appdeeplink-github-well-known-folder-not-identifying
+include: [".well-known"]
