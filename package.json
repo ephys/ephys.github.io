@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "test": "check-engines && concurrently \"npm:test:*\"",
     "test:ts-dry-run": "check-engines && tsc --noEmit --project tsconfig.json --skipLibCheck",
-    "release": "npm run build && gh-pages --branch master -d public --message \"[skip ci] Deploy\""
+    "release": "npm run build && gh-pages --branch \"gh-pages\" -d public --message \"[skip ci] Deploy\" --dotfiles"
   },
   "dependencies": {
     "add": "^2.0.6",
