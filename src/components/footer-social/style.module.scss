@@ -145,11 +145,20 @@ $bitSize: calc(#{$shadowSpacing} / 10);
   }
 }
 
-.sourceCode {
+.footerInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.sourceCode,
+.vat {
   text-align: right;
+  color: #A2A3A3;
+  font-family: 'Space Mono';
 
   a {
-    color: #A2A3A3;
-    font-family: 'Space Mono';
+    color: inherit;
   }
 }
