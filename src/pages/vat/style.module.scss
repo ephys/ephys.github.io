@@ -1,0 +1,13 @@
+@import '../../resources/variables';
+
+.vat {
+  font-size: 4rem;
+  text-align: center;
+  height: 100%;
+  margin-top: 50vh;
+  margin-bottom: 0;
+  transform: translateY(-50%);
+  font-family: "Space Mono";
+
+  @include fluid-type(320px, 1200px, 16px, 104px);
+}

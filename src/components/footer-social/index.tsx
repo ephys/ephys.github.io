@@ -38,7 +38,10 @@ export default function FooterSocial() {
           </div>
         </div>
 
-        <p className={css.sourceCode}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
+        <div className={css.footerInfo}>
+          <p className={css.vat}>VAT BE 0746.377.584</p>
+          <p className={css.sourceCode}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
+        </div>
       </footer>
     </Container>
   )
