@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{WWEi:function(e,t,n){e.exports={vat:"_2NzND"}},yLSL:function(e,t,n){"use strict";n.r(t);var a=n("B7F5"),c=n("H8eV"),l=n("q1tI"),o=n.n(l),r=n("6Hpx"),i=n("WWEi"),s=n.n(i);t.default=function(){return o.a.createElement(a.a,null,o.a.createElement(c.a,{title:"V.A.T.",robots:"noindex"}),o.a.createElement(r.a,null,o.a.createElement("p",{className:s.a.vat},"BE 0746.377.584")))}}}]);
+//# sourceMappingURL=component---src-pages-vat-index-tsx-132eec80ada0b887be2e.js.map
