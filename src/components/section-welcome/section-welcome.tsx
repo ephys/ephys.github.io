@@ -1,7 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useLocation } from '@reach/router';
 import css from './style.module.scss';
 import { getRandomFloat, getRandomInt, getRandomItem, mapNumbers, replaceAt } from '../../utils/utils';
+import { useMediaQuery } from '../../utils/use-media-query';
+import { useLocalStorage } from '../../utils/use-local-storage';
+import Nav from '../nav';
 
 const badCharacterSet = ['_', '\\', '/', '#', '@', '$', '%', '&', '#', 'x'];
 function glitchCharacter() {
@@ -352,31 +356,64 @@ function runAnimGlitch(element: HTMLElement) {
   });
 }
 
+const ONE_HOUR = 60 * 60 * 1000;
+
 function SectionWelcome() {
 
   const welcomeRef = React.useRef();
   const [descriptionVisible, setDescriptionVisible] = React.useState(false);
+  const [animationDisabled, setAnimationDisabled] = React.useState(false);
+  const disableAnimation = useMediaQuery('prefers-reduced-motion: reduce');
+  const [lastRun, setLastRun] = useLocalStorage<number>('hero-anim-last-run');
+  const debugMode = new URLSearchParams(useLocation().search).get('debug') != null;
+  const ran = React.useRef();
 
   React.useEffect(() => {
     const welcome = welcomeRef.current;
+    const targetText = welcome.getAttribute('aria-label');
 
-    return glitchedAppear(welcome, 'Welcome', () => {
+    if (ran.current) {
+      return;
+    }
+
+    ran.current = true;
+
+    if (disableAnimation) {
+      welcome.textContent = targetText;
+      setAnimationDisabled(true);
+
+      return;
+    }
+
+    if (!debugMode && lastRun != null && (Date.now() - lastRun) < ONE_HOUR * 24) {
+      welcome.textContent = targetText;
+      setAnimationDisabled(true);
+
+      return;
+    }
+
+    setLastRun(Date.now());
+
+    return glitchedAppear(welcome, targetText, () => {
       setTimeout(() => {
         setDescriptionVisible(true);
       }, 400);
     });
-  }, []);
+  }, [disableAnimation, lastRun, debugMode]);
 
   return (
-    <div className={classNames(css.welcome, descriptionVisible && css.phase2)}>
-      <div>
-        <h1 aria-label="Welcome" ref={welcomeRef} />
-        <div className={css.description}>
-          <p>Web • Mobile • Development</p>
-          <p>Guylian Cox</p>
+    <>
+      <div className={classNames(css.welcome, (descriptionVisible || animationDisabled) && css.phase2, animationDisabled && css.noAnimation)}>
+        <div>
+          <h1 aria-label="Welcome" ref={welcomeRef} />
+          <div className={css.description}>
+            <p>Guylian Cox</p>
+            <p>Web & Mobile Developer</p>
+          </div>
         </div>
       </div>
-    </div>
+      <Nav mode={animationDisabled ? 'static' : descriptionVisible ? 'animated' : 'invisible'} />
+    </>
   );
 }
 

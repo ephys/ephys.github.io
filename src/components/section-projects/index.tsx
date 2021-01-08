@@ -44,25 +44,30 @@ export default function SectionProjects(props: Props) {
   });
 
   return (<>
-    <Container id={props.id} className={css.container}>
-      <H2 red>My own projects</H2>
-      {props.content.map(item => {
+    <Container id={props.id} className="section" component="section">
+      <div className={css.sectionHeader}>
+        <H2 red>My own projects</H2>
+        <p><a className={css.viewMore} href="https://github.com/ephys">View more on GitHub</a></p>
+      </div>
+      <div className={css.items}>
+        {props.content.map(item => {
 
-        return (
-          <div className={css.experience}>
-            <h3 className={css.h3}>{item.meta.title}</h3>
-            <span className={css.time}>
+          return (
+            <div className={css.experience}>
+              <h3 className={css.h3}>{item.meta.title}</h3>
+              <span className={css.time}>
               <time>{item.meta.year}</time>
             </span>
-            <ul className={css.list}>
-              {item.meta.repository && <li><TextLink to={item.meta.repository} {...externalLinkProps}>Source code</TextLink></li>}
-              {item.meta.npm && <li><TextLink to={item.meta.npm} {...externalLinkProps}>npm</TextLink></li>}
-              {item.meta.demo && <li><TextLink to={item.meta.demo} {...externalLinkProps}>Live page</TextLink></li>}
-            </ul>
-            <MarkdownHtml html={item.html} />
-          </div>
-        )
-      })}
+              <ul className={css.list}>
+                {item.meta.repository && <li><TextLink to={item.meta.repository} {...externalLinkProps}>Source code</TextLink></li>}
+                {item.meta.npm && <li><TextLink to={item.meta.npm} {...externalLinkProps}>npm</TextLink></li>}
+                {item.meta.demo && <li><TextLink to={item.meta.demo} {...externalLinkProps}>Live page</TextLink></li>}
+              </ul>
+              <MarkdownHtml html={item.html} />
+            </div>
+          )
+        })}
+      </div>
     </Container>
   </>);
 }

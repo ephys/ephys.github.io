@@ -3,11 +3,11 @@ import { H2, TextLink } from '../markdown-text';
 import Container from '../container';
 import css from './style.module.scss';
 
-export default function FooterSocial() {
+export default function FooterSocial(props: { id: string }) {
 
   return (
-    <Container>
-      <footer className={css.footer}>
+    <Container id={props.id} component="footer" className={css.footer}>
+      <div className="section">
         <H2 transparent>Let's get in touch?</H2>
         <div className={css.contactInfo}>
           <a target="_blank" href="mailto:hello@guylian.me" className={css.button}>
@@ -37,12 +37,12 @@ export default function FooterSocial() {
             </a>
           </div>
         </div>
+      </div>
 
-        <div className={css.footerInfo}>
-          <p className={css.vat}>VAT BE 0746.377.584</p>
-          <p className={css.sourceCode}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
-        </div>
-      </footer>
+      <div className={css.footerInfo}>
+        <p className={css.vat}>VAT BE 0746.377.584</p>
+        <p className={css.sourceCode}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
+      </div>
     </Container>
   )
 }

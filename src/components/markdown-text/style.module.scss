@@ -1,12 +1,13 @@
 @import '../../resources/variables';
 
 .md h2, .h2 {
-  font-size: $fontSizeSectionTitle;
+  font-size: fluid($min-screen-size, $container-max-width, $fontSizeSectionTitleMobile, $fontSizeSectionTitle);
   margin-top: 0;
 
   font-family: 'Space Mono';
   color: white;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   padding: 5px 20px;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;

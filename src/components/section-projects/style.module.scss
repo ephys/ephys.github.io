@@ -1,11 +1,39 @@
-.container {
-  margin-bottom: 256px;
-  max-width: 600px + 64px;
+@import '../../resources/variables';
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  p, h2 {
+    margin: 0;
+  }
+
+  > :not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.viewMore {
+  color: var(--color);
+  font-size: 20px;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+}
+
+.items {
+  display: grid;
+  grid-gap: fluid($min-screen-size, $container-max-width, 32px, 64px) 32px;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
 }
 
 .h3 {
+  margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Space Mono';
+  font-family: $title-font;
   font-size: 25px;
 }
 
@@ -16,10 +44,6 @@
   :global(.dark) & {
     color: #A2A3A3;
   }
-}
-
-.experience {
-  margin-bottom: 48px;
 }
 
 .list {

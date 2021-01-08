@@ -1,10 +1,13 @@
+@import '../../resources/variables';
+
 .container {
-  max-width: 1148px + 64px;
-  padding: 0 32px;
+  max-width: $container-max-width + 64px;
+  --container-padding: 32px;
+  padding: 0 var(--container-padding);
   margin-left: auto;
   margin-right: auto;
 
   @media (max-width: 410px) {
-    padding: 0 16px;
+    --container-padding: 16px;
   }
 }

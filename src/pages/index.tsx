@@ -10,16 +10,15 @@ import FooterSocial from '../components/footer-social';
 import SectionTestimonials from '../components/section-testimonials';
 
 function IndexPage({ data }) {
-  console.log(data);
   return (
     <Layout contentSectionId="content">
       <SEO />
       <SectionWelcome />
       <SectionAboutMe id="content" content={data.aboutMe.html} />
       <SectionTestimonials id="testimonials" content={data.testimonials.nodes} />
-      <SectionExperience id="experience" content={data.experience.nodes} />
+      {/* <SectionExperience id="experience" content={data.experience.nodes} /> */}
       <SectionProjects id="projects" content={data.projects.nodes} />
-      <FooterSocial />
+      <FooterSocial id="contact" />
     </Layout>
   );
 }

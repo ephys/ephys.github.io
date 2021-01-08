@@ -1,13 +1,16 @@
 $blue: rgb(43, 39, 130);
 $red: rgb(191, 31, 85);
 $white: #fafafa;
+$black: black;
+
+$title-font: "Space Mono";
 
 $fontSizeContent: 20px;
 $fontSizeSectionTitle: 31.25px;
+$fontSizeSectionTitleMobile: 25px;
 
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
+$min-screen-size: 320px;
+$container-max-width: 1148px;
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);
@@ -45,5 +48,34 @@ $fontSizeSectionTitle: 31.25px;
     border-radius: 3px;
     box-shadow: inset 0 0 0 0.12rem var(--focus-color, #EA215A);
     outline: none;
+  }
+}
+
+@mixin escape-container() {
+  margin-left: calc(-1 * var(--container-padding));
+  margin-right: calc(-1 * var(--container-padding));
+}
+
+@mixin container-padding() {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+@function px-to-rem($value-as-px) {
+  @return #{$value-as-px / 16}rem;
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function fluid($min-vw, $max-vw, $min-size, $max-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-size);
+  $u4: unit($max-size);
+
+  @if $u1 == $u2 and $u3 == $u4 {
+    @return max(#{$min-size}, min(#{$max-size}, calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))));
   }
 }

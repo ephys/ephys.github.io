@@ -41,6 +41,16 @@
     transition: width 1s ease-in-out;
   }
 
+  &.noAnimation {
+    h1::after {
+      transition: none;
+    }
+
+    .description {
+      transition: none;
+    }
+  }
+
   p {
     background: black;
     color: $white;
@@ -63,8 +73,7 @@
       }
     }
 
-    font-size: $fontSizeContent;
-    @include fluid-type(320px, 1200px, 16px, $fontSizeContent);
+    font-size: fluid(320px, 1200px, 16px, $fontSizeContent);
   }
 
   h1 {
@@ -75,7 +84,7 @@
 
     animation: glitch 3s steps(100);
 
-    @include fluid-type(320px, 1200px, 60px, 177px);
+    font-size: fluid(320px, 1200px, 60px, 177px);
 
     user-select: none;
     font-family: 'Space Mono', monospace;

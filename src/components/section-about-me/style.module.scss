@@ -2,12 +2,13 @@
 
 .container {
   display: flex;
-  margin-bottom: 256px;
+  margin-top: 0;
   justify-content: space-between;
 }
 
 .content {
   max-width: 600px;
+  margin-bottom: 16px;
 }
 
 .picture {

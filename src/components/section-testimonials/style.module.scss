@@ -1,14 +1,9 @@
 @import '../../resources/variables';
 
-.section {
-  margin-bottom: 256px;
-  margin-top: 256px;
-}
-
 .testimonials {
   //margin-top: 32px;
   display: grid;
-  gap: 32px;
+  gap: 24px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -158,30 +153,30 @@
   @media (hover: none) and (pointer: coarse) {
     .testimonials {
       flex-direction: row;
-      margin-left: -32px;
-      margin-right: -32px;
+      margin-left: calc(var(--container-padding) * -1);
+      margin-right: calc(var(--container-padding) * -1);
       overflow-x: scroll;
       padding-bottom: 9px;
-      scroll-snap-type: x proximity;
-      scroll-padding: 32px;
+      scroll-snap-type: x mandatory;
+      scroll-padding: calc(var(--container-padding));
 
       :last-child::before {
         content: '';
         display: block;
         position: absolute;
-        right: -32px;
-        width: 32px;
+        right: calc(var(--container-padding) * -1);
+        width: var(--container-padding);
         height: 1px;
       }
     }
 
     .testimonial {
       margin: 0 12px;
-      min-width: min(calc(100vw - 64px), 400px);
+      min-width: min(calc(100vw - 56px), 400px);
       scroll-snap-align: start;
 
       &:first-child {
-        margin-left: 32px;
+        margin-left: var(--container-padding);
       }
 
       &:last-child {

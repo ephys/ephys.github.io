@@ -79,7 +79,7 @@ $shadowSpacing: var(--shadow-offset);
 $bitSize: calc(#{$shadowSpacing} / 10);
 
 .contactInfo {
-  margin: 128px 0 256px;
+  margin-top: 128px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -156,7 +156,7 @@ $bitSize: calc(#{$shadowSpacing} / 10);
 .vat {
   text-align: right;
   color: #A2A3A3;
-  font-family: 'Space Mono';
+  font-family: $title-font;
 
   a {
     color: inherit;

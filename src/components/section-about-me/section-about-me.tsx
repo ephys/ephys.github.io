@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from 'classnames';
 import css from './style.module.scss';
 import Container from '../container';
 import photo from '../../resources/duotone.png';
@@ -12,7 +13,7 @@ type Props = {
 function SectionAboutMe(props: Props) {
 
   return (
-    <Container id={props.id} className={css.container}>
+    <Container id={props.id} className={classes(css.container, 'section')} component="section">
       <MarkdownHtml
         className={css.content}
         html={props.content}

@@ -79,7 +79,7 @@ a {
 }
 
 .darkModeToggle {
-  position: fixed;
+  position: absolute;
   top: 16px;
   right: 16px;
   background: transparent;
@@ -98,5 +98,14 @@ a {
   svg {
     height: 44px;
     width: 44px;
+  }
+}
+
+:global {
+  .section {
+    $margin: #{fluid($min-screen-size, $container-max-width, 64px, 256px)};
+
+    margin-top: $margin;
+    margin-bottom: $margin;
   }
 }

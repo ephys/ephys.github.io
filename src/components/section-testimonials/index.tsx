@@ -20,8 +20,8 @@ type Props = {
 
 export default function SectionTestimonials(props: Props) {
   return (
-    <Container id={props.id} className={css.section} component={'section'}>
-      <H2 red>They worked with me<span className="decorative" aria-hidden="true">_</span></H2>
+    <Container id={props.id} className="section" component={'section'}>
+      <H2 red>They worked with me<span aria-hidden="true">_</span></H2>
       <div className={css.testimonials}>
         {props.content.map(testimonial => {
           return (
