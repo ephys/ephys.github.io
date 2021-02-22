@@ -1,0 +1,3 @@
+- overflow indicator using mask-image
+- don't style `a`, style `a:not([class])` & `.link`
+- switch theme color based on background using CSS variables

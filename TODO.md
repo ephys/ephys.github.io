@@ -1,0 +1,2 @@
+- when clicking nav link: go slightly above target item to account for header
+- activate nav items based on scroll
