@@ -4,7 +4,7 @@ import * as css from './resume.module.scss';
 import Layout from '../components/layout/layout';
 import { H2, TextLink } from '../components/markdown-text';
 import classNames from 'classnames';
-import { MapPin, Mail, Link, GitHub } from 'react-feather';
+import { GitHub, Link, Mail, MapPin } from 'react-feather';
 
 export default function CvView() {
   return (
@@ -19,7 +19,7 @@ export default function CvView() {
             <div className={css.contactInfo}>
               <p><MapPin /> Belgium</p>
               <p><Mail /> hello@guylian.me</p>
-              <p><Link /> guylian.me</p>
+              <p><Link /> guylian.me <span className={css.hint}>(you'll find everything in more details)</span></p>
               <p><GitHub /> @ephys</p>
             </div>
           </div>
@@ -121,11 +121,11 @@ export default function CvView() {
               </div>
             </div>
           </div>
-          <div className={css.section}>
-            <H2>Skill Set</H2>
+          <div className={css.mainCols}>
+            <div className={css.mainLeftCol}>
+              <div className={css.section}>
+                <H2>Skill Set</H2>
 
-            <div className={css.skillsetCols}>
-              <div>
                 <h3>General</h3>
                 <ul>
                   <li>Git (+GitHub, Bitbucket, Gitlab)</li>
@@ -134,8 +134,6 @@ export default function CvView() {
                   <li>Jira, Confluence</li>
                   <li>macOS, Ubuntu</li>
                 </ul>
-              </div>
-              <div>
                 <h3>Front-end</h3>
                 <ul>
                   <li>React (6 years)</li>
@@ -149,8 +147,6 @@ export default function CvView() {
                   <li>Cares about load times</li>
                   <li>UX & UI (notions)</li>
                 </ul>
-              </div>
-              <div>
                 <h3>Back-end</h3>
                 <ul>
                   <li>Node, PHP, Java</li>
@@ -159,6 +155,11 @@ export default function CvView() {
                   <li>GraphQL, REST</li>
                   <li>Error management, response time optimisation</li>
                 </ul>
+              </div>
+            </div>
+            <div className={css.mainRightCol}>
+              <div className={css.section}>
+                <H2>Projects</H2>
               </div>
             </div>
           </div>

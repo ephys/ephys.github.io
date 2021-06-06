@@ -71,6 +71,10 @@ $maxPageWidth: 210mm;
   }
 }
 
+.hint {
+  font-size: 12px;
+}
+
 $maxMainWidth: calc(#{$maxPageWidth} - 32px);
 
 .main {
@@ -91,11 +95,13 @@ $colGap: 32px;
 
 .mainLeftCol {
   max-width: 57mm;
+  width: 100%;
 }
 
 .mainRightCol {
   margin-left: auto;
   max-width: 136mm;
+  width: 100%;
 }
 
 .section {
@@ -136,16 +142,6 @@ $colGap: 32px;
 
   > div {
     display: flex;
-  }
-}
-
-.skillsetCols {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  > div {
-    flex-basis: calc((#{$maxPageWidth} - 32px) / 3);
   }
 }
 
