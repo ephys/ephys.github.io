@@ -1,4 +1,4 @@
-@import '../../resources/variables';
+@use '../../resources/variables' as *;
 
 .container {
   max-width: $container-max-width + 64px;

@@ -1,4 +1,4 @@
-@import '../../resources/variables';
+@use '../../resources/variables' as *;
 
 .vat {
   text-align: center;
@@ -6,7 +6,7 @@
   margin-top: 50vh;
   margin-bottom: 0;
   transform: translateY(-50%);
-  font-family: "Space Mono";
+  font-family: $title-font;
 
   font-size: fluid(320px, 1200px, 16px, 104px);
 }

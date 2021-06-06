@@ -1,4 +1,4 @@
-@import '../../resources/variables';
+@use '../../resources/variables' as *;
 
 .md h2, .h2 {
   font-size: fluid($min-screen-size, $container-max-width, $fontSizeSectionTitleMobile, $fontSizeSectionTitle);

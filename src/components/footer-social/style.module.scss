@@ -1,4 +1,4 @@
-@import '../../resources/variables';
+@use '../../resources/variables' as *;
 
 $shadowSpacing: var(--shadow-offset);
 
