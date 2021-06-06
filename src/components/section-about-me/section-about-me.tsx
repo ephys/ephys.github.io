@@ -2,7 +2,7 @@ import React from 'react';
 import classes from 'classnames';
 import * as css from './style.module.scss';
 import Container from '../container';
-import photo from '../../resources/duotone.png';
+import photo from '../../resources/duotone2.jpg';
 import MarkdownHtml from '../markdown-text';
 
 type Props = {
