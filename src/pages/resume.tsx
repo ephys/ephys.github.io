@@ -5,10 +5,12 @@ import Layout from '../components/layout/layout';
 import { TextLink } from '../components/markdown-text';
 import classNames from 'classnames';
 import { GitHub, Link, Mail, MapPin } from 'react-feather';
+import SEO from '../components/seo';
 
 export default function CvView() {
   return (
     <Layout>
+      <SEO title="Resume" />
       <p className={classNames(css.downloadPdf, 'noprint')}><TextLink to="/resume.pdf" external>Download as PDF</TextLink></p>
       <article className={css.page}>
         <header className={css.header}>
