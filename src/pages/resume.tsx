@@ -9,6 +9,7 @@ import { GitHub, Link, Mail, MapPin } from 'react-feather';
 export default function CvView() {
   return (
     <Layout>
+      <p className={classNames(css.downloadPdf, 'noprint')}><TextLink to="/resume.pdf" external>Download as PDF</TextLink></p>
       <div className={css.page}>
         <header className={css.header}>
           <div className={css.picture}>

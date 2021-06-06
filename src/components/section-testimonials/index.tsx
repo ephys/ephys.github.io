@@ -32,7 +32,8 @@ export default function SectionTestimonials(props: Props) {
               <blockquote className={css.blockquote}>
                 <MarkdownHtml html={testimonial.html} className={css.testimonialBody} />
 
-                <p className={classNames(css.testimonialLinks, 'noprint')}><TextLink to={`/case-studies/${testimonial.meta.caseStudy}`}>Read the case study <ArrowRightIcon /></TextLink></p>
+                {/* TODO */}
+                {/*<p className={classNames(css.testimonialLinks, 'noprint')}><TextLink to={`/case-studies/${testimonial.meta.caseStudy}`}>Read the case study <ArrowRightIcon /></TextLink></p>*/}
 
                 <footer className={css.testimonialFooter}>
                   <img src={testimonial.meta.photo} alt="" className={css.refererPicture} />
@@ -46,7 +47,8 @@ export default function SectionTestimonials(props: Props) {
         })}
       </div>
 
-      <p className={classNames(css.sectionViewMore, 'noprint')}><TextLink to="/case-studies">All my Case Studies <ArrowRightIcon /></TextLink></p>
+      {/* TODO */}
+      {/*<p className={classNames(css.sectionViewMore, 'noprint')}><TextLink to="/case-studies">All my Case Studies <ArrowRightIcon /></TextLink></p>*/}
     </Container>
   );
 }

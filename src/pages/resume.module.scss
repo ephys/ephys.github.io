@@ -3,6 +3,14 @@
 
 $maxPageWidth: 210mm;
 
+.downloadPdf {
+  text-align: center;
+
+  @media (width >= calc(#{$maxPageWidth} + 128px)) {
+    margin: 64px 0;
+  }
+}
+
 .page {
   color-adjust: exact;
   --red: #{$red};

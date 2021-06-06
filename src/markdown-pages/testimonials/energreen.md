@@ -1,10 +1,10 @@
 ---
 type: testimonial
-title: Energreen
+title: Coming Soon
 url: energreen.be
 caseStudy: energreen
-referer: Marie Philippart
+referer: Author
 photo: https://placekitten.com/200/139
 ---
 
-« TBD »
+I haven't asked them yet and this section looked too good not to publish already. - ephys

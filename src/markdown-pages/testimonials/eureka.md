@@ -1,10 +1,10 @@
 ---
 type: testimonial
-title: Eureka
+title: Coming Soon
 url: eurekanetwork.org
 caseStudy: eureka
-referer: Frédéric Bouyges
+referer: Author
 photo: https://placekitten.com/200/139
 ---
 
-« TBD » 
+I haven't asked them yet and this section looked too good not to publish already. - ephys

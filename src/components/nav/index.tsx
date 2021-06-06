@@ -17,8 +17,8 @@ const links = [{
   to: '/#contact',
   children: 'Get in Touch',
 }, {
-  to: '/blog',
-  children: 'Blog',
+  to: '/resume',
+  children: 'Resume',
 }];
 
 type TNavProps = {
