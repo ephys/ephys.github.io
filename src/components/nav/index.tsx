@@ -48,7 +48,7 @@ export default function Nav({ mode }: TNavProps) {
   }, [mode]);
 
   return (
-    <Container component={'nav'} className={classes(css.nav, mode === 'static' ? css.noAnimation : '')}>
+    <Container component={'nav'} className={classes(css.nav, mode === 'static' ? css.noAnimation : '', 'noprint')}>
       <div className={css.items}>
         {links.map((link, i) => {
           return <Link {...link} key={i} className={classes(i < visibleIndex ? css.fadeIn : '', css.link, css.active)} />

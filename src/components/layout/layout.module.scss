@@ -18,12 +18,16 @@ html {
   --red: rgb(255, 102, 154);
   --blue: rgb(79, 73, 202);
 
-  &:global(.light) {
+  &:where(:global(.light)) {
     --background: #{$white};
     --color: #000000;
     --red: #{$red};
     --blue: #{$blue};
     scrollbar-color: var(--red) #dbdbdb;
+  }
+
+  @media print {
+    --background: white;
   }
 }
 
@@ -107,5 +111,17 @@ a {
 
     margin-top: $margin;
     margin-bottom: $margin;
+
+    @media print {
+      break-inside: avoid;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  @media print {
+    .noprint {
+      display: none;
+    }
   }
 }

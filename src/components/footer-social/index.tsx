@@ -2,6 +2,7 @@ import React from 'react';
 import { H2, TextLink } from '../markdown-text';
 import Container from '../container';
 import * as css from './style.module.scss';
+import classNames from 'classnames';
 
 export default function FooterSocial(props: { id: string }) {
 
@@ -41,7 +42,7 @@ export default function FooterSocial(props: { id: string }) {
 
       <div className={css.footerInfo}>
         <p className={css.vat}>VAT BE 0746.377.584</p>
-        <p className={css.sourceCode}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
+        <p className={classNames(css.sourceCode, 'noprint')}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
       </div>
     </Container>
   )

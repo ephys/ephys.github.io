@@ -35,6 +35,10 @@
       color: white;
     }
   }
+
+  @media print {
+    padding: 0;
+  }
 }
 
 .md a, .link {

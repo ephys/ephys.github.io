@@ -55,4 +55,8 @@
   a:visited {
     color: #952f52;
   }
+
+  @media print {
+    display: none;
+  }
 }

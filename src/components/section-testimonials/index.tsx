@@ -3,6 +3,7 @@ import Container from '../container';
 import MarkdownHtml, { H2, TextLink } from '../markdown-text';
 import ArrowRightIcon from 'react-feather/dist/icons/arrow-right';
 import * as css from './style.module.scss';
+import classNames from 'classnames';
 
 type Props = {
   id: string,
@@ -31,7 +32,7 @@ export default function SectionTestimonials(props: Props) {
               <blockquote className={css.blockquote}>
                 <MarkdownHtml html={testimonial.html} className={css.testimonialBody} />
 
-                <p className={css.testimonialLinks}><TextLink to={`/case-studies/${testimonial.meta.caseStudy}`}>Read the case study <ArrowRightIcon /></TextLink></p>
+                <p className={classNames(css.testimonialLinks, 'noprint')}><TextLink to={`/case-studies/${testimonial.meta.caseStudy}`}>Read the case study <ArrowRightIcon /></TextLink></p>
 
                 <footer className={css.testimonialFooter}>
                   <img src={testimonial.meta.photo} alt="" className={css.refererPicture} />
@@ -45,7 +46,7 @@ export default function SectionTestimonials(props: Props) {
         })}
       </div>
 
-      <p className={css.sectionViewMore}><TextLink to="/case-studies">All my Case Studies <ArrowRightIcon /></TextLink></p>
+      <p className={classNames(css.sectionViewMore, 'noprint')}><TextLink to="/case-studies">All my Case Studies <ArrowRightIcon /></TextLink></p>
     </Container>
   );
 }

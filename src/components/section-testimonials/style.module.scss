@@ -5,6 +5,10 @@
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @media print {
+    grid-template-columns: 1fr;
+  }
 }
 
 .testimonial {
@@ -32,10 +36,18 @@
     top: 10px;
     z-index: -1;
   }
+
+  @media print {
+    border-width: 0;
+
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .testimonialTitle {
-  font-family: 'Space Mono';
+  font-family: $title-font;
   font-size: 25px;
   margin: 16px;
 }

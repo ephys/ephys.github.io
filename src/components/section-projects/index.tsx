@@ -47,7 +47,7 @@ export default function SectionProjects(props: Props) {
     <Container id={props.id} className="section" component="section">
       <div className={css.sectionHeader}>
         <H2 red>My own projects</H2>
-        <p><a className={css.viewMore} href="https://github.com/ephys">View more on GitHub</a></p>
+        <p className="noprint"><a className={css.viewMore} href="https://github.com/ephys">View more on GitHub</a></p>
       </div>
       <div className={css.items}>
         {props.content.map(item => {

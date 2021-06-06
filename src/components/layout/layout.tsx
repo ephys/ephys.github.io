@@ -5,6 +5,7 @@ import MoonIcon from 'react-feather/dist/icons/moon';
 import * as css from './layout.module.scss';
 import { useLocalStorage } from '../../utils/use-local-storage';
 import { useMediaQuery } from '../../utils/use-media-query';
+import classNames from 'classnames';
 
 type Props = {
   children: ReactNode,
@@ -34,7 +35,7 @@ function Layout(props: Props) {
 
       <button
         onClick={() => setPrefersDark(val => !val)}
-        className={css.darkModeToggle}
+        className={classNames(css.darkModeToggle, 'noprint')}
         title={prefersDark ? 'Use Light mode' : 'Use Dark mode'}
       >
 
