@@ -1,0 +1,165 @@
+@use '../resources/variables' as *;
+@use 'sass:math';
+
+$maxPageWidth: 210mm;
+
+.page {
+  color-adjust: exact;
+  --red: #{$red};
+  --blue: #{$blue};
+
+  @media not print {
+    @media (width >= calc(#{$maxPageWidth} + 128px)) {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      width: #{$maxPageWidth};
+      margin: 64px auto;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+
+  h2 {
+    margin-top: 32px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.header {
+  display: flex;
+  background: $red;
+  border-bottom: 16px var(--blue) solid;
+  color: white;
+}
+
+.picture {
+  max-width: 240px;
+  display: flex;
+
+  img {
+    //width: 100%;
+    //height: auto;
+
+    height: 216px;
+    object-fit: cover;
+    width: 216px;
+  }
+}
+
+.about {
+  padding: 16px;
+
+  p {
+    margin: 8px 0 0;
+  }
+}
+
+.name {
+  font-family: $title-font;
+  margin: 0 0 16px 0;
+}
+
+.contactInfo {
+  margin-left: 4px;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+$maxMainWidth: calc(#{$maxPageWidth} - 32px);
+
+.main {
+  background: white;
+  --color: black;
+  color: black;
+  overflow: hidden;
+  padding: 0 16px 16px;
+}
+
+$colGap: 32px;
+
+.mainCols {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: $colGap;
+}
+
+.mainLeftCol {
+  max-width: 57mm;
+}
+
+.mainRightCol {
+  margin-left: auto;
+  max-width: 136mm;
+}
+
+.section {
+  break-inside: avoid;
+}
+
+.experience {
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+.expYears {
+  margin-top: 0;
+  font-style: italic;
+
+  font-size: 12px;
+}
+
+.expDesc {
+  font-size: 14px;
+}
+
+.languages {
+  margin: 0;
+
+  dt {
+    font-weight: bold;
+
+    &::after {
+      content: ':';
+    }
+  }
+
+  dd {
+    margin-left: 8px;
+  }
+
+  > div {
+    display: flex;
+  }
+}
+
+.skillsetCols {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  > div {
+    flex-basis: calc((#{$maxPageWidth} - 32px) / 3);
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.tag {
+  display: inline-block;
+  background: $red;
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: white;
+}

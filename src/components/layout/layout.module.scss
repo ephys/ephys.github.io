@@ -26,9 +26,10 @@ html {
     scrollbar-color: var(--red) #dbdbdb;
   }
 
-  @media print {
-    --background: white;
-  }
+  //@media print {
+  //  --background: white;
+  //  --color: black;
+  //}
 }
 
 body {
