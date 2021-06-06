@@ -1,8 +1,8 @@
-import photo from '../resources/duotone.png';
+import photo from '../resources/photo-558w.jpg';
 import React, { ReactNode } from 'react';
 import * as css from './resume.module.scss';
 import Layout from '../components/layout/layout';
-import { H2, TextLink } from '../components/markdown-text';
+import { TextLink } from '../components/markdown-text';
 import classNames from 'classnames';
 import { GitHub, Link, Mail, MapPin } from 'react-feather';
 
@@ -28,7 +28,7 @@ export default function CvView() {
           <div className={css.mainCols}>
             <div className={css.mainLeftCol}>
               <div className={css.section}>
-                <H2>Languages</H2>
+                <h2>Languages</h2>
                 <dl className={css.languages}>
                   <div>
                     <dt>French</dt>
@@ -42,14 +42,14 @@ export default function CvView() {
               </div>
 
               <div className={css.section}>
-                <H2>Interests</H2>
+                <h2>Interests</h2>
                 <ul>
                   <li>Baking</li>
                   <li>I love music, terrible movies, tea, rain, and the Oxford comma.</li>
                 </ul>
               </div>
               <div className={classNames(css.section, css.experience)}>
-                <H2>Education</H2>
+                <h2>Education</h2>
 
                 <h3>Institut Paul Lambin, Brussels</h3>
                 <p className={css.expYears}>2013 - 2016</p>
@@ -59,7 +59,7 @@ export default function CvView() {
             </div>
             <div className={css.mainRightCol}>
               <div className={classNames(css.section, css.experience)}>
-                <H2>Past Experience</H2>
+                <h2>Past Experience</h2>
 
                 <h3>Lead Developer, MyMedicoach.com</h3>
                 <p className={css.expYears}>2019 - 2021</p>
@@ -124,7 +124,7 @@ export default function CvView() {
           <div className={css.mainCols}>
             <div className={css.mainLeftCol}>
               <div className={css.section}>
-                <H2>Skill Set</H2>
+                <h2>Skill Set</h2>
 
                 <h3>General</h3>
                 <ul>
@@ -159,7 +159,7 @@ export default function CvView() {
             </div>
             <div className={css.mainRightCol}>
               <div className={css.section}>
-                <H2>Projects</H2>
+                <h2>Projects</h2>
               </div>
             </div>
           </div>

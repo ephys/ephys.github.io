@@ -20,6 +20,11 @@ $maxPageWidth: 210mm;
 
   h2 {
     margin-top: 32px;
+    font-size: 25px;
+    background: var(--blue);
+    color: white;
+    padding: 2px 16px;
+    font-family: $title-font;
   }
 
   h3 {
@@ -30,26 +35,43 @@ $maxPageWidth: 210mm;
 .header {
   display: flex;
   background: $red;
-  border-bottom: 16px var(--blue) solid;
   color: white;
 }
 
 .picture {
-  max-width: 240px;
+  $imgHeight: 216px + 32;
+  $imgWidth: 216px;
+
   display: flex;
+  margin: 16px 16px -16px 24px;
+  height: $imgHeight;
+  position: relative;
+  --shadow-offset: 16px;
 
   img {
-    //width: 100%;
-    //height: auto;
-
-    height: 216px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 216px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: var(--blue);
+    height: 100%;
+    width: 100%;
+    left: var(--shadow-offset);
+    top: var(--shadow-offset);
   }
 }
 
 .about {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   p {
     margin: 8px 0 0;
@@ -78,11 +100,11 @@ $maxPageWidth: 210mm;
 $maxMainWidth: calc(#{$maxPageWidth} - 32px);
 
 .main {
-  background: white;
+  background: $white;
   --color: black;
   color: black;
   overflow: hidden;
-  padding: 0 16px 16px;
+  padding: 16px;
 }
 
 $colGap: 32px;
@@ -102,6 +124,10 @@ $colGap: 32px;
   margin-left: auto;
   max-width: 136mm;
   width: 100%;
+
+  h2 {
+    display: inline-block;
+  }
 }
 
 .section {
@@ -123,6 +149,8 @@ $colGap: 32px;
 
 .expDesc {
   font-size: 14px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .languages {
@@ -150,6 +178,7 @@ $colGap: 32px;
   flex-wrap: wrap;
   gap: 4px;
   font-size: 14px;
+  margin-top: 8px;
 }
 
 .tag {
