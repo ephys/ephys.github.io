@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../container';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 import MarkdownHtml, { H2, TextLink } from '../markdown-text';
 
 type Props = {
@@ -53,7 +53,7 @@ export default function SectionProjects(props: Props) {
         {props.content.map(item => {
 
           return (
-            <div className={css.experience}>
+            <div>
               <h3 className={css.h3}>{item.meta.title}</h3>
               <span className={css.time}>
               <time>{item.meta.year}</time>

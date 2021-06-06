@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import Helmet from 'react-helmet';
 import SunIcon from 'react-feather/dist/icons/sun';
 import MoonIcon from 'react-feather/dist/icons/moon';
-import css from './layout.module.scss';
+import * as css from './layout.module.scss';
 import { useLocalStorage } from '../../utils/use-local-storage';
 import { useMediaQuery } from '../../utils/use-media-query';
 

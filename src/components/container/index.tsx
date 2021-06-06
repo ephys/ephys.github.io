@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from 'classnames';
-import css from './container.module.scss';
+import * as css from './container.module.scss';
 
 type Props = React.ComponentProps<'div'> & {
   component?: React.ElementType,

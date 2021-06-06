@@ -25,13 +25,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `public`,
-        path: `${__dirname}/src/public`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/markdown-pages`,
       },
@@ -48,18 +41,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `guylian.me`,
-        short_name: `guylian.me`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#bf1f55`,
-        display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `guylian.me`,
+    //     short_name: `guylian.me`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#bf1f55`,
+    //     display: `minimal-ui`,
+    //     // icon: `src/images/gatsby-icon.png`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-gtag`,
       options: {

@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../container';
 import MarkdownHtml, { H2, TextLink } from '../markdown-text';
 import ArrowRightIcon from 'react-feather/dist/icons/arrow-right';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 
 type Props = {
   id: string,

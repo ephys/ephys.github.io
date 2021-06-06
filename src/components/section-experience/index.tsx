@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../container';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 import MarkdownHtml, { H2 } from '../markdown-text';
 
 type Props = {

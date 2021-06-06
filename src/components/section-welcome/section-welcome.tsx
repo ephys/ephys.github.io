@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useLocation } from '@reach/router';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 import { getRandomFloat, getRandomInt, getRandomItem, mapNumbers, replaceAt } from '../../utils/utils';
 import { useMediaQuery } from '../../utils/use-media-query';
 import { useLocalStorage } from '../../utils/use-local-storage';

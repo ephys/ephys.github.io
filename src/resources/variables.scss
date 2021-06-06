@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $blue: rgb(43, 39, 130);
 $red: rgb(191, 31, 85);
 $white: #fafafa;
@@ -62,11 +64,11 @@ $container-max-width: 1148px;
 }
 
 @function px-to-rem($value-as-px) {
-  @return #{$value-as-px / 16}rem;
+  @return #{math.div($value-as-px, 16)}rem;
 }
 
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
 }
 
 @function fluid($min-vw, $max-vw, $min-size, $max-size) {

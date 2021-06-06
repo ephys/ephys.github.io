@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink, GatsbyLinkProps } from 'gatsby';
 import classes from 'classnames';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 
 type Props = {
   html: string,

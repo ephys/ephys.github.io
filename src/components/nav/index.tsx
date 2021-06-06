@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import classes from 'classnames';
 import Container from '../container';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 
 const links = [{
   to: '/#content',
@@ -48,7 +48,7 @@ export default function Nav({ mode }: TNavProps) {
   }, [mode]);
 
   return (
-    <Container component={'nav'} className={classes(css.nav, mode === 'static' ? css.static : '')}>
+    <Container component={'nav'} className={classes(css.nav, mode === 'static' ? css.noAnimation : '')}>
       <div className={css.items}>
         {links.map((link, i) => {
           return <Link {...link} key={i} className={classes(i < visibleIndex ? css.fadeIn : '', css.link, css.active)} />

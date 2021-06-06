@@ -1,7 +1,7 @@
 import React from 'react';
 import { H2, TextLink } from '../markdown-text';
 import Container from '../container';
-import css from './style.module.scss';
+import * as css from './style.module.scss';
 
 export default function FooterSocial(props: { id: string }) {
 
