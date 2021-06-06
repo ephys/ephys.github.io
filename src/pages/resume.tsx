@@ -10,7 +10,7 @@ export default function CvView() {
   return (
     <Layout>
       <p className={classNames(css.downloadPdf, 'noprint')}><TextLink to="/resume.pdf" external>Download as PDF</TextLink></p>
-      <div className={css.page}>
+      <article className={css.page}>
         <header className={css.header}>
           <div className={css.picture}>
             <img src={photo} alt="Guylian Cox" width="680" height="907" />
@@ -20,12 +20,12 @@ export default function CvView() {
             <div className={css.contactInfo}>
               <p><MapPin /> Belgium</p>
               <p><Mail /> hello@guylian.me</p>
-              <p><Link /> guylian.me <span className={css.hint}>(you'll find everything in more details)</span></p>
+              <p><Link /> <span>guylian.me <span className={css.hint}>(you'll find everything in more details)</span></span></p>
               <p><GitHub /> @ephys</p>
             </div>
           </div>
         </header>
-        <main className={css.main}>
+        <div className={css.main}>
           <div className={css.mainCols}>
             <div className={css.mainLeftCol}>
               <div className={css.section}>
@@ -164,8 +164,8 @@ export default function CvView() {
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </article>
     </Layout>
   );
 }

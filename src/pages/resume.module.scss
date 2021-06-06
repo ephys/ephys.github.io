@@ -1,6 +1,11 @@
 @use '../resources/variables' as *;
 @use 'sass:math';
 
+// px to mm assuming a device pixel ratio of 1
+@function pxToMm($px) {
+  @return $px * 25.4 * 1mm
+}
+
 $maxPageWidth: 210mm;
 
 .downloadPdf {
@@ -16,18 +21,24 @@ $maxPageWidth: 210mm;
   --red: #{$red};
   --blue: #{$blue};
 
+  --safety-margin: 1cm;
+
   @media not print {
-    @media (width >= calc(#{$maxPageWidth} + 128px)) {
+    @media (min-width: calc(#{$maxPageWidth} + 128px)) {
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-      width: #{$maxPageWidth};
+      max-width: #{$maxPageWidth};
       margin: 64px auto;
       border-radius: 4px;
       overflow: hidden;
     }
+
+    @media (max-width: 600px) {
+      --safety-margin: 16px;
+    }
   }
 
   h2 {
-    margin-top: 32px;
+    margin-top: 1cm;
     font-size: 25px;
     background: var(--blue);
     color: white;
@@ -44,17 +55,24 @@ $maxPageWidth: 210mm;
   display: flex;
   background: $red;
   color: white;
+  padding: var(--safety-margin) var(--safety-margin) 0;
 }
 
+$asideIdealWidth: 5.5cm;
+
+$imgBottomNegMargin: 16px;
+$imgShadowOffset: 16px;
+$imgBottomOverflow: $imgBottomNegMargin + $imgShadowOffset;
+
 .picture {
-  $imgHeight: 216px + 32;
-  $imgWidth: 216px;
+  $imgHeight: 216px + 32px;
+  --shadow-offset: 16px;
 
   display: flex;
-  margin: 16px 16px -16px 24px;
+  margin: 0 16px -16px 0;
   height: $imgHeight;
+  width: $asideIdealWidth - $imgShadowOffset;
   position: relative;
-  --shadow-offset: 16px;
 
   img {
     width: 100%;
@@ -70,16 +88,23 @@ $maxPageWidth: 210mm;
     background: var(--blue);
     height: 100%;
     width: 100%;
-    left: var(--shadow-offset);
-    top: var(--shadow-offset);
+    left: #{$imgShadowOffset};
+    top: #{$imgShadowOffset};
+  }
+}
+
+@media (max-width: 446px) {
+  .picture {
+    display: none;
+  }
+
+  .header {
+    padding: calc(var(--safety-margin) * 2) var(--safety-margin);
   }
 }
 
 .about {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-left: var(--safety-margin);
 
   p {
     margin: 8px 0 0;
@@ -105,17 +130,18 @@ $maxPageWidth: 210mm;
   font-size: 12px;
 }
 
-$maxMainWidth: calc(#{$maxPageWidth} - 32px);
+$mainHorizontalPadding: 1cm;
+$maxMainWidth: $maxPageWidth - ($mainHorizontalPadding * 2);
 
 .main {
   background: $white;
   --color: black;
   color: black;
   overflow: hidden;
-  padding: 16px;
+  padding: 0.3cm var(--safety-margin) 16px;
 }
 
-$colGap: 32px;
+$colGap: 1cm;
 
 .mainCols {
   display: flex;
@@ -124,14 +150,18 @@ $colGap: 32px;
 }
 
 .mainLeftCol {
-  max-width: 57mm;
+  flex: 1 0 $asideIdealWidth;
   width: 100%;
 }
 
 .mainRightCol {
   margin-left: auto;
-  max-width: 136mm;
   width: 100%;
+
+  --max-main-width: #{$maxMainWidth};
+  --col-gap: #{$colGap};
+  --aisde: #{$asideIdealWidth};
+  flex: 11000 1 #{$maxMainWidth - $colGap - $asideIdealWidth - 1cm};
 
   h2 {
     display: inline-block;
@@ -149,7 +179,7 @@ $colGap: 32px;
 }
 
 .expYears {
-  margin-top: 0;
+  margin: 0;
   font-style: italic;
 
   font-size: 12px;
