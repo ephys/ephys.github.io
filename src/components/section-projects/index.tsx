@@ -44,8 +44,6 @@ export default function SectionProjects(props: Props) {
   //   return a.id.localeCompare(b.id);
   // });
 
-  console.log('projects', props.content);
-
   return (<>
     <Container id={props.id} className="section" component="section">
       <div className={css.sectionHeader}>
