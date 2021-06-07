@@ -52,7 +52,8 @@ export default function CvView() {
                 <h2>Interests</h2>
                 <ul>
                   <li>Baking</li>
-                  <li>I love music, terrible movies, tea, rain, and the Oxford comma.</li>
+                  <li>I love music, terrible movies, tea, rain, and the Oxford comma</li>
+                  <li>Modding</li>
                 </ul>
               </div>
               <div className={classNames(css.section, css.experience)}>
@@ -148,6 +149,7 @@ export default function CvView() {
                   <li>Well versed in CSS (10 years)</li>
                   <li>SCSS, PostCSS</li>
                   <li>HTML</li>
+                  <li>Push Notifications</li>
                   <li>PWA, Trusted-Web-Activities, Cordova</li>
                   <li>Accessibility</li>
                   <li>Eye for detail</li>
@@ -161,6 +163,7 @@ export default function CvView() {
                   <li>Redis</li>
                   <li>GraphQL, REST</li>
                   <li>Error management, response time optimisation</li>
+                  <li>Heroku, AWS (S3, SES), Firebase</li>
                 </ul>
               </div>
             </div>
