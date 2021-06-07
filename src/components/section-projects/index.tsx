@@ -47,7 +47,7 @@ export default function SectionProjects(props: Props) {
     <Container id={props.id} className="section" component="section">
       <div className={css.sectionHeader}>
         <H2 red>My own projects</H2>
-        <p className="noprint"><a className={css.viewMore} href="https://github.com/ephys">View more on GitHub</a></p>
+        <p className="noprint"><a className={css.viewMore} href="https://github.com/ephys" {...externalLinkProps}>View more on GitHub</a></p>
       </div>
       <div className={css.items}>
         {props.content.map(item => {
@@ -59,9 +59,9 @@ export default function SectionProjects(props: Props) {
               <time>{item.meta.year}</time>
             </span>
               <ul className={css.list}>
-                {item.meta.repository && <li><TextLink to={item.meta.repository} {...externalLinkProps}>Source code</TextLink></li>}
-                {item.meta.npm && <li><TextLink to={item.meta.npm} {...externalLinkProps}>npm</TextLink></li>}
-                {item.meta.demo && <li><TextLink to={item.meta.demo} {...externalLinkProps}>Live page</TextLink></li>}
+                {item.meta.repository && <li><TextLink to={item.meta.repository} external>Source code</TextLink></li>}
+                {item.meta.npm && <li><TextLink to={item.meta.npm} external>npm</TextLink></li>}
+                {item.meta.demo && <li><TextLink to={item.meta.demo} external>Live page</TextLink></li>}
               </ul>
               <MarkdownHtml html={item.html} />
             </div>

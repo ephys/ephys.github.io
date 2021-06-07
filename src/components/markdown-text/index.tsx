@@ -28,7 +28,7 @@ export function TextLink<TState>(props: GatsbyLinkProps<TState> & { external?: b
   const className = classes(css.link, passDown.className);
 
   if (external) {
-    return <a target="_blank" {...passDown} href={to} className={className} />
+    return <a target="_blank" rel="nofollow noreferrer noopener" {...passDown} href={to} className={className} />
   }
 
   // @ts-ignore
