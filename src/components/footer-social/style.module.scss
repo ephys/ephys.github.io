@@ -4,6 +4,7 @@ $shadowSpacing: var(--shadow-offset);
 
 .footer {
   background: $red;
+  --focus-color: var(--blue);
   @media (max-width: 664px) {
     text-align: center;
   }
@@ -118,7 +119,6 @@ $bitSize: calc(#{$shadowSpacing} / 10);
     text-align: center;
     align-items: center;
 
-    --focus-color: var(--blue);
     @include focus-ring;
 
     &:hover span {
