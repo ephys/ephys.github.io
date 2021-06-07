@@ -7,6 +7,7 @@ type Props = {
   id: string,
   content: Array<{
     html: string,
+    id: string,
     meta: {
       year: string,
       repository?: string,
@@ -25,23 +26,25 @@ const externalLinkProps = {
 
 export default function SectionProjects(props: Props) {
 
-  props.content.sort((a, b) => {
-    const val = Number(b.meta.year) - Number(a.meta.year);
+  // props.content.sort((a, b) => {
+  //   const val = Number(b.meta.year) - Number(a.meta.year);
+  //
+  //   if (val !== 0) {
+  //     return val;
+  //   }
+  //
+  //   if (a.meta.active) {
+  //     return -1;
+  //   }
+  //
+  //   if (b.meta.active) {
+  //     return 1;
+  //   }
+  //
+  //   return a.id.localeCompare(b.id);
+  // });
 
-    if (val !== 0) {
-      return val;
-    }
-
-    if (a.meta.active) {
-      return -1;
-    }
-
-    if (b.meta.active) {
-      return 1;
-    }
-
-    return 0;
-  });
+  console.log('projects', props.content);
 
   return (<>
     <Container id={props.id} className="section" component="section">
@@ -53,7 +56,7 @@ export default function SectionProjects(props: Props) {
         {props.content.map(item => {
 
           return (
-            <div>
+            <div key={item.id}>
               <h3 className={css.h3}>{item.meta.title}</h3>
               <span className={css.time}>
               <time>{item.meta.year}</time>

@@ -41,9 +41,13 @@ export const pageQuery = graphql`
       }
     }
     # My own projects
-    projects: allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
+    projects: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "project" } } }
+        sort: {fields: [frontmatter___active, frontmatter___year, id], order: [DESC, DESC, ASC]}
+    ) {
       nodes {
         html
+        id
         meta: frontmatter {
           year
           title
