@@ -12,7 +12,9 @@ export default function CvView() {
   return (
     <Layout>
       <SEO title="Resume" />
-      <Helmet htmlAttributes={{ 'data-template': 'resume' }}/>
+      <Helmet htmlAttributes={{ 'data-template': 'resume' }}>
+        <link rel="stylesheet" href="/print-no-margin.css" />
+      </Helmet>
       <p className={classNames(css.downloadPdf, 'noprint')}><TextLink to="/resume.pdf" external>Download as PDF</TextLink></p>
       <article className={css.page}>
         <header className={css.header}>
@@ -24,7 +26,7 @@ export default function CvView() {
             <div className={css.contactInfo}>
               <p><MapPin /> Belgium</p>
               <p><Mail /> hello@guylian.me</p>
-              <p><Link /> <span>guylian.me <span className={css.hint}>(you'll find everything in more details)</span></span></p>
+              <p><Link /> <span>guylian.me <span className={css.hint}>(you will find everything in more details)</span></span></p>
               <p><GitHub /> @ephys</p>
             </div>
           </div>
@@ -81,7 +83,7 @@ export default function CvView() {
 
                 <h3>Developer, Eureka</h3>
                 <p className={css.expYears}>2020</p>
-                <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://eurekanetwork.org/">eurekanetwork.org</TextLink>.
+                <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://eurekanetwork.org/" external>eurekanetwork.org</TextLink>.
                 </p>
                 <Tags>
                   <Tag>front-end development</Tag>
@@ -90,7 +92,7 @@ export default function CvView() {
 
                 <h3>Developer, Energreen</h3>
                 <p className={css.expYears}>2019-2021</p>
-                <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://energreen.be/">energreen.be</TextLink>.
+                <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://energreen.be/" external>energreen.be</TextLink>.
                 </p>
                 <Tags>
                   <Tag>front-end development</Tag>
@@ -163,11 +165,67 @@ export default function CvView() {
               </div>
             </div>
             <div className={css.mainRightCol}>
-              <div className={css.section}>
+              <div className={classNames(css.section, css.experience)}>
                 <h2>Projects</h2>
+                <p className={css.expYears}>
+                  Links to source code & live demos are available on <TextLink to="/">guylian.me</TextLink>.
+                </p>
+
+                <h3>Stacked React Router</h3>
+                <p className={css.expDesc}>
+                  A yet-to-be-released experimental library that builds an efficient Stack Router on top of React Router.
+                  This library supports directional page transitions, provides a working Back Button, and includes a multitude of tools
+                  to manipulate the browser history and simulate a native mobile app experience.
+                </p>
+                <p className={css.expDesc}>While not yet available, it is used extensively in <TextLink to="https://app.mymedicoach.com" external>mymedicoach.com</TextLink>.</p>
+
+                <h3>Joi Config Generator</h3>
+                <p className={css.expDesc}>
+                  An open source library that uses Joi to generate and validate a back-end application's configuration file or environment variables.
+                </p>
+
+                <h3>react-intl-formatted-xml-message</h3>
+                <p className={css.expDesc}>
+                  This library gave the ability to use complex formatting in intl messages using XML tags.<br />
+
+                </p>
+                <p className={css.expDesc}>
+                  Support for XML tags has since been added natively to react-intl.
+                </p>
+
+                <h3>react-tiny-markdown</h3>
+                <p className={css.expDesc}>
+                  A very lightweight markdown-to-jsx implementation limited to basic markdown formatting. Designed
+                  to be used by end-users in use-cases such as a chat application.
+                </p>
+
+                <h3>xml-to-jsx</h3>
+                <p className={css.expDesc}>
+                  Another lightweight library that parses XML or HTML and maps tags to react component.
+                  This was designed as a way to safely render and dynamize HTML coming from a CMS.
+                </p>
+
+                <h3>Gender Unicorn</h3>
+                <p className={css.expDesc}>
+                  A web integration experiment with the goal of converting an illustration
+                  designed for paper into an interactive mobile-friendly web page.
+                </p>
+                <p className={css.expDesc}>
+                  Made for the TSER.
+                </p>
+
+                <h3>This Resume</h3>
+                <p className={css.expDesc}>
+                  It is actually a printable HTML page you can find on <TextLink to="/">guylian.me</TextLink>!
+                  <br />
+                  A golden occasion to learn more about making pages printer-friendly.
+                </p>
               </div>
             </div>
           </div>
+          <footer className={css.footer}>
+            <img src="/favicon.svg" alt="" />
+          </footer>
         </div>
       </article>
     </Layout>

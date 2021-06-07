@@ -46,6 +46,10 @@ $maxPageWidth: 210mm;
   }
 
   h3 {
+    margin-top: 16px;
+  }
+
+  h2 + h3 {
     margin-top: 0;
   }
 }
@@ -137,7 +141,7 @@ $maxMainWidth: $maxPageWidth - ($mainHorizontalPadding * 2);
   --color: black;
   color: black;
   overflow: hidden;
-  padding: 0.3cm var(--safety-margin) 16px;
+  padding: 0.3cm var(--safety-margin) 1cm;
 }
 
 $colGap: 1cm;
@@ -216,6 +220,7 @@ $colGap: 1cm;
   gap: 4px;
   font-size: 14px;
   margin-top: 8px;
+  margin-bottom: 0;
 }
 
 .tag {
@@ -224,6 +229,25 @@ $colGap: 1cm;
   border-radius: 4px;
   padding: 1px 6px;
   color: white;
+}
+
+.footer {
+  img {
+    width: 1cm;
+    height: 1cm;
+  }
+
+  @media print {
+    position: fixed;
+    bottom: 1cm;
+    left: 1cm;
+
+    // broken on .. all browsers :(
+    //&::after {
+    //  content: counter(page) " of " counter(pages);
+    //  counter-increment: page;
+    //}
+  }
 }
 
 @media print {
