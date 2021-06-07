@@ -13,5 +13,3 @@ The best way to do this at the time (in 2016), was to detect stylesheet changes 
 
 Detecting such a thing was unsurprisingly extremely inconsistent between browsers at the time (likely still is), so
 I decided to write a library that handled just that, which is how [StyleSheet Observer](https://www.npmjs.com/package/stylesheet-observer) was born.
-
-
