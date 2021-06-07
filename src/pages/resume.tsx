@@ -6,11 +6,13 @@ import { TextLink } from '../components/markdown-text';
 import classNames from 'classnames';
 import { GitHub, Link, Mail, MapPin } from 'react-feather';
 import SEO from '../components/seo';
+import { Helmet } from 'react-helmet';
 
 export default function CvView() {
   return (
     <Layout>
       <SEO title="Resume" />
+      <Helmet htmlAttributes={{ 'data-template': 'resume' }}/>
       <p className={classNames(css.downloadPdf, 'noprint')}><TextLink to="/resume.pdf" external>Download as PDF</TextLink></p>
       <article className={css.page}>
         <header className={css.header}>

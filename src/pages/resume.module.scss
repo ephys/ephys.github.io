@@ -17,7 +17,6 @@ $maxPageWidth: 210mm;
 }
 
 .page {
-  color-adjust: exact;
   --red: #{$red};
   --blue: #{$blue};
 
@@ -225,4 +224,15 @@ $colGap: 1cm;
   border-radius: 4px;
   padding: 1px 6px;
   color: white;
+}
+
+@media print {
+  html[data-template="resume"] {
+    --background: white;
+    color-adjust: exact;
+  }
+
+  .main {
+    background: transparent;
+  }
 }
