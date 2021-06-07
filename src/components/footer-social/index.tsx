@@ -16,22 +16,22 @@ export default function FooterSocial(props: { id: string }) {
           </div>
           <div className={css.contactInfo}>
             <div className={css.socialLinks}>
-              <a href="mailto:hello@guylian.me" title="My Email">
+              <a href="mailto:hello@guylian.me" title="My Email" target="_blank" rel="nofollow noopener noreferrer">
                 <Mail />
                 <span>hello@guylian.me</span>
               </a>
 
-              <a href="https://github.com/ephys" title="My GitHub">
+              <a href="https://github.com/ephys" title="My GitHub" target="_blank" rel="nofollow noopener noreferrer">
                 <GitHub />
                 <span>ephys</span>
               </a>
 
-              <a href="https://twitter.com/ephys_" title="My Twitter">
+              <a href="https://twitter.com/ephys_" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
                 <Twitter />
                 <span>@ephys_</span>
               </a>
 
-              <a href="" title="My LinkedIn">
+              <a href="https://www.linkedin.com/in/guyliancox/" title="My LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
                 <Linkedin />
                 <span>Guylian Cox</span>
               </a>
