@@ -3,6 +3,7 @@ import React from 'react';
 import classes from 'classnames';
 import Container from '../container';
 import * as css from './style.module.scss';
+import { Helmet } from 'react-helmet';
 
 const links = [{
   to: '/#content',
@@ -49,9 +50,10 @@ export default function Nav({ mode }: TNavProps) {
 
   return (
     <Container component={'nav'} className={classes(css.nav, mode === 'static' ? css.noAnimation : '', 'noprint')}>
+      <Helmet htmlAttributes={{ 'data-has-nav': '' }} />
       <div className={css.items}>
         {links.map((link, i) => {
-          return <Link {...link} key={i} className={classes(i < visibleIndex ? css.fadeIn : '', css.link, css.active)} />
+          return <Link {...link} key={i} className={classes(i < visibleIndex ? css.fadeIn : '', css.link, css.active)} />;
         })}
       </div>
     </Container>

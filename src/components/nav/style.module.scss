@@ -1,5 +1,9 @@
 @use '../../resources/variables' as *;
 
+html[data-has-nav] {
+  scroll-padding: 134px;
+}
+
 .nav {
   justify-content: space-between;
   position: sticky;
