@@ -1,7 +1,7 @@
 ---
 type: project
 title: Minecraft Mods
-year: 2016
+year: 2017
 demo: https://www.curseforge.com/members/ephys/projects
 active: true
 ---
