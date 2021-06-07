@@ -84,7 +84,9 @@ function SEO({ description, lang, meta, title, robots }: Props) {
         },
         ...extraMeta,
       ].concat(meta)}
-    />
+    >
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </Helmet>
   );
 }
 
