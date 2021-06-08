@@ -2,7 +2,7 @@
 type: project
 title: sequelize-find-by-cursor
 year: 2020
-repository: https://gist.github.com/Ephys/d48a27f715ecf2e4a1bc6f29b56a1022
+repository: https://github.com/Ephys/sequelize-cursor-pagination
 active: true
 ---
 
