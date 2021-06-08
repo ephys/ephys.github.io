@@ -139,6 +139,7 @@ export default function CvView() {
                   <li>Git (+GitHub, Bitbucket, Gitlab)</li>
                   <li>CircleCI</li>
                   <li>Bash, Zsh</li>
+                  <li>JavaScript (10 years), TypeScript</li>
                   <li>Jira, Confluence</li>
                   <li>macOS, Ubuntu</li>
                 </ul>

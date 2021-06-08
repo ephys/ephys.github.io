@@ -142,6 +142,10 @@ $maxMainWidth: $maxPageWidth - ($mainHorizontalPadding * 2);
   color: black;
   overflow: hidden;
   padding: 0.3cm var(--safety-margin) 1cm;
+
+  ul {
+    font-size: 14px;
+  }
 }
 
 $colGap: 1cm;
