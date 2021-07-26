@@ -74,30 +74,32 @@ export default function CvView() {
 
                 <p className={css.expDesc}>Development of a web & mobile (TWA) application.</p>
                 <Tags>
-                  <Tag>full-stack development</Tag>
+                  <Tag>full-stack</Tag>
                   <Tag>UX</Tag>
                   <Tag>UI</Tag>
                   <Tag>product design</Tag>
                   <Tag>project management</Tag>
                   <Tag>react</Tag>
+                  <Tag>node</Tag>
+                  <Tag>postgres</Tag>
                 </Tags>
 
-                <h3>Developer, Eureka</h3>
+                <h3>Freelance Developer, Eureka</h3>
                 <p className={css.expYears}>2020</p>
                 <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://eurekanetwork.org/" external>eurekanetwork.org</TextLink>.
                 </p>
                 <Tags>
-                  <Tag>front-end development</Tag>
-                  <Tag>freelance</Tag>
+                  <Tag>front-end</Tag>
+                  <Tag>dotCMS</Tag>
                 </Tags>
 
-                <h3>Developer, Energreen</h3>
+                <h3>Freelance Developer, Energreen</h3>
                 <p className={css.expYears}>2019-2021</p>
                 <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://energreen.be/" external>energreen.be</TextLink>.
                 </p>
                 <Tags>
-                  <Tag>front-end development</Tag>
-                  <Tag>freelance</Tag>
+                  <Tag>front-end</Tag>
+                  <Tag>wordpress</Tag>
                 </Tags>
 
                 <h3>Developer, The MAD Company</h3>
@@ -112,6 +114,8 @@ export default function CvView() {
                   <Tag>full-stack development</Tag>
                   <Tag>project management</Tag>
                   <Tag>react</Tag>
+                  <Tag>node</Tag>
+                  <Tag>graphql</Tag>
                 </Tags>
 
                 <h3>Developer, Pictawall</h3>
@@ -125,6 +129,7 @@ export default function CvView() {
                 <Tags>
                   <Tag>full-stack development</Tag>
                   <Tag>UI</Tag>
+                  <Tag>Symfony2</Tag>
                 </Tags>
               </div>
             </div>
@@ -145,7 +150,7 @@ export default function CvView() {
                 </ul>
                 <h3>Front-end</h3>
                 <ul>
-                  <li>React (6 years)</li>
+                  <li>React (6 years), Next.js</li>
                   <li>Webpack (6 years), Gulp</li>
                   <li>Well versed in CSS (10 years)</li>
                   <li>SCSS, PostCSS</li>
@@ -160,6 +165,7 @@ export default function CvView() {
                 <h3>Back-end</h3>
                 <ul>
                   <li>Node, PHP, Java</li>
+                  <li>NestJS</li>
                   <li>Common RDBMS: PostgreSQL, MySQL, SQLite</li>
                   <li>Redis</li>
                   <li>GraphQL, REST</li>
