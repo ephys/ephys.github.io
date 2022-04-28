@@ -19,7 +19,7 @@ function SectionAboutMe(props: Props) {
         html={props.content}
       />
       <div className={css.picture}>
-        <img src={photo} alt="Guylian Cox" />
+        <img src={photo} alt="Zoé Cox" />
       </div>
     </Container>
   );

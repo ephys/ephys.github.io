@@ -407,7 +407,7 @@ function SectionWelcome() {
         <div>
           <h1 aria-label="Welcome" ref={welcomeRef} />
           <div className={css.description}>
-            <p>Guylian Cox</p>
+            <p>Zoé Cox</p>
             <p>Web & Mobile Developer</p>
           </div>
         </div>

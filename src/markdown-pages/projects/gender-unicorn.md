@@ -2,8 +2,8 @@
 type: project
 title: The gender unicorn
 year: 2016
-repository: https://github.com/Ephys/Gender-Unicorn
-demo: https://guylian.me/Gender-Unicorn/
+repository: https://github.com/ephys/Gender-Unicorn
+demo: https://ephys.dev/Gender-Unicorn/
 active: true
 ---
 

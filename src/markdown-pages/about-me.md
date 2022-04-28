@@ -4,7 +4,7 @@ name: "about-me"
 
 ## Who am I?
 
-Hi I'm **Guylian**
+Hi I'm **Zoé**
 
 I'm a deeply **passionate developer** who continuously strives to be better at both who I am and what I'm doing.
 

@@ -16,9 +16,9 @@ export default function FooterSocial(props: { id: string }) {
           </div>
           <div className={css.contactInfo}>
             <div className={css.socialLinks}>
-              <a href="mailto:hello@guylian.me" title="My Email" target="_blank" rel="nofollow noopener noreferrer">
+              <a href="mailto:zoe@ephys.dev" title="My Email" target="_blank" rel="nofollow noopener noreferrer">
                 <Mail />
-                <span>hello@guylian.me</span>
+                <span>zoe@ephys.dev</span>
               </a>
 
               <a href="https://github.com/ephys" title="My GitHub" target="_blank" rel="nofollow noopener noreferrer">
@@ -33,7 +33,7 @@ export default function FooterSocial(props: { id: string }) {
 
               <a href="https://www.linkedin.com/in/guyliancox/" title="My LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
                 <Linkedin />
-                <span>Guylian Cox</span>
+                <span>Zoé Cox</span>
               </a>
             </div>
           </div>

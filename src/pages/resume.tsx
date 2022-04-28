@@ -1,4 +1,4 @@
-import photo from '../resources/photo-558w.jpg';
+import photo from '../resources/photo-small.jpg';
 import React, { ReactNode } from 'react';
 import * as css from './resume.module.scss';
 import Layout from '../components/layout/layout';
@@ -19,14 +19,14 @@ export default function CvView() {
       <article className={css.page}>
         <header className={css.header}>
           <div className={css.picture}>
-            <img src={photo} alt="Guylian Cox" width="680" height="907" />
+            <img src={photo} alt="Zoé Cox" width="558" height="744" />
           </div>
           <div className={css.about}>
-            <h1 className={css.name}>Guylian Cox</h1>
+            <h1 className={css.name}>Zoé Cox</h1>
             <div className={css.contactInfo}>
               <p><MapPin /> Belgium</p>
-              <p><Mail /> hello@guylian.me</p>
-              <p><Link /> <span>guylian.me <span className={css.hint}>(you will find everything in more details)</span></span></p>
+              <p><Mail /> zoe@ephys.dev</p>
+              <p><Link /> ephys.dev</p>
               <p><GitHub /> @ephys</p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function CvView() {
                 <ul>
                   <li>Baking</li>
                   <li>I love music, terrible movies, tea, rain, and the Oxford comma</li>
-                  <li>Modding</li>
+                  <li>Modding & Video Games</li>
                 </ul>
               </div>
               <div className={classNames(css.section, css.experience)}>
@@ -69,49 +69,48 @@ export default function CvView() {
               <div className={classNames(css.section, css.experience)}>
                 <h2>Past Experience</h2>
 
+                <h3>Technical Lead, Sequelize ORM</h3>
+                <p className={css.expYears}>2021 - now</p>
+                <p className={css.expDesc}>
+                  I joined the development team of the open source ORM <TextLink to="https://sequelize.org/">Sequelize</TextLink> in December 2021.
+                  I've since made <TextLink to="https://github.com/sequelize/sequelize/pulls?q=is%3Apr+author%3Aephys+is%3Aclosed">many improvements</TextLink> to all aspects of the ORM.
+                </p>
+                <Tags>
+                  <Tag>back-end</Tag>
+                  <Tag>SQL</Tag>
+                  <Tag>Open Source</Tag>
+                </Tags>
+
                 <h3>Lead Developer, MyMedicoach.com</h3>
-                <p className={css.expYears}>2019 - 2021</p>
+                <p className={css.expYears}>2019 - 2022</p>
 
                 <p className={css.expDesc}>Development of a web & mobile (TWA) application.</p>
                 <Tags>
                   <Tag>full-stack</Tag>
                   <Tag>UX</Tag>
-                  <Tag>UI</Tag>
-                  <Tag>product design</Tag>
-                  <Tag>project management</Tag>
                   <Tag>react</Tag>
                   <Tag>node</Tag>
-                  <Tag>postgres</Tag>
                 </Tags>
 
-                <h3>Freelance Developer, Eureka</h3>
-                <p className={css.expYears}>2020</p>
-                <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://eurekanetwork.org/" external>eurekanetwork.org</TextLink>.
+                <h3>Freelance Developer</h3>
+                <p className={css.expYears}>2020 - 2022</p>
+                <p className={css.expDesc}>Implementation & maintenance of CMS, such as <TextLink to="https://eurekanetwork.org/" external>eurekanetwork.org</TextLink>
+                  {' '}and <TextLink to="https://energreen.be/" external>energreen.be</TextLink>.
                 </p>
                 <Tags>
                   <Tag>front-end</Tag>
                   <Tag>dotCMS</Tag>
-                </Tags>
-
-                <h3>Freelance Developer, Energreen</h3>
-                <p className={css.expYears}>2019-2021</p>
-                <p className={css.expDesc}>Integration of their new CMS, <TextLink to="https://energreen.be/" external>energreen.be</TextLink>.
-                </p>
-                <Tags>
-                  <Tag>front-end</Tag>
                   <Tag>wordpress</Tag>
                 </Tags>
 
                 <h3>Developer, The MAD Company</h3>
                 <p className={css.expYears}>2016 - 2020</p>
                 <p className={css.expDesc}>
-                  Agency work ranging from wordpress integration to full React applications.
+                  Agency work including React/Node/GraphQL/REST applications.
                   Technical lead and setup of internal IT-related processes.
-                  Development of React/Node/GraphQL/REST applications.
-                  Development and maintenance of our open source libraries.
                 </p>
                 <Tags>
-                  <Tag>full-stack development</Tag>
+                  <Tag>full-stack</Tag>
                   <Tag>project management</Tag>
                   <Tag>react</Tag>
                   <Tag>node</Tag>
@@ -127,7 +126,7 @@ export default function CvView() {
                 </p>
 
                 <Tags>
-                  <Tag>full-stack development</Tag>
+                  <Tag>full-stack</Tag>
                   <Tag>UI</Tag>
                   <Tag>Symfony2</Tag>
                 </Tags>
@@ -166,7 +165,7 @@ export default function CvView() {
                 <ul>
                   <li>Node, PHP, Java</li>
                   <li>NestJS</li>
-                  <li>Common RDBMS: PostgreSQL, MySQL, SQLite</li>
+                  <li>Most RDBMS: PostgreSQL, MySQL, SQLite, SQL Server, etc…</li>
                   <li>Redis</li>
                   <li>GraphQL, REST</li>
                   <li>Error management, response time optimisation</li>
@@ -178,7 +177,7 @@ export default function CvView() {
               <div className={classNames(css.section, css.experience)}>
                 <h2>Projects</h2>
                 <p className={css.expYears}>
-                  Links to source code & live demos are available on <TextLink to="/">guylian.me</TextLink>.
+                  Links to source code & live demos are available on <TextLink to="https://ephys.dev">ephys.dev</TextLink>.
                 </p>
 
                 <h3>Stacked React Router</h3>
@@ -189,9 +188,9 @@ export default function CvView() {
                 </p>
                 <p className={css.expDesc}>While not yet available, it is used extensively in <TextLink to="https://app.mymedicoach.com" external>mymedicoach.com</TextLink>.</p>
 
-                <h3>Joi Config Generator</h3>
+                <h3>Sequelize Cursor Pagination</h3>
                 <p className={css.expDesc}>
-                  An open source library that uses Joi to generate and validate a back-end application's configuration file or environment variables.
+                  An implementation of a stateless cursor-based pagination using Sequelize.
                 </p>
 
                 <h3>react-intl-formatted-xml-message</h3>
@@ -226,7 +225,7 @@ export default function CvView() {
 
                 <h3>This Resume</h3>
                 <p className={css.expDesc}>
-                  It is actually a printable HTML page you can find on <TextLink to="/">guylian.me</TextLink>!
+                  It is actually a printable HTML page you can find on <TextLink to="https://ephys.dev">ephys.dev</TextLink>!
                   <br />
                   A golden occasion to learn more about making pages printer-friendly.
                 </p>

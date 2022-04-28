@@ -80,7 +80,7 @@ export default function SectionProjects(props: Props) {
 //       <ul>
 //         <li>I post a lot of code snippets on https://gist.github.com/Ephys</li>
 //         <li>And refined code on https://github.com/ephys</li>
-//         <li>Read my tech thoughts on https://guylian.me/blog</li>
+//         <li>Read my tech thoughts on https://Zoé.me/blog</li>
 //       </ul>
 
 // TODO: live projects in 'Past experience'
