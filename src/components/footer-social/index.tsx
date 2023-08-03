@@ -31,7 +31,7 @@ export default function FooterSocial(props: { id: string }) {
                 <span>@ephys_</span>
               </a>
 
-              <a href="https://www.linkedin.com/in/guyliancox/" title="My LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
+              <a href="https://www.linkedin.com/in/ephys/" title="My LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
                 <Linkedin />
                 <span>Zoé Cox</span>
               </a>
