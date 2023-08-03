@@ -40,7 +40,7 @@ export default function FooterSocial(props: { id: string }) {
         </div>
 
         <div className={css.footerInfo}>
-          <p className={css.vat}>VAT BE 0746.377.584</p>
+          <p className={css.vat} />
           <p className={classNames(css.sourceCode, 'noprint')}><TextLink to="https://github.com/ephys/ephys.github.io" target="_blank">Check out the source code of this website</TextLink></p>
         </div>
       </Container>
