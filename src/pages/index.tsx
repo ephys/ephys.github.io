@@ -27,10 +27,10 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query {
-    aboutMe: markdownRemark(frontmatter: { name: { eq: "about-me" } }) {
+    aboutMe: markdownRemark(frontmatter: {name: {eq: "about-me"}}) {
       html
     }
-    experience: allMarkdownRemark(filter: { frontmatter: { type: { eq: "experience" } } }) {
+    experience: allMarkdownRemark(filter: {frontmatter: {type: {eq: "experience"}}}) {
       nodes {
         html
         meta: frontmatter {
@@ -42,8 +42,8 @@ export const pageQuery = graphql`
     }
     # My own projects
     projects: allMarkdownRemark(
-        filter: { frontmatter: { type: { eq: "project" } } }
-        sort: {fields: [frontmatter___active, frontmatter___year, id], order: [DESC, DESC, ASC]}
+      filter: {frontmatter: {type: {eq: "project"}}}
+      sort: [{frontmatter: {active: DESC}}, {frontmatter: {year: DESC}}, {id: ASC}]
     ) {
       nodes {
         html
@@ -58,7 +58,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    testimonials: allMarkdownRemark(filter: { frontmatter: { type: { eq: "testimonial" } } }) {
+    testimonials: allMarkdownRemark(
+      filter: {frontmatter: {type: {eq: "testimonial"}}}
+    ) {
       nodes {
         html
         meta: frontmatter {

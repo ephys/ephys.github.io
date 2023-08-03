@@ -140,17 +140,17 @@ export default function CvView() {
 
                 <h3>General</h3>
                 <ul>
-                  <li>Git (+GitHub, Bitbucket, Gitlab)</li>
-                  <li>CircleCI</li>
+                  <li>Git (+GitHub, Bitbucket, Gitlab, Azure)</li>
+                  <li>CircleCI, GH Actions, Azure DevOps</li>
                   <li>Bash, Zsh</li>
-                  <li>JavaScript (10 years), TypeScript</li>
+                  <li>JavaScript (11 years), TypeScript</li>
                   <li>Jira, Confluence</li>
                   <li>macOS, Ubuntu</li>
                 </ul>
                 <h3>Front-end</h3>
                 <ul>
-                  <li>React (6 years), Next.js</li>
-                  <li>Webpack (6 years), Gulp</li>
+                  <li>React (8 years), Next.js</li>
+                  <li>Webpack (8 years), Gulp</li>
                   <li>Well versed in CSS (10 years)</li>
                   <li>SCSS, PostCSS</li>
                   <li>HTML</li>

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import * as css from './style.module.scss';
 import { getRandomFloat, getRandomInt, getRandomItem, mapNumbers, replaceAt } from '../../utils/utils';
 import { useMediaQuery } from '../../utils/use-media-query';
